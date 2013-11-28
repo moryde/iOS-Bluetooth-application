@@ -35,7 +35,7 @@
     self.kServiceUUID = @"B8E06067-62AD-41BA-9231-206AE80AB550";
     self.rsUUID = @"F897177B-AEE8-4767-8ECC-CC694FD5FCEE";
     self.txUUID = @"BF45E40A-DE2A-4BC8-BBA0-E5D6065F1B4B";
-    
+    NSLog(@"LOL");
     
     
     switch (central.state) {
