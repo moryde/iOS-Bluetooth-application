@@ -9,7 +9,7 @@
 #import "gameController.h"
 
 @implementation gameController
-@synthesize delegate;
+@synthesize delegate, btConnection;
 
 static gameController *singletonInstance;
 
@@ -18,13 +18,15 @@ static gameController *singletonInstance;
     
     if (self = [super init])
     {
-        btConnection = [[btManager alloc]init];
-        [btConnection setDelegate:self];
         buttons = [[NSMutableDictionary alloc] init];
     }
     return self;
 }
 
+- (void)connectionChanged:(BOOL)isConnected{
+ 
+    [delegate connectionStatusChanged:isConnected];
+}
 
 + (gameController*)getInstance{
     if (singletonInstance == nil) {
@@ -48,12 +50,13 @@ static gameController *singletonInstance;
 
 - (void) connectToBase {
     
-    [btConnection connectToHub];
-
+    btConnection = [[btManager alloc]init];
+    [btConnection setDelegate:self];
 }
 
-- (void) turnOnLed:(char)id{
-    
+- (void) disconnectToBase {
+    //To do!
+    [btConnection.manager cancelPeripheralConnection:btConnection.peripheral];
 }
 
 - (void) colorUpdated:(button*)button {
@@ -98,12 +101,13 @@ static gameController *singletonInstance;
     return hexString;
 }
 
-- (NSMutableArray*) getPlayableButtons {
-    
-    NSMutableArray* a = [[NSMutableArray alloc] init];
-    for (button *b in buttons) {
-        if (b.currentlyInGame == NO) {
-            [a addObject:b];
+- (NSMutableDictionary *) getPlayableButtons {
+
+    NSMutableDictionary* a = [[NSMutableDictionary alloc] init];
+    for (id key in buttons) {
+        button *b = [buttons objectForKey:key];
+        if (b.currentlyInGame == YES) {
+            [a setObject:b forKey:key];
         }
     }
     return a;

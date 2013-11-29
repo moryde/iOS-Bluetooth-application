@@ -162,10 +162,9 @@
 		636F299018362333008E394C /* Climbing_bluetooth */ = {
 			isa = PBXGroup;
 			children = (
+				63E0F3E0184814DD007FFABB /* Games */,
 				636F299918362333008E394C /* AppDelegate.h */,
 				636F299A18362333008E394C /* AppDelegate.m */,
-				6386E19718456A4700FC5DA5 /* timeAttack.h */,
-				6386E19818456A4700FC5DA5 /* timeAttack.m */,
 				636F299C18362333008E394C /* Main_iPhone.storyboard */,
 				636F299F18362333008E394C /* Main_iPad.storyboard */,
 				6386E18C184506D400FC5DA5 /* selectButtonsViewController.h */,
@@ -233,6 +232,23 @@
 			);
 			name = Graphics;
 			path = Climbing_bluetooth;
+			sourceTree = "<group>";
+		};
+		63E0F3E0184814DD007FFABB /* Games */ = {
+			isa = PBXGroup;
+			children = (
+				63E0F3E1184814FD007FFABB /* timeAttack */,
+			);
+			name = Games;
+			sourceTree = "<group>";
+		};
+		63E0F3E1184814FD007FFABB /* timeAttack */ = {
+			isa = PBXGroup;
+			children = (
+				6386E19718456A4700FC5DA5 /* timeAttack.h */,
+				6386E19818456A4700FC5DA5 /* timeAttack.m */,
+			);
+			name = timeAttack;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */

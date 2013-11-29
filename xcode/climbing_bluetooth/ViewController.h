@@ -7,18 +7,17 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "gameController.h"
 
-@interface ViewController : UIViewController {
+@interface ViewController : UIViewController <gameControllerDelegate>{
 
 }
 
 @property (weak, nonatomic) IBOutlet UITextView *debugView;
+@property (weak, nonatomic) IBOutlet UIButton *connectToBase;
 
-
-- (IBAction)connecToBase:(id)sender;
+- (IBAction)connectToBase:(id)sender;
 - (IBAction)newGame:(id)sender;
-
-@property (weak, nonatomic) IBOutlet UIButton *connecToBase;
 
 @end
 

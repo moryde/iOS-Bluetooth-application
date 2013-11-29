@@ -8,17 +8,17 @@
 
 #import "ViewController.h"
 #import "selectButtonsViewController.h"
-#import "gameController.h"
 @interface ViewController ()
 
 @end
 
 @implementation ViewController
-@synthesize debugView ,connecToBase;
+@synthesize debugView, connectToBase;
 
 - (void)viewDidLoad
 {
     [super viewDidLoad];
+
 	// Do any additional setup after loading the view, typically from a nib.
 }
 
@@ -28,13 +28,29 @@
     // Dispose of any resources that can be recreated.
 }
 
-- (IBAction)connecToBase:(id)sender {
+- (IBAction)connectToBase:(id)sender {
+    gameController *localGameController = [gameController getInstance];
+    [localGameController setDelegate:self];
     
-    gameController* localGameController = [gameController getInstance];
-    [localGameController connectToBase];
-    
-    [sender setImage:[UIImage imageNamed:@"connectToBase_Connected.png"] forState:UIControlStateNormal];
-    [sender setTitle:@"Disconnect" forState:UIControlStateNormal];
+    [connectToBase setTitle:@"Connecting..." forState:UIControlStateNormal];
+
+    if (localGameController.btConnection) {
+        [localGameController disconnectToBase];
+    } else {
+        [localGameController connectToBase];
+    }
+
+
+}
+
+- (void)connectionStatusChanged:(BOOL)isConnected{
+    if (isConnected) {
+        [connectToBase setImage:[UIImage imageNamed:@"connectToBase_Connected.png"] forState:UIControlStateNormal];
+        [connectToBase setTitle:@"Disconnect" forState:UIControlStateNormal];
+    }else {
+        [connectToBase setImage:[UIImage imageNamed:@"connectToBase.png"] forState:UIControlStateNormal];
+        [connectToBase setTitle:@"Connect to base" forState:UIControlStateNormal];
+    }
 
 }
 

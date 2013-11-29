@@ -9,7 +9,7 @@
 #import "button.h"
 
 @implementation button
-@synthesize buttonID,ledColor,currentlyInGame,physicalColor;
+@synthesize buttonID,ledColor,currentlyInGame,identificationColor;
 
 - (id)initWith:(int)Id
 {
@@ -19,13 +19,13 @@
         currentlyInGame = NO;
         switch (Id) {
             case 10:
-                physicalColor = [UIColor blueColor];
+                identificationColor = [UIColor blueColor];
                 break;
             case 11:
-                physicalColor = [UIColor redColor];
+                identificationColor = [UIColor redColor];
                 break;
             default:
-                physicalColor = [UIColor yellowColor];
+                identificationColor = [UIColor yellowColor];
                 break;
         }
     }
@@ -49,9 +49,9 @@
     [self.delegate fadeButtonFromCurrentColorTo:endColor duration:seconds button:self];
 }
 
-- (void)displayPhysicalColor{
+- (void)displayIdentificationColor{
     
-    [self displayColor:self.physicalColor fade:YES];
+    [self displayColor:self.identificationColor fade:YES];
 }
 
 @end

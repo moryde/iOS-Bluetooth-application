@@ -30,8 +30,7 @@
     [super viewDidLoad];
 	// Do any additional setup after loading the view.
     gameController* localGameController = [gameController getInstance];
-     [localGameController setDelegate:self];
-    
+    [localGameController setDelegate:self];
     NSDictionary* d = [localGameController getAvalibleButtons];
     [self drawButtons:d];
 }
@@ -59,7 +58,7 @@
         
     } else {
         [sender setTitle:[NSString stringWithFormat:@"%i%@",button.buttonID, @"✓"] forState:UIControlStateNormal];
-        [button fadebuttonFrom:[UIColor colorWithRed:1 green:1 blue:1 alpha:1] duration:1 endColor:button.physicalColor];
+        [button fadebuttonFrom:[UIColor colorWithRed:1 green:1 blue:1 alpha:1] duration:1 endColor:button.identificationColor];
     }
     button.currentlyInGame = !button.currentlyInGame;
     
@@ -84,7 +83,7 @@
         NSLog(@"test");
         UIButton *uiButton = [UIButton buttonWithType:UIButtonTypeRoundedRect];
         uiButton.layer.cornerRadius = (buttonsize-10)/2;
-        uiButton.backgroundColor = button.physicalColor;
+        uiButton.backgroundColor = button.identificationColor;
         [uiButton addTarget:self action:@selector(uiButtonPressed:) forControlEvents:UIControlEventTouchDown];
         [uiButton setTag:button.buttonID];
         if (button.currentlyInGame) {
@@ -98,7 +97,7 @@
         uiButton.frame = CGRectMake(c*buttonsize, r*buttonsize, buttonsize-10, buttonsize-10);
         
         [s addSubview:uiButton];
-        [button displayPhysicalColor];
+        [button displayIdentificationColor];
     }
     [self.view addSubview:s];
     

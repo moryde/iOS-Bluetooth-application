@@ -9,21 +9,16 @@
 #import "btManager.h"
 
 @implementation btManager
-@synthesize delegate,rsUUID,txUUID,txCharacterestic,rxCharacterestic;
+@synthesize delegate,rsUUID,txUUID,txCharacterestic,rxCharacterestic, manager;
 
 -(id)init
 {
 
     if (self = [super init])
     {
+        self.manager = [[CBCentralManager alloc] initWithDelegate:self queue:nil];
     }
     return self;
-}
-
-- (void) connectToHub {
-    
-    self.manager = [[CBCentralManager alloc] initWithDelegate:self queue:nil];
-
 }
 
 
@@ -40,6 +35,8 @@
         case CBCentralManagerStatePoweredOn:
             [self.manager scanForPeripheralsWithServices:@[[CBUUID UUIDWithString:_kServiceUUID]] options:@{CBCentralManagerScanOptionAllowDuplicatesKey: @YES }];
             break;
+        case CBCentralManagerStatePoweredOff:
+            NSLog(@"LOL OFFLINE");
             
         default:
             break;
@@ -64,6 +61,11 @@
     // Asks the peripheral to discover the service
     [self.peripheral discoverServices:nil];
     
+}
+
+- (void)centralManager:(CBCentralManager *)central didDisconnectPeripheral:(CBPeripheral *)peripheral error:(NSError *)error{
+    
+    [delegate connectionChanged:NO];
 }
 
 - (void)peripheral:(CBPeripheral *)aPeripheral didDiscoverServices:(NSError *)error {
@@ -110,8 +112,7 @@
     
     // Notification has started
     if (characteristic.isNotifying) {
-        //NSLog(@"Notification began on %@", characteristic);
-        // TODO [peripheral readValueForCharacteristic:characteristic];
+        [delegate connectionChanged:YES];
     } else { // Notification has stopped
         // so disconnect from the peripheral
         NSLog(@"Notification stopped on %@.  Disconnecting", characteristic);

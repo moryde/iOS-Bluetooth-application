@@ -30,7 +30,6 @@
 @property (nonatomic, assign) id <btManagerDelegate>delegate;
 
 
-- (void) connectToHub;
 - (void)send:(NSString *)Message;
 
 
@@ -39,5 +38,7 @@
 @protocol btManagerDelegate
 
 -(void)buttonPressed:(int)buttonId;
+-(void)connectionChanged:(BOOL)isConnected;
+
 
 @end

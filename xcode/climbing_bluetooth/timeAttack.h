@@ -11,10 +11,12 @@
 @interface timeAttack : UIViewController <gameControllerDelegate> {
     
     NSDate *startTime;
-    NSMutableDictionary *gameIds;
+    NSMutableDictionary *buttons;
+    NSMutableDictionary *labels;
+    NSTimer *uiTimer;
 }
-@property (weak, nonatomic) IBOutlet UILabel *buttonTwo;
-@property (weak, nonatomic) IBOutlet UILabel *ButtonOne;
+@property (nonatomic) NSMutableDictionary *labels;
+
 - (IBAction)startTime:(id)sender;
 
 @end
