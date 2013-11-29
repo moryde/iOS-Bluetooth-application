@@ -282,12 +282,15 @@
 				LastUpgradeCheck = 0500;
 				ORGANIZATIONNAME = "Morten Ydefeldt";
 				TargetAttributes = {
+					636F298618362333008E394C = {
+						DevelopmentTeam = 6V8W5E58Z8;
+					};
 					636F29AA18362333008E394C = {
 						TestTargetID = 636F298618362333008E394C;
 					};
 				};
 			};
-			buildConfigurationList = 636F298218362333008E394C /* Build configuration list for PBXProject "Climbing_bluetooth" */;
+			buildConfigurationList = 636F298218362333008E394C /* Build configuration list for PBXProject "climbing_bluetooth" */;
 			compatibilityVersion = "Xcode 3.2";
 			developmentRegion = English;
 			hasScannedForEncodings = 0;
@@ -491,10 +494,13 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "Climbing_bluetooth/Climbing_bluetooth-Prefix.pch";
 				INFOPLIST_FILE = "Climbing_bluetooth/Climbing_bluetooth-Info.plist";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "";
 				WRAPPER_EXTENSION = app;
 			};
 			name = Debug;
@@ -504,10 +510,13 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "Climbing_bluetooth/Climbing_bluetooth-Prefix.pch";
 				INFOPLIST_FILE = "Climbing_bluetooth/Climbing_bluetooth-Info.plist";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "";
 				WRAPPER_EXTENSION = app;
 			};
 			name = Release;
@@ -557,7 +566,7 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		636F298218362333008E394C /* Build configuration list for PBXProject "Climbing_bluetooth" */ = {
+		636F298218362333008E394C /* Build configuration list for PBXProject "climbing_bluetooth" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				636F29BA18362333008E394C /* Debug */,

@@ -9,32 +9,34 @@
 #import "button.h"
 
 @implementation button
-@synthesize buttonID,ledColor;
+@synthesize buttonID,ledColor,currentlyInGame,physicalColor;
 
 - (id)initWith:(int)Id
 {
     self = [super init];
     if(self) {
         buttonID = Id;
+        currentlyInGame = NO;
+        switch (Id) {
+            case 10:
+                physicalColor = [UIColor blueColor];
+                break;
+            case 11:
+                physicalColor = [UIColor redColor];
+                break;
+            default:
+                physicalColor = [UIColor yellowColor];
+                break;
+        }
     }
     return(self);
 }
 
-- (int) getId{
-    return buttonID;
-}
-
-- (void)setColor:(UIColor*)color fadeOption:(BOOL)fade{
+- (void)displayColor:(UIColor *)color fade:(BOOL)fade{
     
     ledColor = color;
-    if (fade) NSLog(@"LOL");
     [self.delegate colorUpdated:self];
 
-}
-
-- (UIColor*)getColor {
-    
-    return ledColor;
 }
 
 
@@ -45,6 +47,11 @@
 
 - (void)fadebuttonFromCurrentColorTo:(UIColor *)endColor duration:(int)seconds {
     [self.delegate fadeButtonFromCurrentColorTo:endColor duration:seconds button:self];
+}
+
+- (void)displayPhysicalColor{
+    
+    [self displayColor:self.physicalColor fade:YES];
 }
 
 @end

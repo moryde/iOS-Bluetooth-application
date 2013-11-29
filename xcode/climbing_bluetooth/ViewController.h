@@ -15,7 +15,6 @@
 @property (weak, nonatomic) IBOutlet UITextView *debugView;
 
 
-- (IBAction)refreshPeripheral:(id)sender;
 - (IBAction)connecToBase:(id)sender;
 - (IBAction)newGame:(id)sender;
 

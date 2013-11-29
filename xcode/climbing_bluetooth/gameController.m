@@ -57,15 +57,15 @@ static gameController *singletonInstance;
 }
 
 - (void) colorUpdated:(button*)button {
-    NSString *dec = [NSString stringWithFormat:@"%i",[button getId]];
+    NSString *dec = [NSString stringWithFormat:@"%i",button.buttonID];
     NSMutableString *ss = [[NSMutableString alloc] initWithString:[NSString stringWithFormat:@"%02lX", (long)[dec integerValue]]];
-    [ss appendString:[gameController getHexStringForColor:[button getColor]]];
+    [ss appendString:[gameController getHexStringForColor:button.ledColor]];
     [btConnection send:ss];
 }
 
 - (void) fadebuttonFrom:(UIColor *)startColor duration:(int)Seconds endColor:(UIColor *)endColor button:(button *)button{
     
-    NSString *i = [NSString stringWithFormat:@"%i",[button getId]];
+    NSString *i = [NSString stringWithFormat:@"%i",button.buttonID];
     NSString *sec = [NSString stringWithFormat:@"%i",Seconds];
 
     NSMutableString *ss = [[NSMutableString alloc] initWithString:[NSString stringWithFormat:@"%02lX", (long)[i integerValue]]];
@@ -78,7 +78,7 @@ static gameController *singletonInstance;
 
 - (void)fadeButtonFromCurrentColorTo:(UIColor *)endColor duration:(int)seconds button:(button *)button {
 
-    NSString *i = [NSString stringWithFormat:@"%i",[button getId]];
+    NSString *i = [NSString stringWithFormat:@"%i",button.buttonID];
     NSString *sec = [NSString stringWithFormat:@"%i",seconds];
     
     NSMutableString *ss = [[NSMutableString alloc] initWithString:[NSString stringWithFormat:@"%02lX", (long)[i integerValue]]];
@@ -98,6 +98,17 @@ static gameController *singletonInstance;
     return hexString;
 }
 
+- (NSMutableArray*) getPlayableButtons {
+    
+    NSMutableArray* a = [[NSMutableArray alloc] init];
+    for (button *b in buttons) {
+        if (b.currentlyInGame == NO) {
+            [a addObject:b];
+        }
+    }
+    return a;
+}
+
 -(void)buttonPressed:(int)buttonId{
     NSLog(@"BUTTON PRESSED");
     button* b = [buttons valueForKey:[NSString stringWithFormat:@"%i",buttonId]];
@@ -106,7 +117,7 @@ static gameController *singletonInstance;
         b = [[button alloc] initWith:buttonId];
         [b setDelegate:self];
         [buttons setObject:b forKey:[NSString stringWithFormat:@"%i", buttonId]];
-        [delegate newButtonAttatched:b :buttons];
+        [delegate newButtonAttatched:b buttons:buttons];
     }
     
     //NSLog(@"%@%i", @"BUTTON WITH ID PRESSED", [b getId]);

@@ -27,6 +27,7 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
+    
     gameController* localGameController = [gameController getInstance];
     [localGameController setDelegate:self];
 	gameIds = [localGameController getAvalibleButtons];
@@ -34,16 +35,15 @@
 }
 
 - (void)buttonPressed:(button *)button{
-
-    if ([button getId] == 11) {
+    if (button.buttonID == 11) {
        self.ButtonOne.text = [NSString stringWithFormat:@"%f",[[NSDate date]timeIntervalSinceDate:startTime]];
-        [button setColor:[UIColor colorWithRed:1 green:1 blue:1 alpha:0] fadeOption:YES];
+        [button fadebuttonFrom:[UIColor colorWithRed:0 green:0 blue:1 alpha:1] duration:2 endColor:[UIColor colorWithRed:0 green:1 blue:0 alpha:1]];
 
     }
     
-    if ([button getId] == 10) {
+    if (button.buttonID == 10) {
         self.buttonTwo.text = [NSString stringWithFormat:@"%f",[[NSDate date]timeIntervalSinceDate:startTime]];
-        [button setColor:[UIColor colorWithRed:1 green:0.5 blue:1 alpha:0]fadeOption:NO];
+        [button fadebuttonFrom:[UIColor colorWithRed:0 green:0 blue:1 alpha:1] duration:2 endColor:[UIColor colorWithRed:0 green:1 blue:0 alpha:1]];
 
     }
 }
@@ -55,7 +55,12 @@
 }
 
 - (IBAction)startTime:(id)sender {
-    
+    NSTimer* uiTimer = [NSTimer scheduledTimerWithTimeInterval:0.1 target:self selector:@selector(updateUI) userInfo:nil repeats:YES];
+
     startTime = [NSDate date];
+}
+
+- (void)updateUI{
+    self.ButtonOne.text = [NSString stringWithFormat:@"%f",[[NSDate date]timeIntervalSinceDate:startTime]];
 }
 @end

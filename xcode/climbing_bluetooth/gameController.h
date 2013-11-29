@@ -10,20 +10,19 @@
 #import "btManager.h"
 #import "button.h"
 
-@protocol gameControllerDelegate;
+@protocol gameControllerDelegate,gameDelegate;
 
 @interface gameController : NSObject <btManagerDelegate, buttonDelegate> {
-    
     btManager *btConnection;
     NSMutableDictionary *buttons;
 }
 
 - (void) connectToBase;
 - (NSMutableDictionary*) getAvalibleButtons;
+- (NSMutableDictionary*) getPlayableButtons;
 - (button*)getButtonWith:(long)ID;
 
 + (gameController*) getInstance;
-- (void)setButton:(button*) button color: (UIColor*) color;
 + (NSString *)getHexStringForColor:(UIColor *)color;
 
 
@@ -31,9 +30,7 @@
 
 @end
 
-
 @protocol gameControllerDelegate
-
 - (void) buttonPressed:(button*)button;
-- (void) newButtonAttatched:(button*)button :(NSDictionary*)avalibleButtons;
+- (void) newButtonAttatched:(button*)button buttons:(NSDictionary*)avalibleButtons;
 @end

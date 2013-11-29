@@ -21,15 +21,14 @@
 @property (nonatomic) UIColor* ledColor;
 @property (nonatomic) int buttonID;
 @property (nonatomic, assign) id <buttonDelegate>delegate;
+@property (nonatomic) BOOL currentlyInGame;
+@property (nonatomic) UIColor* physicalColor;
 
--(id)initWith:(int)Id;
-- (void)setColor:(UIColor*)color fadeOption:(BOOL)fade;
-- (UIColor*)getColor;
-- (int)getId;
+- (id)initWith:(int)Id;
+- (void)displayColor:(UIColor*)color fade:(BOOL)fade;
 - (void)fadebuttonFrom:(UIColor*)startColor duration:(int)seconds endColor:(UIColor*)endColor;
 - (void)fadebuttonFromCurrentColorTo:(UIColor *)endColor duration:(int)seconds;
-
-
+- (void)displayPhysicalColor;
 
 @end
 

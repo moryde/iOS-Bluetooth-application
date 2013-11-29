@@ -86,7 +86,6 @@
     }
     if ([service.UUID isEqual:[CBUUID UUIDWithString:_kServiceUUID]]) {
         for (CBCharacteristic *characteristic in service.characteristics) {
-            
             if ([characteristic.UUID isEqual:[CBUUID UUIDWithString:txUUID]]) {
                 txCharacterestic = characteristic;
 
@@ -147,7 +146,6 @@
 - (void)send:(NSString *)Message{
     
     NSData *d = [btManager dataByIntepretingHexString:Message];
-    NSLog(Message);
     [self.peripheral writeValue:d forCharacteristic:txCharacterestic type:CBCharacteristicWriteWithoutResponse];
 
 }

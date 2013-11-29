@@ -10,11 +10,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Climbing_bluetooth/btManager.m"
-            timestampString = "407330872.269302"
+            timestampString = "407375164.081455"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "154"
-            endingLineNumber = "154"
+            startingLineNumber = "152"
+            endingLineNumber = "152"
             landmarkName = "@implementation btManager"
             landmarkType = "3">
          </BreakpointContent>
