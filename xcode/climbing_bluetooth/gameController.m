@@ -67,7 +67,7 @@ static gameController *singletonInstance;
 }
 
 - (void) fadebuttonFrom:(UIColor *)startColor duration:(int)Seconds endColor:(UIColor *)endColor button:(button *)button{
-    
+
     NSString *i = [NSString stringWithFormat:@"%i",button.buttonID];
     NSString *sec = [NSString stringWithFormat:@"%i",Seconds];
 
@@ -80,7 +80,6 @@ static gameController *singletonInstance;
 }
 
 - (void)fadeButtonFromCurrentColorTo:(UIColor *)endColor duration:(int)seconds button:(button *)button {
-
     NSString *i = [NSString stringWithFormat:@"%i",button.buttonID];
     NSString *sec = [NSString stringWithFormat:@"%i",seconds];
     
@@ -114,7 +113,7 @@ static gameController *singletonInstance;
 }
 
 -(void)buttonPressed:(int)buttonId{
-    NSLog(@"BUTTON PRESSED");
+    AudioServicesPlaySystemSound(kSystemSoundID_Vibrate);
     button* b = [buttons valueForKey:[NSString stringWithFormat:@"%i",buttonId]];
     //Check if button exsists
     if(!b){

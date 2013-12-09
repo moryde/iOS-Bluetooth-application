@@ -14,8 +14,11 @@
     NSMutableDictionary *buttons;
     NSMutableDictionary *labels;
     NSTimer *uiTimer;
+    CGPoint startPoint;
+
 }
 @property (nonatomic) NSMutableDictionary *labels;
+@property (nonatomic) CGPoint startPoint;
 
 - (IBAction)startTime:(id)sender;
 

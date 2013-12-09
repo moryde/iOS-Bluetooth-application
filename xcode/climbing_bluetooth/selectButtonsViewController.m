@@ -58,6 +58,7 @@
         
     } else {
         [sender setTitle:[NSString stringWithFormat:@"%i%@",button.buttonID, @"✓"] forState:UIControlStateNormal];
+
         [button fadebuttonFrom:[UIColor colorWithRed:1 green:1 blue:1 alpha:1] duration:1 endColor:button.identificationColor];
     }
     button.currentlyInGame = !button.currentlyInGame;
@@ -67,7 +68,7 @@
 }
 
 - (void)drawButtons:(NSDictionary*)buttons {
-    UIScrollView *s = [[UIScrollView alloc] initWithFrame: CGRectMake(20, 100, self.view.frame.size.width-40, 500)];
+    UIScrollView *s = [[UIScrollView alloc] initWithFrame: CGRectMake(20, 100, self.view.frame.size.width-40, 200)];
     s.contentSize = CGSizeMake(s.frame.size.width,500);
     s.scrollEnabled = YES;
     
@@ -106,6 +107,10 @@
 
 - (void) newButtonAttatched:(button *)button buttons:(NSDictionary *)avalibleButtons{
     [self drawButtons:avalibleButtons];
+}
+
+- (void) connectionStatusChanged:(BOOL)isConnected {
+    
 }
 
 @end

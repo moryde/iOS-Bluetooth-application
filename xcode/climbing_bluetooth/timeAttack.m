@@ -13,7 +13,7 @@
 @end
 
 @implementation timeAttack
-@synthesize ButtonOne,buttonTwo;
+@synthesize labels,startPoint;
 
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {
@@ -30,22 +30,18 @@
     
     gameController* localGameController = [gameController getInstance];
     [localGameController setDelegate:self];
-	gameIds = [localGameController getAvalibleButtons];
-    
+	buttons = [localGameController getPlayableButtons];
+    labels = [[NSMutableDictionary alloc]init];
+    [self drawUI];
 }
 
 - (void)buttonPressed:(button *)button{
-    if (button.buttonID == 11) {
-       self.ButtonOne.text = [NSString stringWithFormat:@"%f",[[NSDate date]timeIntervalSinceDate:startTime]];
-        [button fadebuttonFrom:[UIColor colorWithRed:0 green:0 blue:1 alpha:1] duration:2 endColor:[UIColor colorWithRed:0 green:1 blue:0 alpha:1]];
-
-    }
-    
-    if (button.buttonID == 10) {
-        self.buttonTwo.text = [NSString stringWithFormat:@"%f",[[NSDate date]timeIntervalSinceDate:startTime]];
-        [button fadebuttonFrom:[UIColor colorWithRed:0 green:0 blue:1 alpha:1] duration:2 endColor:[UIColor colorWithRed:0 green:1 blue:0 alpha:1]];
-
-    }
+    [button displayColor:[UIColor greenColor] fade:NO];
+    id key = [buttons allKeysForObject:button];
+    [uiTimer invalidate];
+        UILabel *l = [labels objectForKey:key[0]];
+        l.text = [NSString stringWithFormat:@"%f",[[NSDate date]timeIntervalSinceDate:startTime]];
+        l.backgroundColor = [UIColor greenColor];
 }
 
 - (void)didReceiveMemoryWarning
@@ -55,12 +51,82 @@
 }
 
 - (IBAction)startTime:(id)sender {
-    NSTimer* uiTimer = [NSTimer scheduledTimerWithTimeInterval:0.1 target:self selector:@selector(updateUI) userInfo:nil repeats:YES];
+    uiTimer = [NSTimer scheduledTimerWithTimeInterval:0.1 target:self selector:@selector(updateUI) userInfo:nil repeats:YES];
 
     startTime = [NSDate date];
+    
+    for (id key in labels) {
+        UILabel *label = labels[key];
+        label.backgroundColor = [UIColor redColor];
+    }
 }
 
 - (void)updateUI{
-    self.ButtonOne.text = [NSString stringWithFormat:@"%f",[[NSDate date]timeIntervalSinceDate:startTime]];
+        for (id key in buttons) {
+            UILabel *l =[labels objectForKey:key];
+            l.text = [NSString stringWithFormat:@"%f",[[NSDate date]timeIntervalSinceDate:startTime]];
+            [self.view addSubview:l];
+        }
 }
+
+- (void)drawUI{
+    int i = 0;
+    for (id key in buttons) {
+        button *button = [buttons objectForKey:key];
+        UILabel *l = [[UILabel alloc] initWithFrame:CGRectMake(20, 200+(i*30), 100, 30)];
+        l.layer.cornerRadius = 10;
+        l.layer.borderColor = [UIColor whiteColor].CGColor;
+        l.layer.borderWidth = 2;
+        l.backgroundColor = button.identificationColor;
+        l.font = [UIFont boldSystemFontOfSize:20];
+        l.textColor = [UIColor whiteColor];
+        l.text = [NSString stringWithFormat:@"%@%i",@"  ", button.buttonID];
+        l.tag = button.buttonID;
+        l.layer.shadowColor = [UIColor colorWithRed:0.5 green:0.5 blue:0.5 alpha:0.5].CGColor;
+        l.layer.shadowOffset = CGSizeMake(0.0, -1.0);
+        l.layer.shadowRadius = 3.0;
+        l.layer.shadowOpacity = 0.5;
+        [l setUserInteractionEnabled:YES];
+        UIPanGestureRecognizer *touchReconizer = [[UIPanGestureRecognizer alloc] initWithTarget:self action:@selector(labelTouched:)];
+
+        [l addGestureRecognizer:touchReconizer];
+        
+        [self.labels setObject:l forKey:key];
+        [self.view addSubview:l];
+        
+        i++;
+
+    }
+}
+
+-(void)labelTouched:(UIPanGestureRecognizer *)gesture
+{
+    // Check if this is the first touch
+    if(gesture.state == UIGestureRecognizerStateBegan)
+    {
+        // Store the initial touch so when we change positions we do not snap
+        self.startPoint = [gesture locationInView:gesture.view];
+        [self.view bringSubviewToFront:gesture.view];
+    }
+    
+    CGPoint newCoord = [gesture locationInView:gesture.view];
+    
+    // Create the frame offsets to use our finger position in the view.
+    float dX = newCoord.x-self.startPoint.x;
+    float dY = newCoord.y-self.startPoint.y;
+    
+    gesture.view.frame = CGRectMake(gesture.view.frame.origin.x+dX,
+                                    gesture.view.frame.origin.y+dY,
+                                    gesture.view.frame.size.width,
+                                    gesture.view.frame.size.height);
+}
+
+-(void)connectionStatusChanged:(BOOL)isConnected{
+    
+}
+
+-(void)newButtonAttatched:(button *)button buttons:(NSDictionary *)avalibleButtons {
+    
+}
+
 @end

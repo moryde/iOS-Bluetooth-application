@@ -58,5 +58,12 @@
     
 }
 
+- (void)buttonPressed:(button *)button{
+    
+}
+
+- (void)newButtonAttatched:(button *)button buttons:(NSDictionary *)avalibleButtons{
+    
+}
 
 @end

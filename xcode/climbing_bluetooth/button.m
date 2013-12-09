@@ -22,7 +22,7 @@
                 identificationColor = [UIColor blueColor];
                 break;
             case 11:
-                identificationColor = [UIColor redColor];
+                identificationColor = [UIColor yellowColor];
                 break;
             default:
                 identificationColor = [UIColor yellowColor];
@@ -33,13 +33,9 @@
 }
 
 - (void)displayColor:(UIColor *)color fade:(BOOL)fade{
-    
     ledColor = color;
     [self.delegate colorUpdated:self];
-
 }
-
-
 - (void)fadebuttonFrom:(UIColor *)startColor duration: (int)seconds endColor:(UIColor*)endColor {
     
     [self.delegate fadebuttonFrom:startColor duration:seconds endColor:endColor button:self];

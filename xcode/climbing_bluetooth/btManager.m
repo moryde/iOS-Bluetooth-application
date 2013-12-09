@@ -148,7 +148,7 @@
     
     NSData *d = [btManager dataByIntepretingHexString:Message];
     [self.peripheral writeValue:d forCharacteristic:txCharacterestic type:CBCharacteristicWriteWithoutResponse];
-
+    NSLog([d description]);
 }
 
 - (void) peripheral:(CBPeripheral *)peripheral didWriteValueForCharacteristic:(CBCharacteristic *)characteristic error:(NSError *)error{
