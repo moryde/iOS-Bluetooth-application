@@ -22,10 +22,14 @@
                 identificationColor = [UIColor blueColor];
                 break;
             case 11:
-                identificationColor = [UIColor yellowColor];
+                identificationColor = [UIColor magentaColor];
                 break;
+            case 16:
+                identificationColor = [UIColor purpleColor];
+            case 19:
+                identificationColor = [UIColor cyanColor];
             default:
-                identificationColor = [UIColor yellowColor];
+                identificationColor = [UIColor redColor];
                 break;
         }
     }

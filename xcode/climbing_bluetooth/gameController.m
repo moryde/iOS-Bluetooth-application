@@ -116,6 +116,7 @@ static gameController *singletonInstance;
     AudioServicesPlaySystemSound(kSystemSoundID_Vibrate);
     button* b = [buttons valueForKey:[NSString stringWithFormat:@"%i",buttonId]];
     //Check if button exsists
+    
     if(!b){
         b = [[button alloc] initWith:buttonId];
         [b setDelegate:self];
