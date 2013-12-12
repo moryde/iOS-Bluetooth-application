@@ -14,8 +14,8 @@
 
 // Config
 #define LED_R_PIN 6
-#define LED_G_PIN 3
-#define LED_B_PIN 5
+#define LED_G_PIN 5
+#define LED_B_PIN 3
 #define BUTTON_PIN 4
 #define BUTTON_DEBOUNCE 5
 #define SERIAL_BAUD 57600
