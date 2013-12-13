@@ -51,6 +51,7 @@ void loop() {
     if (rf12_crc == 0) {
       Serial.println("Receiving...");
       if ( rf12_len == 1 ) {
+        // Double as 'button pressed' and 'pong'
         button_id = rf12_data[0];
         Serial.print("Button pressed on: ");
         Serial.println(button_id);
@@ -125,6 +126,19 @@ void wireWriteEvent(int howMany) {
       buffer[6] = endB;
       length = 7;
     } 
+  } else if ( count == 1 ) {
+    // Ping command
+    int id = data[0];
+
+    // Sets destination bit and destination    
+    header = RF12_HDR_DST | id;   
+    transmit = true;
+    
+    // Payload
+    buffer[0] = true;
+    length = 1;
+    
+    Serial.println("OK");
   }
   else {
     Serial.print( "Bad: " );

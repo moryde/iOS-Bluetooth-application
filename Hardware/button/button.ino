@@ -34,10 +34,8 @@ void setup() {
   Serial.begin(SERIAL_BAUD);
 
   // RF setup
-    Serial.println("LOL1");
-
   rf12_initialize(RF_ID, RF12_433MHZ, RF_GRP);
-  Serial.println("LOL");
+  
   // Print config
   Serial.print("Button booted. Group:");
   Serial.print(RF_GRP);
@@ -79,15 +77,14 @@ void loop() {
   if (rf12_recvDone()) {
     if (rf12_crc == 0) {
       Serial.println("Receiving...");
-      if ( rf12_len == 3 ) {
+      if (rf12_len == 1) {
+        // Ping -> pong
+        buffer[0] = RF_ID;
+        length = 1;
+        transmit = true;
+      } else if ( rf12_len == 3 ) {
         // LED Set color
         led.set( rf12_data[0], rf12_data[1], rf12_data[2] );
-        Serial.print("LED:");
-        for ( int i = 0; i < rf12_len; i++ ) {
-          Serial.print(" ");
-          Serial.print(rf12_data[i], HEX);
-        }
-        Serial.println();
       }  
       else if ( rf12_len == 4 ) {
         // LED Fade, no prev. color
