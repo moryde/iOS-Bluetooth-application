@@ -36,7 +36,6 @@
             [self.manager scanForPeripheralsWithServices:@[[CBUUID UUIDWithString:_kServiceUUID]] options:@{CBCentralManagerScanOptionAllowDuplicatesKey: @YES }];
             break;
         case CBCentralManagerStatePoweredOff:
-            NSLog(@"LOL OFFLINE");
             
         default:
             break;
@@ -148,7 +147,6 @@
     
     NSData *d = [btManager dataByIntepretingHexString:Message];
     [self.peripheral writeValue:d forCharacteristic:txCharacterestic type:CBCharacteristicWriteWithoutResponse];
-    NSLog([d description]);
 }
 
 - (void) peripheral:(CBPeripheral *)peripheral didWriteValueForCharacteristic:(CBCharacteristic *)characteristic error:(NSError *)error{

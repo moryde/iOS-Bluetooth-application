@@ -47,6 +47,16 @@ static gameController *singletonInstance;
 
 }
 
+-(void)pingButtons{
+    
+    for (int i = 2; i <= 30; i++) {
+        NSString *j = [NSString stringWithFormat:@"%i",i];
+        NSMutableString *ss = [[NSMutableString alloc] initWithString:[NSString stringWithFormat:@"%02lX", (long)[j integerValue]]];
+        [btConnection send:ss];
+    }
+    
+}
+
 
 - (void) connectToBase {
     
@@ -124,7 +134,6 @@ static gameController *singletonInstance;
         [delegate newButtonAttatched:b buttons:buttons];
     }
     
-    //NSLog(@"%@%i", @"BUTTON WITH ID PRESSED", [b getId]);
     [delegate buttonPressed:b];
 }
 

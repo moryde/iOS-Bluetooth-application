@@ -67,11 +67,13 @@
 
 -(void)buttonPressed:(button *)button {
     
-    if (gameTimer) {
-        score++;
-        scoreLabel.text = [NSString stringWithFormat:@"%i",score];
-        [button displayColor:[UIColor colorWithRed:0 green:0 blue:0 alpha:0] fade:NO];
-        [self turnOnRandomButton];
+    if (button.buttonID == lastButtonPressed) {
+        if (gameTimer) {
+            score++;
+            scoreLabel.text = [NSString stringWithFormat:@"%i",score];
+            [button displayColor:[UIColor colorWithRed:0 green:0 blue:0 alpha:0] fade:NO];
+            [self turnOnRandomButton];
+        }
     }
 
 }
@@ -104,8 +106,12 @@ int i = gameTime-[[NSDate date]timeIntervalSinceDate:startTime];
 - (void)turnOnRandomButton{
     NSArray *array = [buttons allKeys];
     int random = arc4random()%[array count];
+    
+    while ([[array objectAtIndex:random] isEqualToString: [NSString stringWithFormat:@"%i", lastButtonPressed]]) {
+        random = arc4random()%[array count];
+    }
+    
     NSString *key = [array objectAtIndex:random];
-
     lastButtonPressed = key.intValue;
     button* button = [buttons objectForKey:key];
     [button displayColor:button.identificationColor fade:NO];

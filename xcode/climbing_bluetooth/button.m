@@ -16,20 +16,24 @@
     self = [super init];
     if(self) {
         buttonID = Id;
+        NSLog([NSString stringWithFormat:@"%i",buttonID]);
+
         currentlyInGame = NO;
         switch (Id) {
             case 10:
-                identificationColor = [UIColor blueColor];
+                identificationColor = [UIColor orangeColor];
                 break;
             case 11:
                 identificationColor = [UIColor magentaColor];
                 break;
             case 16:
                 identificationColor = [UIColor purpleColor];
-            case 19:
-                identificationColor = [UIColor cyanColor];
+                break;
+            case 13:
+                identificationColor = [UIColor yellowColor];
+                break;
             default:
-                identificationColor = [UIColor redColor];
+                identificationColor = [UIColor blueColor];
                 break;
         }
     }
@@ -51,7 +55,7 @@
 
 - (void)displayIdentificationColor{
     
-    [self displayColor:self.identificationColor fade:YES];
+    [self displayColor:self.identificationColor fade:NO];
 }
 
 @end

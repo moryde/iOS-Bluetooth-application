@@ -31,6 +31,7 @@
 	// Do any additional setup after loading the view.
     gameController* localGameController = [gameController getInstance];
     [localGameController setDelegate:self];
+    [localGameController pingButtons];
     NSDictionary* d = [localGameController getAvalibleButtons];
     [self drawButtons:d];
 }
@@ -81,14 +82,12 @@
         c = i%coloumCount;
         r = i/coloumCount;
         i++;
-        NSLog(@"test");
         UIButton *uiButton = [UIButton buttonWithType:UIButtonTypeRoundedRect];
         uiButton.layer.cornerRadius = (buttonsize-10)/2;
         uiButton.backgroundColor = button.identificationColor;
         [uiButton addTarget:self action:@selector(uiButtonPressed:) forControlEvents:UIControlEventTouchDown];
         [uiButton setTag:button.buttonID];
         if (button.currentlyInGame) {
-            NSLog(@"omg lol");
             [uiButton setTitle:[NSString stringWithFormat:@"%i%@",button.buttonID, @"✓"] forState:UIControlStateNormal];
         } else {
             [uiButton setTitle:[NSString stringWithFormat:@"%i",button.buttonID] forState:UIControlStateNormal];

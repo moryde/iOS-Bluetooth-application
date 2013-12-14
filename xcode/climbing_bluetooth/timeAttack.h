@@ -13,12 +13,14 @@
     NSDate *startTime;
     NSMutableDictionary *buttons;
     NSMutableDictionary *labels;
+    NSMutableDictionary *inGameButtons;
     NSTimer *uiTimer;
     CGPoint startPoint;
 
 }
 @property (nonatomic) NSMutableDictionary *labels;
 @property (nonatomic) CGPoint startPoint;
+
 
 - (IBAction)startTime:(id)sender;
 

@@ -44,7 +44,6 @@
 
 - (IBAction)startTime:(id)sender {
     
-    NSLog(@"LOL");
     
 }
 

@@ -24,6 +24,7 @@
 - (NSMutableDictionary*) getAvalibleButtons;
 - (NSMutableDictionary*) getPlayableButtons;
 - (button*)getButtonWith:(long)ID;
+- (void)pingButtons;
 
 + (gameController*) getInstance;
 + (NSString *)getHexStringForColor:(UIColor *)color;

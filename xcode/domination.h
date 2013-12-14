@@ -21,7 +21,6 @@
     int score;
     int lastButtonPressed;
     
-    
 }
 @property (nonatomic) NSMutableDictionary *labels;
 @property (nonatomic) CGPoint startPoint;
