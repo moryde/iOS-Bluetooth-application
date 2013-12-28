@@ -33,6 +33,7 @@
 	buttons = [localGameController getPlayableButtons];
     labels = [[NSMutableDictionary alloc]init];
     [self drawUI];
+
 }
 
 - (void)buttonPressed:(button *)button{
@@ -58,13 +59,15 @@
     for (id key in labels) {
         UILabel *label = labels[key];
         label.backgroundColor = [UIColor redColor];
+        button* b = buttons[key];
+        [b startTime];
     }
 }
 
 - (void)updateUI{
         for (id key in buttons) {
             UILabel *l =[labels objectForKey:key];
-            l.text = [NSString stringWithFormat:@"%f",[[NSDate date]timeIntervalSinceDate:startTime]];
+            l.text = [buttons[key] getTime];
             [self.view addSubview:l];
         }
 }

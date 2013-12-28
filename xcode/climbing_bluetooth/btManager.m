@@ -122,8 +122,12 @@
 - (void)peripheral:(CBPeripheral *)peripheral didUpdateValueForCharacteristic:(CBCharacteristic *)characteristic error:(NSError *)error{
     int i;
     [characteristic.value getBytes:&i length:sizeof(i)];
-    [delegate buttonPressed:i];
-
+    
+    
+    NSLog([NSString stringWithFormat:@"%lu",sizeof(i)]);
+    if (sizeof(i) == 1){
+        [delegate buttonPressed:i];
+    }
 }
 
 + (NSData*) dataByIntepretingHexString:(NSString*) hexString {

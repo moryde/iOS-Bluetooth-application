@@ -8,6 +8,7 @@
 
 #import <UIKit/UIKit.h>
 #import "gameController.h"
+#import "buttonGroup.h"
 
 
 @interface selectButtonsViewController : UIViewController <gameControllerDelegate>{
@@ -15,7 +16,10 @@
     UIColor *baseColor;
 }
 @property (weak, nonatomic) IBOutlet UIScrollView *scrollView;
+@property (weak, nonatomic) IBOutlet buttonGroup *buttonGroup;
+
 
 - (void)drawButtons:(NSDictionary*)buttons;
+
 
 @end

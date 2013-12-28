@@ -10,6 +10,7 @@
 #import <AudioToolbox/AudioToolbox.h>
 #import "btManager.h"
 #import "button.h"
+#import "buttonGroup.h"
 
 @protocol gameControllerDelegate;
 
@@ -29,8 +30,11 @@
 + (gameController*) getInstance;
 + (NSString *)getHexStringForColor:(UIColor *)color;
 
+@property (nonatomic) buttonGroup *group;
 @property (nonatomic, readonly) btManager *btConnection;
 @property (nonatomic, assign) id <gameControllerDelegate>delegate;
+@property (nonatomic) int index;
+
 
 @end
 

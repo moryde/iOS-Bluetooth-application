@@ -31,7 +31,6 @@
 - (IBAction)connectToBase:(id)sender {
     gameController *localGameController = [gameController getInstance];
     [localGameController setDelegate:self];
-    
     [connectToBase setTitle:@"Connecting..." forState:UIControlStateNormal];
 
     if (localGameController.btConnection) {

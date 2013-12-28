@@ -11,7 +11,20 @@
 @implementation gameController
 @synthesize delegate, btConnection;
 
+
 static gameController *singletonInstance;
+
+-(int)index{
+    return 2;
+}
+
+- (buttonGroup*) group {
+    
+    if (!_group) {
+        _group = [_group initWithGroupIndex:self.index];
+    }
+    return _group;
+}
 
 -(id)init
 {
@@ -115,7 +128,7 @@ static gameController *singletonInstance;
     NSMutableDictionary* a = [[NSMutableDictionary alloc] init];
     for (id key in buttons) {
         button *b = [buttons objectForKey:key];
-        if (b.currentlyInGame == YES) {
+        if (b.groupIndex == _index) {
             [a setObject:b forKey:key];
         }
     }

@@ -17,12 +17,13 @@
     UIColor* ledColor;
 }
 
-@property (nonatomic) int buttonId;
+@property (nonatomic) int index;
 @property (nonatomic) UIColor* ledColor;
 @property (nonatomic) int buttonID;
 @property (nonatomic, assign) id <buttonDelegate>delegate;
-@property (nonatomic) BOOL currentlyInGame;
 @property (nonatomic) UIColor* identificationColor;
+@property (nonatomic) int groupIndex;
+@property (nonatomic) NSDate *startTime;
 
 
 - (id)initWith:(int)Id;
@@ -30,6 +31,8 @@
 - (void)fadebuttonFrom:(UIColor*)startColor duration:(int)seconds endColor:(UIColor*)endColor;
 - (void)fadebuttonFromCurrentColorTo:(UIColor *)endColor duration:(int)seconds;
 - (void)displayIdentificationColor;
+- (void)startTimerFromNow;
+- (NSString*)getTime;
 
 @end
 

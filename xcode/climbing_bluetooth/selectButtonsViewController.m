@@ -53,22 +53,24 @@
     gameController* localGameController = [gameController getInstance];
     button* button = [localGameController getButtonWith:[sender tag]];
     
-    if (button.currentlyInGame) {
-        [sender setTitle:[NSString stringWithFormat:@"%i",button.buttonID] forState:UIControlStateNormal];
+    if (button.groupIndex == 2) {
+        //[sender setTitle:[NSString stringWithFormat:@"%i",button.buttonID] forState:UIControlStateNormal];
+        [sender setHighlighted:YES];
         [button fadebuttonFromCurrentColorTo:[UIColor colorWithRed:0 green:0 blue:0 alpha:0] duration:1];
-        
+        [button setGroupIndex:1];
     } else {
-        [sender setTitle:[NSString stringWithFormat:@"%i%@",button.buttonID, @"✓"] forState:UIControlStateNormal];
-
+        //[sender setTitle:[NSString stringWithFormat:@"%i%@",button.buttonID, @"✓"] forState:UIControlStateNormal];
+        [sender setHighlighted:NO];
+        [button setGroupIndex:2];
         [button fadebuttonFrom:[UIColor colorWithRed:1 green:1 blue:1 alpha:1] duration:1 endColor:button.identificationColor];
     }
-    button.currentlyInGame = !button.currentlyInGame;
     
-    
+    [_buttonGroup setAllButtonsWithIdentificationColor];
    //[b fadebuttonFromCurrentColorTo:[UIColor redColor] duration:2];
 }
 
 - (void)drawButtons:(NSDictionary*)buttons {
+    
     UIScrollView *s = [[UIScrollView alloc] initWithFrame: CGRectMake(20, 100, self.view.frame.size.width-40, 200)];
     s.contentSize = CGSizeMake(s.frame.size.width,500);
     s.scrollEnabled = YES;
@@ -87,8 +89,8 @@
         uiButton.backgroundColor = button.identificationColor;
         [uiButton addTarget:self action:@selector(uiButtonPressed:) forControlEvents:UIControlEventTouchDown];
         [uiButton setTag:button.buttonID];
-        if (button.currentlyInGame) {
-            [uiButton setTitle:[NSString stringWithFormat:@"%i%@",button.buttonID, @"✓"] forState:UIControlStateNormal];
+        if (button.groupIndex == 2) {
+            [uiButton setTitle:[NSString stringWithFormat:@"%i%@",button.buttonID, @"✓"] forState:UIControlStateHighlighted];
         } else {
             [uiButton setTitle:[NSString stringWithFormat:@"%i",button.buttonID] forState:UIControlStateNormal];
         }
