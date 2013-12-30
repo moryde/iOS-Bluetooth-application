@@ -122,12 +122,7 @@
 - (void)peripheral:(CBPeripheral *)peripheral didUpdateValueForCharacteristic:(CBCharacteristic *)characteristic error:(NSError *)error{
     int i;
     [characteristic.value getBytes:&i length:sizeof(i)];
-    
-    
-    NSLog([NSString stringWithFormat:@"%lu",sizeof(i)]);
-    if (sizeof(i) == 1){
-        [delegate buttonPressed:i];
-    }
+            [delegate buttonPressed:i];
 }
 
 + (NSData*) dataByIntepretingHexString:(NSString*) hexString {
@@ -155,6 +150,8 @@
 
 - (void) peripheral:(CBPeripheral *)peripheral didWriteValueForCharacteristic:(CBCharacteristic *)characteristic error:(NSError *)error{
     NSLog(@"Error changing notification state: %@", error.localizedDescription);
+    NSLog(@"didwriteValue");
+
 }
 
 @end

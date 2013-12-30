@@ -12,7 +12,6 @@
 
 
 @interface selectButtonsViewController : UIViewController <gameControllerDelegate>{
-    NSString *myString;
     UIColor *baseColor;
 }
 @property (weak, nonatomic) IBOutlet UIScrollView *scrollView;

@@ -19,7 +19,7 @@ static gameController *singletonInstance;
 }
 
 - (buttonGroup*) group {
-    
+    NSLog(@"group");
     if (!_group) {
         _group = [_group initWithGroupIndex:self.index];
     }
@@ -28,10 +28,10 @@ static gameController *singletonInstance;
 
 -(id)init
 {
-    
     if (self = [super init])
     {
         buttons = [[NSMutableDictionary alloc] init];
+        NSLog(@"buttons created");
     }
     return self;
 }
@@ -124,26 +124,29 @@ static gameController *singletonInstance;
 }
 
 - (NSMutableDictionary *) getPlayableButtons {
-
     NSMutableDictionary* a = [[NSMutableDictionary alloc] init];
     for (id key in buttons) {
-        button *b = [buttons objectForKey:key];
-        if (b.groupIndex == _index) {
+        button *b = [buttons objectForKey:key];        
+        if (b.groupIndex == self.index) {
             [a setObject:b forKey:key];
+            NSLog(@"Matching button");
+
+        }else{
+            NSLog(@"NOGET ANDET");
         }
     }
     return a;
 }
 
--(void)buttonPressed:(int)buttonId{
+-(void)buttonPressed:(int)buttonID{
     AudioServicesPlaySystemSound(kSystemSoundID_Vibrate);
-    button* b = [buttons valueForKey:[NSString stringWithFormat:@"%i",buttonId]];
+    button* b = [buttons valueForKey:[NSString stringWithFormat:@"%i",buttonID]];
     //Check if button exsists
     
     if(!b){
-        b = [[button alloc] initWith:buttonId];
+        b = [[button alloc] initWith:buttonID];
         [b setDelegate:self];
-        [buttons setObject:b forKey:[NSString stringWithFormat:@"%i", buttonId]];
+        [buttons setObject:b forKey:[NSString stringWithFormat:@"%i", buttonID]];
         [delegate newButtonAttatched:b buttons:buttons];
     }
     

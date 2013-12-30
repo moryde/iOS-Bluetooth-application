@@ -20,7 +20,7 @@
 {
     self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
     if (self) {
-        baseColor = [UIColor colorWithRed:1 green:0 blue:0 alpha:1];
+
     }
     return self;
 }
@@ -54,12 +54,12 @@
     button* button = [localGameController getButtonWith:[sender tag]];
     
     if (button.groupIndex == 2) {
-        //[sender setTitle:[NSString stringWithFormat:@"%i",button.buttonID] forState:UIControlStateNormal];
+        [sender setTitle:[NSString stringWithFormat:@"%i",button.buttonID] forState:UIControlStateNormal];
         [sender setHighlighted:YES];
         [button fadebuttonFromCurrentColorTo:[UIColor colorWithRed:0 green:0 blue:0 alpha:0] duration:1];
         [button setGroupIndex:1];
     } else {
-        //[sender setTitle:[NSString stringWithFormat:@"%i%@",button.buttonID, @"✓"] forState:UIControlStateNormal];
+        [sender setTitle:[NSString stringWithFormat:@"%i%@",button.buttonID, @"✓"] forState:UIControlStateNormal];
         [sender setHighlighted:NO];
         [button setGroupIndex:2];
         [button fadebuttonFrom:[UIColor colorWithRed:1 green:1 blue:1 alpha:1] duration:1 endColor:button.identificationColor];
@@ -90,7 +90,7 @@
         [uiButton addTarget:self action:@selector(uiButtonPressed:) forControlEvents:UIControlEventTouchDown];
         [uiButton setTag:button.buttonID];
         if (button.groupIndex == 2) {
-            [uiButton setTitle:[NSString stringWithFormat:@"%i%@",button.buttonID, @"✓"] forState:UIControlStateHighlighted];
+            [uiButton setTitle:[NSString stringWithFormat:@"%i%@",button.buttonID, @"✓"] forState:UIControlStateNormal];
         } else {
             [uiButton setTitle:[NSString stringWithFormat:@"%i",button.buttonID] forState:UIControlStateNormal];
         }

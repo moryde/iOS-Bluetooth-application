@@ -13,7 +13,7 @@
 @end
 
 @implementation timeAttack
-@synthesize labels,startPoint;
+@synthesize labels,startPoint,buttonCount;
 
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {
@@ -36,14 +36,29 @@
 
 }
 
+- (void)viewDidDisappear:(BOOL)animated {
+    
+    labels = nil;
+
+}
+
 - (void)buttonPressed:(button *)button{
-    [button displayColor:[UIColor greenColor] fade:NO];
+    buttonCount++;
+    [button displayIdentificationColor];
     id key = [buttons allKeysForObject:button];
-    [uiTimer invalidate];
+    [button stopTime];
         UILabel *l = [labels objectForKey:key[0]];
         l.text = [NSString stringWithFormat:@"%f",[[NSDate date]timeIntervalSinceDate:startTime]];
-        l.backgroundColor = [UIColor greenColor];
+        l.backgroundColor = [button identificationColor];
+    
+    if (buttonCount == [buttons count]) {
+        buttonCount = 0;
+        [self.gameControlButton setTitle:@"Start Game" forState:UIControlStateNormal];
+        [uiTimer invalidate];
+        
+    }
 }
+
 
 - (void)didReceiveMemoryWarning
 {
@@ -52,15 +67,17 @@
 }
 
 - (IBAction)startTime:(id)sender {
+    [self.gameControlButton setTitle:@"End Game" forState:UIControlStateNormal];
     uiTimer = [NSTimer scheduledTimerWithTimeInterval:0.1 target:self selector:@selector(updateUI) userInfo:nil repeats:YES];
-
     startTime = [NSDate date];
+    
     
     for (id key in labels) {
         UILabel *label = labels[key];
         label.backgroundColor = [UIColor redColor];
         button* b = buttons[key];
-        [b startTime];
+        [b displayColor:[UIColor redColor] fade:NO];
+        [b startTimerFromNow];
     }
 }
 
@@ -122,6 +139,9 @@
                                     gesture.view.frame.origin.y+dY,
                                     gesture.view.frame.size.width,
                                     gesture.view.frame.size.height);
+    
+    button *b = [buttons objectForKey:[NSString stringWithFormat:@"%li", (long)gesture.view.tag]];
+    [b setUiPosition:gesture.view.frame.origin];
 }
 
 -(void)connectionStatusChanged:(BOOL)isConnected{

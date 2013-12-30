@@ -18,12 +18,14 @@
     
 }
 
-- (id) initWithGroupIndex:(int) groupIndex{
-    return  nil;
+- (buttonGroup*) initWithGroupIndex:(int)groupID {
+    NSLog(@"initWithIndex");
+    _groupIndex = groupID;
+    return self;
 }
 
 - (void) setAllButtonsWithIdentificationColor{
-
+    NSLog(@"setAllButtonsWithIdentificationColor");
     for (button *b in _buttons) {
         if ([b groupIndex] == _groupIndex) {
             [self updateAllButtons];
@@ -32,16 +34,12 @@
 }
 
 - (void) turnAllButtonsOff {
+        NSLog(@"turnAllButtonsOff");
     
-    
-}
-
-- (buttonGroup*) initWithIndex:(int)groupID {
-    _groupIndex = groupID;
-    return self;
 }
 
 - (void)updateAllButtons {
+        NSLog(@"updateAllButtons");
     
     for (button *b in _buttons) {
         [b setGroupIndex:_groupIndex];

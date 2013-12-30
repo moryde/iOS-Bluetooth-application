@@ -16,10 +16,13 @@
     NSMutableDictionary *inGameButtons;
     NSTimer *uiTimer;
     CGPoint startPoint;
+    int buttonCount;
 
 }
+@property (nonatomic) int buttonCount;
 @property (nonatomic) NSMutableDictionary *labels;
 @property (nonatomic) CGPoint startPoint;
+@property (weak, nonatomic) IBOutlet UIButton *gameControlButton;
 
 
 - (IBAction)startTime:(id)sender;

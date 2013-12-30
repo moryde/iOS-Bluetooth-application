@@ -10,17 +10,14 @@
 
 @interface buttonGroup : NSObject {
     
-    
 }
 
 @property (nonatomic) NSMutableArray *buttons;
 @property (nonatomic) int groupIndex;
 
-- (id) initWithGroupIndex:(int) groupIndex;
+- (buttonGroup*) initWithGroupIndex:(int)groupID;
 - (void) turnAllButtonsOff;
 - (void) setAllButtonsWithIdentificationColor;
-
-
 
 @end
 

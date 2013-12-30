@@ -12,12 +12,11 @@
 @implementation button
 @synthesize buttonID,ledColor;
 
-- (id)initWith:(int)Id
+- (button*)initWith:(int)Id
 {
     self = [super init];
     if(self) {
         buttonID = Id;
-
         _groupIndex = 1;
 
         switch (buttonID) {
@@ -31,7 +30,7 @@
                 _identificationColor = [UIColor purpleColor];
                 break;
             case 13:
-                _identificationColor = [UIColor yellowColor];
+                _identificationColor = [UIColor purpleColor];
                 break;
             default:
                 _identificationColor = [UIColor blueColor];
@@ -60,17 +59,26 @@
 }
 
 - (void)startTimerFromNow {
-    
-    _startTime = [NSDate date];
+    self.startTime = [NSDate date];
 }
 
 - (NSString *)getTime {
-    
-    NSTimeInterval interval = [_startTime timeIntervalSinceNow];
-    NSString *s = [NSString stringWithFormat:@"%.2f",interval];
+    [self updateTime];
+    NSString *s = [NSString stringWithFormat:@"%.2f",fabs(self.time)];
     return s;
 }
 
+- (void)stopTime {
+    [self updateTime];
+    self.startTime = nil;
+}
+
+- (void)updateTime{
+    if (self.startTime) {
+        self.time = [self.startTime timeIntervalSinceNow];
+    }
+    
+}
 
 
 @end

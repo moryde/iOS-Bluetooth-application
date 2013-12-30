@@ -104,13 +104,16 @@ int i = gameTime-[[NSDate date]timeIntervalSinceDate:startTime];
 
 
 - (void)turnOnRandomButton{
+
     NSArray *array = [buttons allKeys];
     int random = arc4random()%[array count];
     
     while ([[array objectAtIndex:random] isEqualToString: [NSString stringWithFormat:@"%i", lastButtonPressed]]) {
         random = arc4random()%[array count];
+        NSLog(@"4");
+
     }
-    
+    NSLog(@"5");
     NSString *key = [array objectAtIndex:random];
     lastButtonPressed = key.intValue;
     button* button = [buttons objectForKey:key];
