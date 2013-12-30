@@ -28,9 +28,9 @@
 {
     [super viewDidLoad];
     
-    gameController* localGameController = [gameController getInstance];
-    [localGameController setDelegate:self];
-	buttons = [localGameController getPlayableButtons];
+    _localGameController = [gameController getInstance];
+    [_localGameController setDelegate:self];
+	buttons = [_localGameController getPlayableButtons];
     labels = [[NSMutableDictionary alloc]init];
     [self drawUI];
 
@@ -91,9 +91,15 @@
 
 - (void)drawUI{
     int i = 0;
+    if ([_localGameController backgroundImage]) {
+        self.backgroundView.image = [_localGameController backgroundImage];
+    }
     for (id key in buttons) {
         button *button = [buttons objectForKey:key];
-        UILabel *l = [[UILabel alloc] initWithFrame:CGRectMake(20, 200+(i*30), 100, 30)];
+        CGPoint p = [button uiPosition];
+        
+        
+        UILabel *l = [[UILabel alloc] initWithFrame:CGRectMake(p.x, p.y, 100, 30)];
         l.layer.cornerRadius = 10;
         l.layer.borderColor = [UIColor whiteColor].CGColor;
         l.layer.borderWidth = 2;
@@ -142,6 +148,7 @@
     
     button *b = [buttons objectForKey:[NSString stringWithFormat:@"%li", (long)gesture.view.tag]];
     [b setUiPosition:gesture.view.frame.origin];
+    NSLog(@"%@", NSStringFromCGPoint([b uiPosition]));
 }
 
 -(void)connectionStatusChanged:(BOOL)isConnected{

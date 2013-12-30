@@ -13,7 +13,7 @@
 @end
 
 @implementation ViewController
-@synthesize debugView, connectToBase;
+@synthesize connectToBase;
 
 - (void)viewDidLoad
 {

@@ -47,6 +47,7 @@
 		6386E195184569EA00FC5DA5 /* Vector-Smart-Object.png in Resources */ = {isa = PBXBuildFile; fileRef = 6386E193184569EA00FC5DA5 /* Vector-Smart-Object.png */; };
 		6386E196184569EA00FC5DA5 /* Vector-Smart-Object@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 6386E194184569EA00FC5DA5 /* Vector-Smart-Object@2x.png */; };
 		6386E19918456A4700FC5DA5 /* timeAttack.m in Sources */ = {isa = PBXBuildFile; fileRef = 6386E19818456A4700FC5DA5 /* timeAttack.m */; };
+		63D1CC04187229B000F4F71F /* cameraViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 63D1CC03187229B000F4F71F /* cameraViewController.m */; };
 		63E03A6218551CDF00B0DCDF /* domination.m in Sources */ = {isa = PBXBuildFile; fileRef = 63E03A6118551CDF00B0DCDF /* domination.m */; };
 /* End PBXBuildFile section */
 
@@ -113,6 +114,8 @@
 		6386E194184569EA00FC5DA5 /* Vector-Smart-Object@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Vector-Smart-Object@2x.png"; sourceTree = "<group>"; };
 		6386E19718456A4700FC5DA5 /* timeAttack.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = timeAttack.h; sourceTree = "<group>"; };
 		6386E19818456A4700FC5DA5 /* timeAttack.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = timeAttack.m; sourceTree = "<group>"; };
+		63D1CC02187229B000F4F71F /* cameraViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = cameraViewController.h; path = climbing_bluetooth/cameraViewController.h; sourceTree = SOURCE_ROOT; };
+		63D1CC03187229B000F4F71F /* cameraViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = cameraViewController.m; path = climbing_bluetooth/cameraViewController.m; sourceTree = SOURCE_ROOT; };
 		63E03A6018551CDF00B0DCDF /* domination.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = domination.h; sourceTree = "<group>"; };
 		63E03A6118551CDF00B0DCDF /* domination.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = domination.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -203,6 +206,8 @@
 				636F299918362333008E394C /* AppDelegate.h */,
 				636F299A18362333008E394C /* AppDelegate.m */,
 				636F299C18362333008E394C /* Main_iPhone.storyboard */,
+				63D1CC02187229B000F4F71F /* cameraViewController.h */,
+				63D1CC03187229B000F4F71F /* cameraViewController.m */,
 				636F299F18362333008E394C /* Main_iPad.storyboard */,
 				6386E18C184506D400FC5DA5 /* selectButtonsViewController.h */,
 				6386E18D184506D400FC5DA5 /* selectButtonsViewController.m */,
@@ -420,6 +425,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				636F29A418362333008E394C /* ViewController.m in Sources */,
+				63D1CC04187229B000F4F71F /* cameraViewController.m in Sources */,
 				6386E18B1845035C00FC5DA5 /* gameController.m in Sources */,
 				6386E18E184506D400FC5DA5 /* selectButtonsViewController.m in Sources */,
 				63E03A6218551CDF00B0DCDF /* domination.m in Sources */,

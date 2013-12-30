@@ -30,6 +30,7 @@
 + (gameController*) getInstance;
 + (NSString *)getHexStringForColor:(UIColor *)color;
 
+@property (strong, nonatomic) IBOutlet UIImage *backgroundImage;
 @property (nonatomic) buttonGroup *group;
 @property (nonatomic, readonly) btManager *btConnection;
 @property (nonatomic, assign) id <gameControllerDelegate>delegate;

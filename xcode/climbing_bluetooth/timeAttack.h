@@ -23,6 +23,8 @@
 @property (nonatomic) NSMutableDictionary *labels;
 @property (nonatomic) CGPoint startPoint;
 @property (weak, nonatomic) IBOutlet UIButton *gameControlButton;
+@property (weak, nonatomic) IBOutlet UIImageView *backgroundView;
+@property (nonatomic) gameController *localGameController;
 
 
 - (IBAction)startTime:(id)sender;

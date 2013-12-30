@@ -29,15 +29,13 @@
 
 @property (nonatomic, assign) id <btManagerDelegate>delegate;
 
-
 - (void)send:(NSString *)Message;
-
 
 @end
 
 @protocol btManagerDelegate
 
--(void)buttonPressed:(int)buttonId;
+-(void)buttonPressed:(int)buttonID;
 -(void)connectionChanged:(BOOL)isConnected;
 
 

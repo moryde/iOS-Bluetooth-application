@@ -29,10 +29,10 @@
 {
     [super viewDidLoad];
 	// Do any additional setup after loading the view.
-    gameController* localGameController = [gameController getInstance];
-    [localGameController setDelegate:self];
-    [localGameController pingButtons];
-    NSDictionary* d = [localGameController getAvalibleButtons];
+    _localGameController = [gameController getInstance];
+    [_localGameController setDelegate:self];
+    [_localGameController pingButtons];
+    NSDictionary* d = [_localGameController getAvalibleButtons];
     [self drawButtons:d];
 }
 
@@ -67,6 +67,19 @@
     
     [_buttonGroup setAllButtonsWithIdentificationColor];
    //[b fadebuttonFromCurrentColorTo:[UIColor redColor] duration:2];
+}
+
+- (IBAction)cameraButton:(id)sender {
+    
+    UIImagePickerController * picker = [[UIImagePickerController alloc] init];
+	picker.delegate = self;
+	picker.sourceType = UIImagePickerControllerSourceTypeCamera;
+	[self presentModalViewController:picker animated:YES];
+}
+
+- (void)imagePickerController:(UIImagePickerController *)picker didFinishPickingMediaWithInfo:(NSDictionary *)info {
+	[picker dismissModalViewControllerAnimated:YES];
+	[_localGameController setBackgroundImage:[info objectForKey:@"UIImagePickerControllerOriginalImage"]];
 }
 
 - (void)drawButtons:(NSDictionary*)buttons {

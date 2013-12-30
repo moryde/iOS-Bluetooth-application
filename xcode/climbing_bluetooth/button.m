@@ -16,8 +16,10 @@
 {
     self = [super init];
     if(self) {
+        _shouldVibrate = NO;
         buttonID = Id;
         _groupIndex = 1;
+        _uiPosition = CGPointMake(100,100);
 
         switch (buttonID) {
             case 10:
@@ -60,6 +62,7 @@
 
 - (void)startTimerFromNow {
     self.startTime = [NSDate date];
+    _shouldVibrate = YES;
 }
 
 - (NSString *)getTime {
@@ -71,6 +74,7 @@
 - (void)stopTime {
     [self updateTime];
     self.startTime = nil;
+    _shouldVibrate = NO;
 }
 
 - (void)updateTime{

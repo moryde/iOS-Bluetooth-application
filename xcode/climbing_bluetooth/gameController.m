@@ -9,7 +9,7 @@
 #import "gameController.h"
 
 @implementation gameController
-@synthesize delegate, btConnection;
+@synthesize delegate, btConnection,backgroundImage;
 
 
 static gameController *singletonInstance;
@@ -129,17 +129,12 @@ static gameController *singletonInstance;
         button *b = [buttons objectForKey:key];        
         if (b.groupIndex == self.index) {
             [a setObject:b forKey:key];
-            NSLog(@"Matching button");
-
-        }else{
-            NSLog(@"NOGET ANDET");
         }
     }
     return a;
 }
 
 -(void)buttonPressed:(int)buttonID{
-    AudioServicesPlaySystemSound(kSystemSoundID_Vibrate);
     button* b = [buttons valueForKey:[NSString stringWithFormat:@"%i",buttonID]];
     //Check if button exsists
     
@@ -148,6 +143,10 @@ static gameController *singletonInstance;
         [b setDelegate:self];
         [buttons setObject:b forKey:[NSString stringWithFormat:@"%i", buttonID]];
         [delegate newButtonAttatched:b buttons:buttons];
+    }
+    
+    if ([b shouldVibrate]) {
+        AudioServicesPlaySystemSound(kSystemSoundID_Vibrate);
     }
     
     [delegate buttonPressed:b];
