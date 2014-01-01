@@ -65,6 +65,8 @@
 - (void)centralManager:(CBCentralManager *)central didDisconnectPeripheral:(CBPeripheral *)peripheral error:(NSError *)error{
     
     [delegate connectionChanged:NO];
+    NSLog(@"LOGGED OUT");
+    manager = nil;
 }
 
 - (void)peripheral:(CBPeripheral *)aPeripheral didDiscoverServices:(NSError *)error {

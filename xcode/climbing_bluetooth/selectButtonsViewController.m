@@ -55,14 +55,12 @@
     
     if (button.groupIndex == 2) {
         [sender setTitle:[NSString stringWithFormat:@"%i",button.buttonID] forState:UIControlStateNormal];
-        [sender setHighlighted:YES];
         [button fadebuttonFromCurrentColorTo:[UIColor colorWithRed:0 green:0 blue:0 alpha:0] duration:1];
         [button setGroupIndex:1];
     } else {
         [sender setTitle:[NSString stringWithFormat:@"%i%@",button.buttonID, @"✓"] forState:UIControlStateNormal];
-        [sender setHighlighted:NO];
-        [button setGroupIndex:2];
         [button fadebuttonFrom:[UIColor colorWithRed:1 green:1 blue:1 alpha:1] duration:1 endColor:button.identificationColor];
+        [button setGroupIndex:2];
     }
     
     [_buttonGroup setAllButtonsWithIdentificationColor];
@@ -72,13 +70,13 @@
 - (IBAction)cameraButton:(id)sender {
     
     UIImagePickerController * picker = [[UIImagePickerController alloc] init];
-	picker.delegate = self;
+	[picker setDelegate: self];
 	picker.sourceType = UIImagePickerControllerSourceTypeCamera;
-	[self presentModalViewController:picker animated:YES];
+	[self presentViewController:picker animated:YES completion:nil];
 }
 
 - (void)imagePickerController:(UIImagePickerController *)picker didFinishPickingMediaWithInfo:(NSDictionary *)info {
-	[picker dismissModalViewControllerAnimated:YES];
+	[picker dismissViewControllerAnimated:YES completion:nil];
 	[_localGameController setBackgroundImage:[info objectForKey:@"UIImagePickerControllerOriginalImage"]];
 }
 
