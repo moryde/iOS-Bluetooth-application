@@ -8,32 +8,34 @@
 
 #import "button.h"
 
-@implementation button
-@synthesize buttonID,ledColor,currentlyInGame,identificationColor;
 
-- (id)initWith:(int)Id
+@implementation button
+@synthesize buttonID,ledColor;
+
+- (button*)initWith:(int)Id
 {
     self = [super init];
     if(self) {
+        _shouldVibrate = NO;
         buttonID = Id;
-        NSLog([NSString stringWithFormat:@"%i",buttonID]);
+        _groupIndex = 1;
+        _uiPosition = CGPointMake(100,100);
 
-        currentlyInGame = NO;
-        switch (Id) {
+        switch (buttonID) {
             case 10:
-                identificationColor = [UIColor orangeColor];
+                _identificationColor = [UIColor orangeColor];
                 break;
             case 11:
-                identificationColor = [UIColor magentaColor];
+                _identificationColor = [UIColor magentaColor];
                 break;
             case 16:
-                identificationColor = [UIColor purpleColor];
+                _identificationColor = [UIColor purpleColor];
                 break;
             case 13:
-                identificationColor = [UIColor yellowColor];
+                _identificationColor = [UIColor purpleColor];
                 break;
             default:
-                identificationColor = [UIColor blueColor];
+                _identificationColor = [UIColor blueColor];
                 break;
         }
     }
@@ -55,7 +57,32 @@
 
 - (void)displayIdentificationColor{
     
-    [self displayColor:self.identificationColor fade:NO];
+    [self displayColor:_identificationColor fade:NO];
 }
+
+- (void)startTimerFromNow {
+    self.startTime = [NSDate date];
+    _shouldVibrate = YES;
+}
+
+- (NSString *)getTime {
+    [self updateTime];
+    NSString *s = [NSString stringWithFormat:@"%.2f",fabs(self.time)];
+    return s;
+}
+
+- (void)stopTime {
+    [self updateTime];
+    self.startTime = nil;
+    _shouldVibrate = NO;
+}
+
+- (void)updateTime{
+    if (self.startTime) {
+        self.time = [self.startTime timeIntervalSinceNow];
+    }
+    
+}
+
 
 @end

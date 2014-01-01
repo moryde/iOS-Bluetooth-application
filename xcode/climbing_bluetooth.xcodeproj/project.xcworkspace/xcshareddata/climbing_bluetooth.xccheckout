@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>IDESourceControlProjectFavoriteDictionaryKey</key>
+	<false/>
+	<key>IDESourceControlProjectIdentifier</key>
+	<string>34CEDC6A-3AB6-412E-9781-46254A5476E7</string>
+	<key>IDESourceControlProjectName</key>
+	<string>climbing_bluetooth</string>
+	<key>IDESourceControlProjectOriginsDictionary</key>
+	<dict>
+		<key>687CF9E1-5ABE-4CCC-824A-EEE688335582</key>
+		<string>https://github.com/moryde/iOS-Bluetooth-application.git</string>
+	</dict>
+	<key>IDESourceControlProjectPath</key>
+	<string>xcode/climbing_bluetooth.xcodeproj/project.xcworkspace</string>
+	<key>IDESourceControlProjectRelativeInstallPathDictionary</key>
+	<dict>
+		<key>687CF9E1-5ABE-4CCC-824A-EEE688335582</key>
+		<string>../../..</string>
+	</dict>
+	<key>IDESourceControlProjectURL</key>
+	<string>https://github.com/moryde/iOS-Bluetooth-application.git</string>
+	<key>IDESourceControlProjectVersion</key>
+	<integer>110</integer>
+	<key>IDESourceControlProjectWCCIdentifier</key>
+	<string>687CF9E1-5ABE-4CCC-824A-EEE688335582</string>
+	<key>IDESourceControlProjectWCConfigurations</key>
+	<array>
+		<dict>
+			<key>IDESourceControlRepositoryExtensionIdentifierKey</key>
+			<string>public.vcs.git</string>
+			<key>IDESourceControlWCCIdentifierKey</key>
+			<string>687CF9E1-5ABE-4CCC-824A-EEE688335582</string>
+			<key>IDESourceControlWCCName</key>
+			<string>iOS-Bluetooth-application</string>
+		</dict>
+	</array>
+</dict>
+</plist>

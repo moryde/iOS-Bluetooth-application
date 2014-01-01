@@ -13,7 +13,7 @@
 @end
 
 @implementation timeAttack
-@synthesize labels,startPoint;
+@synthesize labels,startPoint,buttonCount;
 
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {
@@ -28,21 +28,37 @@
 {
     [super viewDidLoad];
     
-    gameController* localGameController = [gameController getInstance];
-    [localGameController setDelegate:self];
-	buttons = [localGameController getPlayableButtons];
+    _localGameController = [gameController getInstance];
+    [_localGameController setDelegate:self];
+	buttons = [_localGameController getPlayableButtons];
     labels = [[NSMutableDictionary alloc]init];
     [self drawUI];
+
+}
+
+- (void)viewDidDisappear:(BOOL)animated {
+    
+    labels = nil;
+
 }
 
 - (void)buttonPressed:(button *)button{
-    [button displayColor:[UIColor greenColor] fade:NO];
+    buttonCount++;
+    [button displayIdentificationColor];
     id key = [buttons allKeysForObject:button];
-    [uiTimer invalidate];
+    [button stopTime];
         UILabel *l = [labels objectForKey:key[0]];
         l.text = [NSString stringWithFormat:@"%f",[[NSDate date]timeIntervalSinceDate:startTime]];
-        l.backgroundColor = [UIColor greenColor];
+        l.backgroundColor = [button identificationColor];
+    
+    if (buttonCount == [buttons count]) {
+        buttonCount = 0;
+        [self.gameControlButton setTitle:@"Start Game" forState:UIControlStateNormal];
+        [uiTimer invalidate];
+        
+    }
 }
+
 
 - (void)didReceiveMemoryWarning
 {
@@ -51,29 +67,39 @@
 }
 
 - (IBAction)startTime:(id)sender {
+    [self.gameControlButton setTitle:@"End Game" forState:UIControlStateNormal];
     uiTimer = [NSTimer scheduledTimerWithTimeInterval:0.1 target:self selector:@selector(updateUI) userInfo:nil repeats:YES];
-
     startTime = [NSDate date];
+    
     
     for (id key in labels) {
         UILabel *label = labels[key];
         label.backgroundColor = [UIColor redColor];
+        button* b = buttons[key];
+        [b displayColor:[UIColor redColor] fade:NO];
+        [b startTimerFromNow];
     }
 }
 
 - (void)updateUI{
         for (id key in buttons) {
             UILabel *l =[labels objectForKey:key];
-            l.text = [NSString stringWithFormat:@"%f",[[NSDate date]timeIntervalSinceDate:startTime]];
+            l.text = [buttons[key] getTime];
             [self.view addSubview:l];
         }
 }
 
 - (void)drawUI{
     int i = 0;
+    if ([_localGameController backgroundImage]) {
+        self.backgroundView.image = [_localGameController backgroundImage];
+    }
     for (id key in buttons) {
         button *button = [buttons objectForKey:key];
-        UILabel *l = [[UILabel alloc] initWithFrame:CGRectMake(20, 200+(i*30), 100, 30)];
+        CGPoint p = [button uiPosition];
+        
+        
+        UILabel *l = [[UILabel alloc] initWithFrame:CGRectMake(p.x, p.y, 100, 30)];
         l.layer.cornerRadius = 10;
         l.layer.borderColor = [UIColor whiteColor].CGColor;
         l.layer.borderWidth = 2;
@@ -119,6 +145,10 @@
                                     gesture.view.frame.origin.y+dY,
                                     gesture.view.frame.size.width,
                                     gesture.view.frame.size.height);
+    
+    button *b = [buttons objectForKey:[NSString stringWithFormat:@"%li", (long)gesture.view.tag]];
+    [b setUiPosition:gesture.view.frame.origin];
+    NSLog(@"%@", NSStringFromCGPoint([b uiPosition]));
 }
 
 -(void)connectionStatusChanged:(BOOL)isConnected{

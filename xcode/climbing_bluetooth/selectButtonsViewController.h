@@ -8,14 +8,22 @@
 
 #import <UIKit/UIKit.h>
 #import "gameController.h"
+#import "buttonGroup.h"
 
 
 @interface selectButtonsViewController : UIViewController <gameControllerDelegate>{
-    NSString *myString;
-    UIColor *baseColor;
+
 }
+
 @property (weak, nonatomic) IBOutlet UIScrollView *scrollView;
+@property (weak, nonatomic) IBOutlet buttonGroup *buttonGroup;
+@property (nonatomic) gameController *localGameController;
+
+
+- (IBAction)cameraButton:(id)sender;
+
 
 - (void)drawButtons:(NSDictionary*)buttons;
+
 
 @end

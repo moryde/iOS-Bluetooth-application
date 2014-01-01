@@ -13,7 +13,6 @@
 
 }
 
-@property (weak, nonatomic) IBOutlet UITextView *debugView;
 @property (weak, nonatomic) IBOutlet UIButton *connectToBase;
 
 - (IBAction)connectToBase:(id)sender;

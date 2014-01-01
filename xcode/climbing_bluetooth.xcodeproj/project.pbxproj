@@ -19,6 +19,7 @@
 		632B6FB81844F6D700100B56 /* Placeholder@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 632B6FAE1844F6D700100B56 /* Placeholder@2x.png */; };
 		6344D77C1839FBC200788FE8 /* btManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 6344D77B1839FBC200788FE8 /* btManager.m */; };
 		634A81A3183A602800DD4DC2 /* button.m in Sources */ = {isa = PBXBuildFile; fileRef = 634A81A2183A602800DD4DC2 /* button.m */; };
+		63501728185DF3190056DAC3 /* buttonGroup.m in Sources */ = {isa = PBXBuildFile; fileRef = 63501727185DF3190056DAC3 /* buttonGroup.m */; };
 		636224DE1855482900C8BEBF /* AudioToolbox.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 636224DD1855482900C8BEBF /* AudioToolbox.framework */; };
 		636EDD2418551F3000813ABA /* trainerModeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 636EDD2318551F3000813ABA /* trainerModeViewController.m */; };
 		636EDD281855230E00813ABA /* genericButton.png in Resources */ = {isa = PBXBuildFile; fileRef = 636EDD261855230E00813ABA /* genericButton.png */; };
@@ -46,6 +47,7 @@
 		6386E195184569EA00FC5DA5 /* Vector-Smart-Object.png in Resources */ = {isa = PBXBuildFile; fileRef = 6386E193184569EA00FC5DA5 /* Vector-Smart-Object.png */; };
 		6386E196184569EA00FC5DA5 /* Vector-Smart-Object@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 6386E194184569EA00FC5DA5 /* Vector-Smart-Object@2x.png */; };
 		6386E19918456A4700FC5DA5 /* timeAttack.m in Sources */ = {isa = PBXBuildFile; fileRef = 6386E19818456A4700FC5DA5 /* timeAttack.m */; };
+		63D1CC04187229B000F4F71F /* cameraViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 63D1CC03187229B000F4F71F /* cameraViewController.m */; };
 		63E03A6218551CDF00B0DCDF /* domination.m in Sources */ = {isa = PBXBuildFile; fileRef = 63E03A6118551CDF00B0DCDF /* domination.m */; };
 /* End PBXBuildFile section */
 
@@ -74,6 +76,8 @@
 		6344D77B1839FBC200788FE8 /* btManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = btManager.m; sourceTree = "<group>"; };
 		634A81A1183A602800DD4DC2 /* button.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = button.h; sourceTree = "<group>"; };
 		634A81A2183A602800DD4DC2 /* button.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = button.m; sourceTree = "<group>"; };
+		63501726185DF3190056DAC3 /* buttonGroup.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = buttonGroup.h; path = climbing_bluetooth/model/buttonGroup.h; sourceTree = SOURCE_ROOT; };
+		63501727185DF3190056DAC3 /* buttonGroup.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = buttonGroup.m; path = climbing_bluetooth/model/buttonGroup.m; sourceTree = SOURCE_ROOT; };
 		636224DD1855482900C8BEBF /* AudioToolbox.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AudioToolbox.framework; path = System/Library/Frameworks/AudioToolbox.framework; sourceTree = SDKROOT; };
 		636EDD2218551F3000813ABA /* trainerModeViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = trainerModeViewController.h; sourceTree = "<group>"; };
 		636EDD2318551F3000813ABA /* trainerModeViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = trainerModeViewController.m; sourceTree = "<group>"; };
@@ -110,6 +114,8 @@
 		6386E194184569EA00FC5DA5 /* Vector-Smart-Object@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Vector-Smart-Object@2x.png"; sourceTree = "<group>"; };
 		6386E19718456A4700FC5DA5 /* timeAttack.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = timeAttack.h; sourceTree = "<group>"; };
 		6386E19818456A4700FC5DA5 /* timeAttack.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = timeAttack.m; sourceTree = "<group>"; };
+		63D1CC02187229B000F4F71F /* cameraViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = cameraViewController.h; path = climbing_bluetooth/cameraViewController.h; sourceTree = SOURCE_ROOT; };
+		63D1CC03187229B000F4F71F /* cameraViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = cameraViewController.m; path = climbing_bluetooth/cameraViewController.m; sourceTree = SOURCE_ROOT; };
 		63E03A6018551CDF00B0DCDF /* domination.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = domination.h; sourceTree = "<group>"; };
 		63E03A6118551CDF00B0DCDF /* domination.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = domination.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -140,6 +146,15 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		63501729185DF31F0056DAC3 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				63501726185DF3190056DAC3 /* buttonGroup.h */,
+				63501727185DF3190056DAC3 /* buttonGroup.m */,
+			);
+			name = Model;
+			sourceTree = "<group>";
+		};
 		636EDD2518551F4A00813ABA /* trainerMode */ = {
 			isa = PBXGroup;
 			children = (
@@ -187,9 +202,12 @@
 			isa = PBXGroup;
 			children = (
 				63E0F3E0184814DD007FFABB /* Games */,
+				63501729185DF31F0056DAC3 /* Model */,
 				636F299918362333008E394C /* AppDelegate.h */,
 				636F299A18362333008E394C /* AppDelegate.m */,
 				636F299C18362333008E394C /* Main_iPhone.storyboard */,
+				63D1CC02187229B000F4F71F /* cameraViewController.h */,
+				63D1CC03187229B000F4F71F /* cameraViewController.m */,
 				636F299F18362333008E394C /* Main_iPad.storyboard */,
 				6386E18C184506D400FC5DA5 /* selectButtonsViewController.h */,
 				6386E18D184506D400FC5DA5 /* selectButtonsViewController.m */,
@@ -407,11 +425,13 @@
 			buildActionMask = 2147483647;
 			files = (
 				636F29A418362333008E394C /* ViewController.m in Sources */,
+				63D1CC04187229B000F4F71F /* cameraViewController.m in Sources */,
 				6386E18B1845035C00FC5DA5 /* gameController.m in Sources */,
 				6386E18E184506D400FC5DA5 /* selectButtonsViewController.m in Sources */,
 				63E03A6218551CDF00B0DCDF /* domination.m in Sources */,
 				634A81A3183A602800DD4DC2 /* button.m in Sources */,
 				636F299B18362333008E394C /* AppDelegate.m in Sources */,
+				63501728185DF3190056DAC3 /* buttonGroup.m in Sources */,
 				636F299718362333008E394C /* main.m in Sources */,
 				636EDD2418551F3000813ABA /* trainerModeViewController.m in Sources */,
 				6386E19918456A4700FC5DA5 /* timeAttack.m in Sources */,

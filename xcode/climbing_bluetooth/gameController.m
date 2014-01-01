@@ -9,16 +9,29 @@
 #import "gameController.h"
 
 @implementation gameController
-@synthesize delegate, btConnection;
+@synthesize delegate, btConnection,backgroundImage;
+
 
 static gameController *singletonInstance;
 
+-(int)index{
+    return 2;
+}
+
+- (buttonGroup*) group {
+    NSLog(@"group");
+    if (!_group) {
+        _group = [_group initWithGroupIndex:self.index];
+    }
+    return _group;
+}
+
 -(id)init
 {
-    
     if (self = [super init])
     {
         buttons = [[NSMutableDictionary alloc] init];
+        NSLog(@"buttons created");
     }
     return self;
 }
@@ -111,27 +124,29 @@ static gameController *singletonInstance;
 }
 
 - (NSMutableDictionary *) getPlayableButtons {
-
     NSMutableDictionary* a = [[NSMutableDictionary alloc] init];
     for (id key in buttons) {
-        button *b = [buttons objectForKey:key];
-        if (b.currentlyInGame == YES) {
+        button *b = [buttons objectForKey:key];        
+        if (b.groupIndex == self.index) {
             [a setObject:b forKey:key];
         }
     }
     return a;
 }
 
--(void)buttonPressed:(int)buttonId{
-    AudioServicesPlaySystemSound(kSystemSoundID_Vibrate);
-    button* b = [buttons valueForKey:[NSString stringWithFormat:@"%i",buttonId]];
+-(void)buttonPressed:(int)buttonID{
+    button* b = [buttons valueForKey:[NSString stringWithFormat:@"%i",buttonID]];
     //Check if button exsists
     
     if(!b){
-        b = [[button alloc] initWith:buttonId];
+        b = [[button alloc] initWith:buttonID];
         [b setDelegate:self];
-        [buttons setObject:b forKey:[NSString stringWithFormat:@"%i", buttonId]];
+        [buttons setObject:b forKey:[NSString stringWithFormat:@"%i", buttonID]];
         [delegate newButtonAttatched:b buttons:buttons];
+    }
+    
+    if ([b shouldVibrate]) {
+        AudioServicesPlaySystemSound(kSystemSoundID_Vibrate);
     }
     
     [delegate buttonPressed:b];

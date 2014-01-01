@@ -20,7 +20,7 @@
 {
     self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
     if (self) {
-        baseColor = [UIColor colorWithRed:1 green:0 blue:0 alpha:1];
+
     }
     return self;
 }
@@ -29,10 +29,10 @@
 {
     [super viewDidLoad];
 	// Do any additional setup after loading the view.
-    gameController* localGameController = [gameController getInstance];
-    [localGameController setDelegate:self];
-    [localGameController pingButtons];
-    NSDictionary* d = [localGameController getAvalibleButtons];
+    _localGameController = [gameController getInstance];
+    [_localGameController setDelegate:self];
+    [_localGameController pingButtons];
+    NSDictionary* d = [_localGameController getAvalibleButtons];
     [self drawButtons:d];
 }
 
@@ -53,22 +53,35 @@
     gameController* localGameController = [gameController getInstance];
     button* button = [localGameController getButtonWith:[sender tag]];
     
-    if (button.currentlyInGame) {
+    if (button.groupIndex == 2) {
         [sender setTitle:[NSString stringWithFormat:@"%i",button.buttonID] forState:UIControlStateNormal];
         [button fadebuttonFromCurrentColorTo:[UIColor colorWithRed:0 green:0 blue:0 alpha:0] duration:1];
-        
+        [button setGroupIndex:1];
     } else {
         [sender setTitle:[NSString stringWithFormat:@"%i%@",button.buttonID, @"✓"] forState:UIControlStateNormal];
-
         [button fadebuttonFrom:[UIColor colorWithRed:1 green:1 blue:1 alpha:1] duration:1 endColor:button.identificationColor];
+        [button setGroupIndex:2];
     }
-    button.currentlyInGame = !button.currentlyInGame;
     
-    
+    [_buttonGroup setAllButtonsWithIdentificationColor];
    //[b fadebuttonFromCurrentColorTo:[UIColor redColor] duration:2];
 }
 
+- (IBAction)cameraButton:(id)sender {
+    
+    UIImagePickerController * picker = [[UIImagePickerController alloc] init];
+	[picker setDelegate: self];
+	picker.sourceType = UIImagePickerControllerSourceTypeCamera;
+	[self presentViewController:picker animated:YES completion:nil];
+}
+
+- (void)imagePickerController:(UIImagePickerController *)picker didFinishPickingMediaWithInfo:(NSDictionary *)info {
+	[picker dismissViewControllerAnimated:YES completion:nil];
+	[_localGameController setBackgroundImage:[info objectForKey:@"UIImagePickerControllerOriginalImage"]];
+}
+
 - (void)drawButtons:(NSDictionary*)buttons {
+    
     UIScrollView *s = [[UIScrollView alloc] initWithFrame: CGRectMake(20, 100, self.view.frame.size.width-40, 200)];
     s.contentSize = CGSizeMake(s.frame.size.width,500);
     s.scrollEnabled = YES;
@@ -87,7 +100,7 @@
         uiButton.backgroundColor = button.identificationColor;
         [uiButton addTarget:self action:@selector(uiButtonPressed:) forControlEvents:UIControlEventTouchDown];
         [uiButton setTag:button.buttonID];
-        if (button.currentlyInGame) {
+        if (button.groupIndex == 2) {
             [uiButton setTitle:[NSString stringWithFormat:@"%i%@",button.buttonID, @"✓"] forState:UIControlStateNormal];
         } else {
             [uiButton setTitle:[NSString stringWithFormat:@"%i",button.buttonID] forState:UIControlStateNormal];

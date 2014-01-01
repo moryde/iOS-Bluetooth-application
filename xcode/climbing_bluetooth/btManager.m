@@ -65,6 +65,8 @@
 - (void)centralManager:(CBCentralManager *)central didDisconnectPeripheral:(CBPeripheral *)peripheral error:(NSError *)error{
     
     [delegate connectionChanged:NO];
+    NSLog(@"LOGGED OUT");
+    manager = nil;
 }
 
 - (void)peripheral:(CBPeripheral *)aPeripheral didDiscoverServices:(NSError *)error {
@@ -122,8 +124,7 @@
 - (void)peripheral:(CBPeripheral *)peripheral didUpdateValueForCharacteristic:(CBCharacteristic *)characteristic error:(NSError *)error{
     int i;
     [characteristic.value getBytes:&i length:sizeof(i)];
-    [delegate buttonPressed:i];
-
+            [delegate buttonPressed:i];
 }
 
 + (NSData*) dataByIntepretingHexString:(NSString*) hexString {
@@ -151,6 +152,8 @@
 
 - (void) peripheral:(CBPeripheral *)peripheral didWriteValueForCharacteristic:(CBCharacteristic *)characteristic error:(NSError *)error{
     NSLog(@"Error changing notification state: %@", error.localizedDescription);
+    NSLog(@"didwriteValue");
+
 }
 
 @end
