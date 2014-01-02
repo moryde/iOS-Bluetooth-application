@@ -66,7 +66,6 @@
     
     [delegate connectionChanged:NO];
     NSLog(@"LOGGED OUT");
-    manager = nil;
 }
 
 - (void)peripheral:(CBPeripheral *)aPeripheral didDiscoverServices:(NSError *)error {
@@ -124,6 +123,8 @@
 - (void)peripheral:(CBPeripheral *)peripheral didUpdateValueForCharacteristic:(CBCharacteristic *)characteristic error:(NSError *)error{
     int i;
     [characteristic.value getBytes:&i length:sizeof(i)];
+    NSLog(@"%i",i);
+
             [delegate buttonPressed:i];
 }
 

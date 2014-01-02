@@ -148,7 +148,6 @@
     
     button *b = [buttons objectForKey:[NSString stringWithFormat:@"%li", (long)gesture.view.tag]];
     [b setUiPosition:gesture.view.frame.origin];
-    NSLog(@"%@", NSStringFromCGPoint([b uiPosition]));
 }
 
 -(void)connectionStatusChanged:(BOOL)isConnected{

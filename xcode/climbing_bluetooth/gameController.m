@@ -135,6 +135,7 @@ static gameController *singletonInstance;
 }
 
 -(void)buttonPressed:(int)buttonID{
+    
     button* b = [buttons valueForKey:[NSString stringWithFormat:@"%i",buttonID]];
     //Check if button exsists
     
