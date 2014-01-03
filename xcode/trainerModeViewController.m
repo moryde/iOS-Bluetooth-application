@@ -34,6 +34,63 @@
     labels = [[NSMutableDictionary alloc]init];
     
 	// Do any additional setup after loading the view.
+    
+    CGRect parentRect = self.view.bounds;
+    parentRect = _graphHostingView.frame;
+
+    _graphHostingView.allowPinchScaling = YES;
+    
+    CPTGraph *graph = [[CPTXYGraph alloc] initWithFrame:_graphHostingView.bounds];
+    _graphHostingView.hostedGraph = graph;
+    graph.title = @"TITLELELEL";
+    
+    CPTScatterPlot *ScatterPlot = [[CPTScatterPlot alloc]init];
+    
+    
+    ScatterPlot.dataSource = self;
+    ScatterPlot.delegate = self;
+    
+    //plot line style
+    CPTMutableLineStyle *lineStyle = [[CPTMutableLineStyle alloc]init];
+    lineStyle.lineColor = [CPTColor redColor];
+    
+    //plot symbol style
+    CPTPlotSymbol *graphSymbolStyle = [CPTPlotSymbol ellipsePlotSymbol];
+    
+    //add styles to plot
+    ScatterPlot.plotSymbol = graphSymbolStyle;
+    ScatterPlot.dataLineStyle = lineStyle;
+
+    CPTXYPlotSpace *plotSpace = (CPTXYPlotSpace *) graph.defaultPlotSpace;
+    plotSpace.allowsUserInteraction = YES;
+    
+    [graph addPlot:ScatterPlot toPlotSpace:plotSpace];
+    
+
+
+    
+}
+
+- (NSUInteger)numberOfRecordsForPlot:(CPTPlot *)plot {
+
+    NSLog(@"NumberOfRecord");
+    return 5;
+    
+}
+
+- (NSNumber *)numberForPlot:(CPTPlot *)plot field:(NSUInteger)fieldEnum recordIndex:(NSUInteger)idx {
+    switch (fieldEnum) {
+        case 0:
+            return [NSNumber numberWithInt:idx*2];
+            break;
+        case 1:
+            return [NSNumber numberWithInt:idx];
+            break;
+        default:
+            NSLog(@"Error no data");
+            return nil;
+            break;
+    }
 }
 
 - (void)didReceiveMemoryWarning

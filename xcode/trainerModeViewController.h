@@ -7,9 +7,10 @@
 //
 
 #import <UIKit/UIKit.h>
-
+#import <CorePlot/CorePlot-CocoaTouch.h>
 #import "gameController.h"
-@interface trainerModeViewController : UIViewController <gameControllerDelegate> {
+
+@interface trainerModeViewController : UIViewController <gameControllerDelegate, CPTScatterPlotDataSource, CPTScatterPlotDelegate> {
     
     NSDate *startTime;
     NSMutableDictionary *buttons;
@@ -21,6 +22,10 @@
 @property (nonatomic) NSMutableDictionary *labels;
 @property (nonatomic) CGPoint startPoint;
 
+@property (weak, nonatomic) IBOutlet CPTGraphHostingView *graphHostingView;
+
+
 - (IBAction)startTime:(id)sender;
+
 
 @end

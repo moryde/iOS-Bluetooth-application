@@ -338,10 +338,6 @@
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
-                            <imageView userInteractionEnabled="NO" alpha="0.5" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="Vector-Smart-Object.png" translatesAutoresizingMaskIntoConstraints="NO" id="1Bh-hq-3Zs">
-                                <rect key="frame" x="97" y="98" width="126" height="226"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                            </imageView>
                             <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Trainer mode" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="7F5-sX-vum">
                                 <rect key="frame" x="97" y="41" width="149" height="21"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
@@ -383,12 +379,20 @@
                                     <action selector="startTime:" destination="ptt-Om-UKW" eventType="touchUpInside" id="zME-4k-yyK"/>
                                 </connections>
                             </button>
+                            <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="3h9-Ad-oLl" customClass="CPTGraphHostingView">
+                                <rect key="frame" x="0.0" y="89" width="320" height="232"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                            </view>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                     </view>
                     <simulatedStatusBarMetrics key="simulatedStatusBarMetrics" statusBarStyle="blackOpaque"/>
                     <nil key="simulatedTopBarMetrics"/>
                     <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina4"/>
+                    <connections>
+                        <outlet property="graphHostingView" destination="3h9-Ad-oLl" id="J4J-hP-tmQ"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="eQu-0U-17h" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -397,7 +401,7 @@
     </scenes>
     <resources>
         <image name="Vector-Smart-Object.png" width="242" height="461"/>
-        <image name="backButton.png" width="40" height="40"/>
+        <image name="backButton.png" width="24" height="24"/>
         <image name="connectToBase.png" width="88" height="88"/>
         <image name="debugMode.png" width="89" height="88"/>
         <image name="genericButton.png" width="279" height="57"/>
@@ -409,6 +413,6 @@
         <simulatedScreenMetrics key="destination"/>
     </simulatedMetricsContainer>
     <inferredMetricsTieBreakers>
-        <segue reference="T3f-mf-UIC"/>
+        <segue reference="JT0-5B-24L"/>
     </inferredMetricsTieBreakers>
 </document>
