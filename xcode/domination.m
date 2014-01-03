@@ -45,6 +45,7 @@
     
     for (id key in buttons) {
         button *button = [buttons objectForKey:key];
+        button.shouldVibrate = YES;
         [button displayColor:[UIColor colorWithRed:0 green:0 blue:0 alpha:0] fade:YES];
     }
     

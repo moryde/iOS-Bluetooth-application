@@ -362,7 +362,7 @@
 					};
 				};
 			};
-			buildConfigurationList = 636F298218362333008E394C /* Build configuration list for PBXProject "climbing_bluetooth" */;
+			buildConfigurationList = 636F298218362333008E394C /* Build configuration list for PBXProject "Climbing_bluetooth" */;
 			compatibilityVersion = "Xcode 3.2";
 			developmentRegion = English;
 			hasScannedForEncodings = 0;
@@ -644,7 +644,7 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		636F298218362333008E394C /* Build configuration list for PBXProject "climbing_bluetooth" */ = {
+		636F298218362333008E394C /* Build configuration list for PBXProject "Climbing_bluetooth" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				636F29BA18362333008E394C /* Debug */,

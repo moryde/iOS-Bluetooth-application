@@ -45,6 +45,7 @@
 - (void)buttonPressed:(button *)button{
     buttonCount++;
     [button displayIdentificationColor];
+    [button displayColor:[UIColor greenColor] fade:NO];
     id key = [buttons allKeysForObject:button];
     [button stopTime];
         UILabel *l = [labels objectForKey:key[0]];
@@ -55,6 +56,7 @@
         buttonCount = 0;
         [self.gameControlButton setTitle:@"Start Game" forState:UIControlStateNormal];
         [uiTimer invalidate];
+        
         
     }
 }

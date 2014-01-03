@@ -17,7 +17,7 @@
                BlueprintIdentifier = "636F298618362333008E394C"
                BuildableName = "Climbing_bluetooth.app"
                BlueprintName = "Climbing_bluetooth"
-               ReferencedContainer = "container:climbing_bluetooth.xcodeproj">
+               ReferencedContainer = "container:Climbing_bluetooth.xcodeproj">
             </BuildableReference>
          </BuildActionEntry>
       </BuildActionEntries>
@@ -35,7 +35,7 @@
                BlueprintIdentifier = "636F29AA18362333008E394C"
                BuildableName = "Climbing_bluetoothTests.xctest"
                BlueprintName = "Climbing_bluetoothTests"
-               ReferencedContainer = "container:climbing_bluetooth.xcodeproj">
+               ReferencedContainer = "container:Climbing_bluetooth.xcodeproj">
             </BuildableReference>
          </TestableReference>
       </Testables>
@@ -45,7 +45,7 @@
             BlueprintIdentifier = "636F298618362333008E394C"
             BuildableName = "Climbing_bluetooth.app"
             BlueprintName = "Climbing_bluetooth"
-            ReferencedContainer = "container:climbing_bluetooth.xcodeproj">
+            ReferencedContainer = "container:Climbing_bluetooth.xcodeproj">
          </BuildableReference>
       </MacroExpansion>
    </TestAction>
@@ -64,7 +64,7 @@
             BlueprintIdentifier = "636F298618362333008E394C"
             BuildableName = "Climbing_bluetooth.app"
             BlueprintName = "Climbing_bluetooth"
-            ReferencedContainer = "container:climbing_bluetooth.xcodeproj">
+            ReferencedContainer = "container:Climbing_bluetooth.xcodeproj">
          </BuildableReference>
       </BuildableProductRunnable>
       <AdditionalOptions>
@@ -82,7 +82,7 @@
             BlueprintIdentifier = "636F298618362333008E394C"
             BuildableName = "Climbing_bluetooth.app"
             BlueprintName = "Climbing_bluetooth"
-            ReferencedContainer = "container:climbing_bluetooth.xcodeproj">
+            ReferencedContainer = "container:Climbing_bluetooth.xcodeproj">
          </BuildableReference>
       </BuildableProductRunnable>
    </ProfileAction>

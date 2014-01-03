@@ -32,7 +32,10 @@
                 _identificationColor = [UIColor purpleColor];
                 break;
             case 13:
-                _identificationColor = [UIColor purpleColor];
+                _identificationColor = [UIColor blueColor];
+                break;
+            case 20:
+                _identificationColor = [UIColor brownColor];
                 break;
             default:
                 _identificationColor = [UIColor blueColor];
