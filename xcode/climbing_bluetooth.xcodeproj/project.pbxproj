@@ -1,677 +1,1930 @@
-// !$*UTF8*$!
-{
-	archiveVersion = 1;
-	classes = {
-	};
-	objectVersion = 46;
-	objects = {
-
-/* Begin PBXBuildFile section */
-		63165022183623850060A6C0 /* CoreBluetooth.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 63165021183623850060A6C0 /* CoreBluetooth.framework */; };
-		632B6FAF1844F6D700100B56 /* backButton.png in Resources */ = {isa = PBXBuildFile; fileRef = 632B6FA51844F6D700100B56 /* backButton.png */; };
-		632B6FB01844F6D700100B56 /* backButton@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 632B6FA61844F6D700100B56 /* backButton@2x.png */; };
-		632B6FB11844F6D700100B56 /* connectToBase.png in Resources */ = {isa = PBXBuildFile; fileRef = 632B6FA71844F6D700100B56 /* connectToBase.png */; };
-		632B6FB21844F6D700100B56 /* connectToBase@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 632B6FA81844F6D700100B56 /* connectToBase@2x.png */; };
-		632B6FB31844F6D700100B56 /* debugMode.png in Resources */ = {isa = PBXBuildFile; fileRef = 632B6FA91844F6D700100B56 /* debugMode.png */; };
-		632B6FB41844F6D700100B56 /* debugMode@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 632B6FAA1844F6D700100B56 /* debugMode@2x.png */; };
-		632B6FB51844F6D700100B56 /* newGame.png in Resources */ = {isa = PBXBuildFile; fileRef = 632B6FAB1844F6D700100B56 /* newGame.png */; };
-		632B6FB71844F6D700100B56 /* Placeholder.png in Resources */ = {isa = PBXBuildFile; fileRef = 632B6FAD1844F6D700100B56 /* Placeholder.png */; };
-		632B6FB81844F6D700100B56 /* Placeholder@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 632B6FAE1844F6D700100B56 /* Placeholder@2x.png */; };
-		6344D77C1839FBC200788FE8 /* btManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 6344D77B1839FBC200788FE8 /* btManager.m */; };
-		634A81A3183A602800DD4DC2 /* button.m in Sources */ = {isa = PBXBuildFile; fileRef = 634A81A2183A602800DD4DC2 /* button.m */; };
-		63501728185DF3190056DAC3 /* buttonGroup.m in Sources */ = {isa = PBXBuildFile; fileRef = 63501727185DF3190056DAC3 /* buttonGroup.m */; };
-		636224DE1855482900C8BEBF /* AudioToolbox.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 636224DD1855482900C8BEBF /* AudioToolbox.framework */; };
-		636EDD2418551F3000813ABA /* trainerModeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 636EDD2318551F3000813ABA /* trainerModeViewController.m */; };
-		636EDD281855230E00813ABA /* genericButton.png in Resources */ = {isa = PBXBuildFile; fileRef = 636EDD261855230E00813ABA /* genericButton.png */; };
-		636EDD291855230E00813ABA /* genericButton@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 636EDD271855230E00813ABA /* genericButton@2x.png */; };
-		636F298B18362333008E394C /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 636F298A18362333008E394C /* Foundation.framework */; };
-		636F298D18362333008E394C /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 636F298C18362333008E394C /* CoreGraphics.framework */; };
-		636F298F18362333008E394C /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 636F298E18362333008E394C /* UIKit.framework */; };
-		636F299518362333008E394C /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 636F299318362333008E394C /* InfoPlist.strings */; };
-		636F299718362333008E394C /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 636F299618362333008E394C /* main.m */; };
-		636F299B18362333008E394C /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 636F299A18362333008E394C /* AppDelegate.m */; };
-		636F299E18362333008E394C /* Main_iPhone.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 636F299C18362333008E394C /* Main_iPhone.storyboard */; };
-		636F29A118362333008E394C /* Main_iPad.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 636F299F18362333008E394C /* Main_iPad.storyboard */; };
-		636F29A418362333008E394C /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 636F29A318362333008E394C /* ViewController.m */; };
-		636F29A618362333008E394C /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 636F29A518362333008E394C /* Images.xcassets */; };
-		636F29AD18362333008E394C /* XCTest.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 636F29AC18362333008E394C /* XCTest.framework */; };
-		636F29AE18362333008E394C /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 636F298A18362333008E394C /* Foundation.framework */; };
-		636F29AF18362333008E394C /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 636F298E18362333008E394C /* UIKit.framework */; };
-		636F29B718362333008E394C /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 636F29B518362333008E394C /* InfoPlist.strings */; };
-		636F29B918362333008E394C /* Climbing_bluetoothTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 636F29B818362333008E394C /* Climbing_bluetoothTests.m */; };
-		6386E1881844F91F00FC5DA5 /* newGame@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 6386E1871844F91F00FC5DA5 /* newGame@2x.png */; };
-		6386E18B1845035C00FC5DA5 /* gameController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6386E18A1845035C00FC5DA5 /* gameController.m */; };
-		6386E18E184506D400FC5DA5 /* selectButtonsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6386E18D184506D400FC5DA5 /* selectButtonsViewController.m */; };
-		6386E19118450F0B00FC5DA5 /* connectToBase_Connected.png in Resources */ = {isa = PBXBuildFile; fileRef = 6386E18F18450F0B00FC5DA5 /* connectToBase_Connected.png */; };
-		6386E19218450F0B00FC5DA5 /* connectToBase_Connected@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 6386E19018450F0B00FC5DA5 /* connectToBase_Connected@2x.png */; };
-		6386E195184569EA00FC5DA5 /* Vector-Smart-Object.png in Resources */ = {isa = PBXBuildFile; fileRef = 6386E193184569EA00FC5DA5 /* Vector-Smart-Object.png */; };
-		6386E196184569EA00FC5DA5 /* Vector-Smart-Object@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 6386E194184569EA00FC5DA5 /* Vector-Smart-Object@2x.png */; };
-		6386E19918456A4700FC5DA5 /* timeAttack.m in Sources */ = {isa = PBXBuildFile; fileRef = 6386E19818456A4700FC5DA5 /* timeAttack.m */; };
-		63D1CC04187229B000F4F71F /* cameraViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 63D1CC03187229B000F4F71F /* cameraViewController.m */; };
-		63E03A6218551CDF00B0DCDF /* domination.m in Sources */ = {isa = PBXBuildFile; fileRef = 63E03A6118551CDF00B0DCDF /* domination.m */; };
-/* End PBXBuildFile section */
-
-/* Begin PBXContainerItemProxy section */
-		636F29B018362333008E394C /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = 636F297F18362333008E394C /* Project object */;
-			proxyType = 1;
-			remoteGlobalIDString = 636F298618362333008E394C;
-			remoteInfo = Climbing_bluetooth;
-		};
-/* End PBXContainerItemProxy section */
-
-/* Begin PBXFileReference section */
-		63165021183623850060A6C0 /* CoreBluetooth.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreBluetooth.framework; path = System/Library/Frameworks/CoreBluetooth.framework; sourceTree = SDKROOT; };
-		632B6FA51844F6D700100B56 /* backButton.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = backButton.png; sourceTree = "<group>"; };
-		632B6FA61844F6D700100B56 /* backButton@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "backButton@2x.png"; sourceTree = "<group>"; };
-		632B6FA71844F6D700100B56 /* connectToBase.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = connectToBase.png; sourceTree = "<group>"; };
-		632B6FA81844F6D700100B56 /* connectToBase@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "connectToBase@2x.png"; sourceTree = "<group>"; };
-		632B6FA91844F6D700100B56 /* debugMode.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = debugMode.png; sourceTree = "<group>"; };
-		632B6FAA1844F6D700100B56 /* debugMode@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "debugMode@2x.png"; sourceTree = "<group>"; };
-		632B6FAB1844F6D700100B56 /* newGame.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = newGame.png; sourceTree = "<group>"; };
-		632B6FAD1844F6D700100B56 /* Placeholder.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Placeholder.png; sourceTree = "<group>"; };
-		632B6FAE1844F6D700100B56 /* Placeholder@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Placeholder@2x.png"; sourceTree = "<group>"; };
-		6344D77A1839FBC200788FE8 /* btManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = btManager.h; sourceTree = "<group>"; };
-		6344D77B1839FBC200788FE8 /* btManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = btManager.m; sourceTree = "<group>"; };
-		634A81A1183A602800DD4DC2 /* button.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = button.h; sourceTree = "<group>"; };
-		634A81A2183A602800DD4DC2 /* button.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = button.m; sourceTree = "<group>"; };
-		63501726185DF3190056DAC3 /* buttonGroup.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = buttonGroup.h; path = climbing_bluetooth/model/buttonGroup.h; sourceTree = SOURCE_ROOT; };
-		63501727185DF3190056DAC3 /* buttonGroup.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = buttonGroup.m; path = climbing_bluetooth/model/buttonGroup.m; sourceTree = SOURCE_ROOT; };
-		636224DD1855482900C8BEBF /* AudioToolbox.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AudioToolbox.framework; path = System/Library/Frameworks/AudioToolbox.framework; sourceTree = SDKROOT; };
-		636EDD2218551F3000813ABA /* trainerModeViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = trainerModeViewController.h; sourceTree = "<group>"; };
-		636EDD2318551F3000813ABA /* trainerModeViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = trainerModeViewController.m; sourceTree = "<group>"; };
-		636EDD261855230E00813ABA /* genericButton.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = genericButton.png; path = Graphics/genericButton.png; sourceTree = SOURCE_ROOT; };
-		636EDD271855230E00813ABA /* genericButton@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "genericButton@2x.png"; path = "Graphics/genericButton@2x.png"; sourceTree = SOURCE_ROOT; };
-		636F298718362333008E394C /* Climbing_bluetooth.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Climbing_bluetooth.app; sourceTree = BUILT_PRODUCTS_DIR; };
-		636F298A18362333008E394C /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
-		636F298C18362333008E394C /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
-		636F298E18362333008E394C /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
-		636F299218362333008E394C /* Climbing_bluetooth-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "Climbing_bluetooth-Info.plist"; sourceTree = "<group>"; };
-		636F299418362333008E394C /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
-		636F299618362333008E394C /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
-		636F299818362333008E394C /* Climbing_bluetooth-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Climbing_bluetooth-Prefix.pch"; sourceTree = "<group>"; };
-		636F299918362333008E394C /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
-		636F299A18362333008E394C /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
-		636F299D18362333008E394C /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main_iPhone.storyboard; sourceTree = "<group>"; };
-		636F29A018362333008E394C /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main_iPad.storyboard; sourceTree = "<group>"; };
-		636F29A218362333008E394C /* ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
-		636F29A318362333008E394C /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
-		636F29A518362333008E394C /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
-		636F29AB18362333008E394C /* Climbing_bluetoothTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = Climbing_bluetoothTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		636F29AC18362333008E394C /* XCTest.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = XCTest.framework; path = Library/Frameworks/XCTest.framework; sourceTree = DEVELOPER_DIR; };
-		636F29B418362333008E394C /* Climbing_bluetoothTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "Climbing_bluetoothTests-Info.plist"; sourceTree = "<group>"; };
-		636F29B618362333008E394C /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
-		636F29B818362333008E394C /* Climbing_bluetoothTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = Climbing_bluetoothTests.m; sourceTree = "<group>"; };
-		6386E1871844F91F00FC5DA5 /* newGame@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "newGame@2x.png"; sourceTree = "<group>"; };
-		6386E1891845035C00FC5DA5 /* gameController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = gameController.h; sourceTree = "<group>"; };
-		6386E18A1845035C00FC5DA5 /* gameController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = gameController.m; sourceTree = "<group>"; };
-		6386E18C184506D400FC5DA5 /* selectButtonsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = selectButtonsViewController.h; sourceTree = "<group>"; };
-		6386E18D184506D400FC5DA5 /* selectButtonsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = selectButtonsViewController.m; sourceTree = "<group>"; };
-		6386E18F18450F0B00FC5DA5 /* connectToBase_Connected.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = connectToBase_Connected.png; sourceTree = "<group>"; };
-		6386E19018450F0B00FC5DA5 /* connectToBase_Connected@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "connectToBase_Connected@2x.png"; sourceTree = "<group>"; };
-		6386E193184569EA00FC5DA5 /* Vector-Smart-Object.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Vector-Smart-Object.png"; sourceTree = "<group>"; };
-		6386E194184569EA00FC5DA5 /* Vector-Smart-Object@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Vector-Smart-Object@2x.png"; sourceTree = "<group>"; };
-		6386E19718456A4700FC5DA5 /* timeAttack.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = timeAttack.h; sourceTree = "<group>"; };
-		6386E19818456A4700FC5DA5 /* timeAttack.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = timeAttack.m; sourceTree = "<group>"; };
-		63D1CC02187229B000F4F71F /* cameraViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = cameraViewController.h; path = climbing_bluetooth/cameraViewController.h; sourceTree = SOURCE_ROOT; };
-		63D1CC03187229B000F4F71F /* cameraViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = cameraViewController.m; path = climbing_bluetooth/cameraViewController.m; sourceTree = SOURCE_ROOT; };
-		63E03A6018551CDF00B0DCDF /* domination.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = domination.h; sourceTree = "<group>"; };
-		63E03A6118551CDF00B0DCDF /* domination.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = domination.m; sourceTree = "<group>"; };
-/* End PBXFileReference section */
-
-/* Begin PBXFrameworksBuildPhase section */
-		636F298418362333008E394C /* Frameworks */ = {
-			isa = PBXFrameworksBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				636224DE1855482900C8BEBF /* AudioToolbox.framework in Frameworks */,
-				63165022183623850060A6C0 /* CoreBluetooth.framework in Frameworks */,
-				636F298D18362333008E394C /* CoreGraphics.framework in Frameworks */,
-				636F298F18362333008E394C /* UIKit.framework in Frameworks */,
-				636F298B18362333008E394C /* Foundation.framework in Frameworks */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		636F29A818362333008E394C /* Frameworks */ = {
-			isa = PBXFrameworksBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				636F29AD18362333008E394C /* XCTest.framework in Frameworks */,
-				636F29AF18362333008E394C /* UIKit.framework in Frameworks */,
-				636F29AE18362333008E394C /* Foundation.framework in Frameworks */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-/* End PBXFrameworksBuildPhase section */
-
-/* Begin PBXGroup section */
-		63501729185DF31F0056DAC3 /* Model */ = {
-			isa = PBXGroup;
-			children = (
-				63501726185DF3190056DAC3 /* buttonGroup.h */,
-				63501727185DF3190056DAC3 /* buttonGroup.m */,
-			);
-			name = Model;
-			sourceTree = "<group>";
-		};
-		636EDD2518551F4A00813ABA /* trainerMode */ = {
-			isa = PBXGroup;
-			children = (
-				636EDD2218551F3000813ABA /* trainerModeViewController.h */,
-				636EDD2318551F3000813ABA /* trainerModeViewController.m */,
-			);
-			name = trainerMode;
-			path = ..;
-			sourceTree = "<group>";
-		};
-		636F297E18362333008E394C = {
-			isa = PBXGroup;
-			children = (
-				63A8E67F1843AB2F00F8A894 /* Graphics */,
-				636F299018362333008E394C /* Climbing_bluetooth */,
-				636F29B218362333008E394C /* Climbing_bluetoothTests */,
-				636F298918362333008E394C /* Frameworks */,
-				636F298818362333008E394C /* Products */,
-			);
-			sourceTree = "<group>";
-		};
-		636F298818362333008E394C /* Products */ = {
-			isa = PBXGroup;
-			children = (
-				636F298718362333008E394C /* Climbing_bluetooth.app */,
-				636F29AB18362333008E394C /* Climbing_bluetoothTests.xctest */,
-			);
-			name = Products;
-			sourceTree = "<group>";
-		};
-		636F298918362333008E394C /* Frameworks */ = {
-			isa = PBXGroup;
-			children = (
-				636224DD1855482900C8BEBF /* AudioToolbox.framework */,
-				63165021183623850060A6C0 /* CoreBluetooth.framework */,
-				636F298A18362333008E394C /* Foundation.framework */,
-				636F298C18362333008E394C /* CoreGraphics.framework */,
-				636F298E18362333008E394C /* UIKit.framework */,
-				636F29AC18362333008E394C /* XCTest.framework */,
-			);
-			name = Frameworks;
-			sourceTree = "<group>";
-		};
-		636F299018362333008E394C /* Climbing_bluetooth */ = {
-			isa = PBXGroup;
-			children = (
-				63E0F3E0184814DD007FFABB /* Games */,
-				63501729185DF31F0056DAC3 /* Model */,
-				636F299918362333008E394C /* AppDelegate.h */,
-				636F299A18362333008E394C /* AppDelegate.m */,
-				636F299C18362333008E394C /* Main_iPhone.storyboard */,
-				63D1CC02187229B000F4F71F /* cameraViewController.h */,
-				63D1CC03187229B000F4F71F /* cameraViewController.m */,
-				636F299F18362333008E394C /* Main_iPad.storyboard */,
-				6386E18C184506D400FC5DA5 /* selectButtonsViewController.h */,
-				6386E18D184506D400FC5DA5 /* selectButtonsViewController.m */,
-				636F29A218362333008E394C /* ViewController.h */,
-				636F29A318362333008E394C /* ViewController.m */,
-				6344D77A1839FBC200788FE8 /* btManager.h */,
-				6344D77B1839FBC200788FE8 /* btManager.m */,
-				634A81A1183A602800DD4DC2 /* button.h */,
-				634A81A2183A602800DD4DC2 /* button.m */,
-				6386E1891845035C00FC5DA5 /* gameController.h */,
-				6386E18A1845035C00FC5DA5 /* gameController.m */,
-				636F29A518362333008E394C /* Images.xcassets */,
-				636F299118362333008E394C /* Supporting Files */,
-			);
-			path = Climbing_bluetooth;
-			sourceTree = "<group>";
-		};
-		636F299118362333008E394C /* Supporting Files */ = {
-			isa = PBXGroup;
-			children = (
-				636F299218362333008E394C /* Climbing_bluetooth-Info.plist */,
-				636F299318362333008E394C /* InfoPlist.strings */,
-				636F299618362333008E394C /* main.m */,
-				636F299818362333008E394C /* Climbing_bluetooth-Prefix.pch */,
-			);
-			name = "Supporting Files";
-			sourceTree = "<group>";
-		};
-		636F29B218362333008E394C /* Climbing_bluetoothTests */ = {
-			isa = PBXGroup;
-			children = (
-				636F29B818362333008E394C /* Climbing_bluetoothTests.m */,
-				636F29B318362333008E394C /* Supporting Files */,
-			);
-			path = Climbing_bluetoothTests;
-			sourceTree = "<group>";
-		};
-		636F29B318362333008E394C /* Supporting Files */ = {
-			isa = PBXGroup;
-			children = (
-				636F29B418362333008E394C /* Climbing_bluetoothTests-Info.plist */,
-				636F29B518362333008E394C /* InfoPlist.strings */,
-			);
-			name = "Supporting Files";
-			sourceTree = "<group>";
-		};
-		63A8E67F1843AB2F00F8A894 /* Graphics */ = {
-			isa = PBXGroup;
-			children = (
-				636EDD261855230E00813ABA /* genericButton.png */,
-				636EDD271855230E00813ABA /* genericButton@2x.png */,
-				6386E18F18450F0B00FC5DA5 /* connectToBase_Connected.png */,
-				6386E19018450F0B00FC5DA5 /* connectToBase_Connected@2x.png */,
-				6386E193184569EA00FC5DA5 /* Vector-Smart-Object.png */,
-				6386E194184569EA00FC5DA5 /* Vector-Smart-Object@2x.png */,
-				632B6FA51844F6D700100B56 /* backButton.png */,
-				632B6FA61844F6D700100B56 /* backButton@2x.png */,
-				632B6FA71844F6D700100B56 /* connectToBase.png */,
-				632B6FA81844F6D700100B56 /* connectToBase@2x.png */,
-				632B6FA91844F6D700100B56 /* debugMode.png */,
-				632B6FAA1844F6D700100B56 /* debugMode@2x.png */,
-				6386E1871844F91F00FC5DA5 /* newGame@2x.png */,
-				632B6FAB1844F6D700100B56 /* newGame.png */,
-				632B6FAD1844F6D700100B56 /* Placeholder.png */,
-				632B6FAE1844F6D700100B56 /* Placeholder@2x.png */,
-			);
-			name = Graphics;
-			path = Climbing_bluetooth;
-			sourceTree = "<group>";
-		};
-		63E03A5F1855158C00B0DCDF /* domination */ = {
-			isa = PBXGroup;
-			children = (
-				63E03A6018551CDF00B0DCDF /* domination.h */,
-				63E03A6118551CDF00B0DCDF /* domination.m */,
-			);
-			name = domination;
-			path = ..;
-			sourceTree = "<group>";
-		};
-		63E0F3E0184814DD007FFABB /* Games */ = {
-			isa = PBXGroup;
-			children = (
-				636EDD2518551F4A00813ABA /* trainerMode */,
-				63E03A5F1855158C00B0DCDF /* domination */,
-				63E0F3E1184814FD007FFABB /* timeAttack */,
-			);
-			name = Games;
-			sourceTree = "<group>";
-		};
-		63E0F3E1184814FD007FFABB /* timeAttack */ = {
-			isa = PBXGroup;
-			children = (
-				6386E19718456A4700FC5DA5 /* timeAttack.h */,
-				6386E19818456A4700FC5DA5 /* timeAttack.m */,
-			);
-			name = timeAttack;
-			sourceTree = "<group>";
-		};
-/* End PBXGroup section */
-
-/* Begin PBXNativeTarget section */
-		636F298618362333008E394C /* Climbing_bluetooth */ = {
-			isa = PBXNativeTarget;
-			buildConfigurationList = 636F29BC18362333008E394C /* Build configuration list for PBXNativeTarget "Climbing_bluetooth" */;
-			buildPhases = (
-				636F298318362333008E394C /* Sources */,
-				636F298418362333008E394C /* Frameworks */,
-				636F298518362333008E394C /* Resources */,
-			);
-			buildRules = (
-			);
-			dependencies = (
-			);
-			name = Climbing_bluetooth;
-			productName = Climbing_bluetooth;
-			productReference = 636F298718362333008E394C /* Climbing_bluetooth.app */;
-			productType = "com.apple.product-type.application";
-		};
-		636F29AA18362333008E394C /* Climbing_bluetoothTests */ = {
-			isa = PBXNativeTarget;
-			buildConfigurationList = 636F29BF18362333008E394C /* Build configuration list for PBXNativeTarget "Climbing_bluetoothTests" */;
-			buildPhases = (
-				636F29A718362333008E394C /* Sources */,
-				636F29A818362333008E394C /* Frameworks */,
-				636F29A918362333008E394C /* Resources */,
-			);
-			buildRules = (
-			);
-			dependencies = (
-				636F29B118362333008E394C /* PBXTargetDependency */,
-			);
-			name = Climbing_bluetoothTests;
-			productName = Climbing_bluetoothTests;
-			productReference = 636F29AB18362333008E394C /* Climbing_bluetoothTests.xctest */;
-			productType = "com.apple.product-type.bundle.unit-test";
-		};
-/* End PBXNativeTarget section */
-
-/* Begin PBXProject section */
-		636F297F18362333008E394C /* Project object */ = {
-			isa = PBXProject;
-			attributes = {
-				LastUpgradeCheck = 0500;
-				ORGANIZATIONNAME = "Morten Ydefeldt";
-				TargetAttributes = {
-					636F298618362333008E394C = {
-						DevelopmentTeam = 6V8W5E58Z8;
-					};
-					636F29AA18362333008E394C = {
-						TestTargetID = 636F298618362333008E394C;
-					};
-				};
-			};
-			buildConfigurationList = 636F298218362333008E394C /* Build configuration list for PBXProject "Climbing_bluetooth" */;
-			compatibilityVersion = "Xcode 3.2";
-			developmentRegion = English;
-			hasScannedForEncodings = 0;
-			knownRegions = (
-				en,
-				Base,
-			);
-			mainGroup = 636F297E18362333008E394C;
-			productRefGroup = 636F298818362333008E394C /* Products */;
-			projectDirPath = "";
-			projectRoot = "";
-			targets = (
-				636F298618362333008E394C /* Climbing_bluetooth */,
-				636F29AA18362333008E394C /* Climbing_bluetoothTests */,
-			);
-		};
-/* End PBXProject section */
-
-/* Begin PBXResourcesBuildPhase section */
-		636F298518362333008E394C /* Resources */ = {
-			isa = PBXResourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				6386E195184569EA00FC5DA5 /* Vector-Smart-Object.png in Resources */,
-				632B6FB31844F6D700100B56 /* debugMode.png in Resources */,
-				636F29A118362333008E394C /* Main_iPad.storyboard in Resources */,
-				632B6FB21844F6D700100B56 /* connectToBase@2x.png in Resources */,
-				6386E196184569EA00FC5DA5 /* Vector-Smart-Object@2x.png in Resources */,
-				632B6FB41844F6D700100B56 /* debugMode@2x.png in Resources */,
-				636EDD291855230E00813ABA /* genericButton@2x.png in Resources */,
-				632B6FB71844F6D700100B56 /* Placeholder.png in Resources */,
-				6386E19218450F0B00FC5DA5 /* connectToBase_Connected@2x.png in Resources */,
-				632B6FB01844F6D700100B56 /* backButton@2x.png in Resources */,
-				636EDD281855230E00813ABA /* genericButton.png in Resources */,
-				632B6FB81844F6D700100B56 /* Placeholder@2x.png in Resources */,
-				6386E19118450F0B00FC5DA5 /* connectToBase_Connected.png in Resources */,
-				636F29A618362333008E394C /* Images.xcassets in Resources */,
-				632B6FB51844F6D700100B56 /* newGame.png in Resources */,
-				6386E1881844F91F00FC5DA5 /* newGame@2x.png in Resources */,
-				632B6FB11844F6D700100B56 /* connectToBase.png in Resources */,
-				632B6FAF1844F6D700100B56 /* backButton.png in Resources */,
-				636F299E18362333008E394C /* Main_iPhone.storyboard in Resources */,
-				636F299518362333008E394C /* InfoPlist.strings in Resources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		636F29A918362333008E394C /* Resources */ = {
-			isa = PBXResourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				636F29B718362333008E394C /* InfoPlist.strings in Resources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-/* End PBXResourcesBuildPhase section */
-
-/* Begin PBXSourcesBuildPhase section */
-		636F298318362333008E394C /* Sources */ = {
-			isa = PBXSourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				636F29A418362333008E394C /* ViewController.m in Sources */,
-				63D1CC04187229B000F4F71F /* cameraViewController.m in Sources */,
-				6386E18B1845035C00FC5DA5 /* gameController.m in Sources */,
-				6386E18E184506D400FC5DA5 /* selectButtonsViewController.m in Sources */,
-				63E03A6218551CDF00B0DCDF /* domination.m in Sources */,
-				634A81A3183A602800DD4DC2 /* button.m in Sources */,
-				636F299B18362333008E394C /* AppDelegate.m in Sources */,
-				63501728185DF3190056DAC3 /* buttonGroup.m in Sources */,
-				636F299718362333008E394C /* main.m in Sources */,
-				636EDD2418551F3000813ABA /* trainerModeViewController.m in Sources */,
-				6386E19918456A4700FC5DA5 /* timeAttack.m in Sources */,
-				6344D77C1839FBC200788FE8 /* btManager.m in Sources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		636F29A718362333008E394C /* Sources */ = {
-			isa = PBXSourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				636F29B918362333008E394C /* Climbing_bluetoothTests.m in Sources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-/* End PBXSourcesBuildPhase section */
-
-/* Begin PBXTargetDependency section */
-		636F29B118362333008E394C /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			target = 636F298618362333008E394C /* Climbing_bluetooth */;
-			targetProxy = 636F29B018362333008E394C /* PBXContainerItemProxy */;
-		};
-/* End PBXTargetDependency section */
-
-/* Begin PBXVariantGroup section */
-		636F299318362333008E394C /* InfoPlist.strings */ = {
-			isa = PBXVariantGroup;
-			children = (
-				636F299418362333008E394C /* en */,
-			);
-			name = InfoPlist.strings;
-			sourceTree = "<group>";
-		};
-		636F299C18362333008E394C /* Main_iPhone.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				636F299D18362333008E394C /* Base */,
-			);
-			name = Main_iPhone.storyboard;
-			sourceTree = "<group>";
-		};
-		636F299F18362333008E394C /* Main_iPad.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				636F29A018362333008E394C /* Base */,
-			);
-			name = Main_iPad.storyboard;
-			sourceTree = "<group>";
-		};
-		636F29B518362333008E394C /* InfoPlist.strings */ = {
-			isa = PBXVariantGroup;
-			children = (
-				636F29B618362333008E394C /* en */,
-			);
-			name = InfoPlist.strings;
-			sourceTree = "<group>";
-		};
-/* End PBXVariantGroup section */
-
-/* Begin XCBuildConfiguration section */
-		636F29BA18362333008E394C /* Debug */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				ALWAYS_SEARCH_USER_PATHS = NO;
-				ARCHS = "$(ARCHS_STANDARD_INCLUDING_64_BIT)";
-				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
-				CLANG_CXX_LIBRARY = "libc++";
-				CLANG_ENABLE_MODULES = YES;
-				CLANG_ENABLE_OBJC_ARC = YES;
-				CLANG_WARN_BOOL_CONVERSION = YES;
-				CLANG_WARN_CONSTANT_CONVERSION = YES;
-				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
-				CLANG_WARN_EMPTY_BODY = YES;
-				CLANG_WARN_ENUM_CONVERSION = YES;
-				CLANG_WARN_INT_CONVERSION = YES;
-				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
-				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
-				COPY_PHASE_STRIP = NO;
-				GCC_C_LANGUAGE_STANDARD = gnu99;
-				GCC_DYNAMIC_NO_PIC = NO;
-				GCC_OPTIMIZATION_LEVEL = 0;
-				GCC_PREPROCESSOR_DEFINITIONS = (
-					"DEBUG=1",
-					"$(inherited)",
-				);
-				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
-				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
-				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
-				GCC_WARN_UNDECLARED_SELECTOR = YES;
-				GCC_WARN_UNINITIALIZED_AUTOS = YES;
-				GCC_WARN_UNUSED_FUNCTION = YES;
-				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
-				ONLY_ACTIVE_ARCH = YES;
-				SDKROOT = iphoneos;
-				TARGETED_DEVICE_FAMILY = "1,2";
-			};
-			name = Debug;
-		};
-		636F29BB18362333008E394C /* Release */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				ALWAYS_SEARCH_USER_PATHS = NO;
-				ARCHS = "$(ARCHS_STANDARD_INCLUDING_64_BIT)";
-				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
-				CLANG_CXX_LIBRARY = "libc++";
-				CLANG_ENABLE_MODULES = YES;
-				CLANG_ENABLE_OBJC_ARC = YES;
-				CLANG_WARN_BOOL_CONVERSION = YES;
-				CLANG_WARN_CONSTANT_CONVERSION = YES;
-				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
-				CLANG_WARN_EMPTY_BODY = YES;
-				CLANG_WARN_ENUM_CONVERSION = YES;
-				CLANG_WARN_INT_CONVERSION = YES;
-				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
-				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
-				COPY_PHASE_STRIP = YES;
-				ENABLE_NS_ASSERTIONS = NO;
-				GCC_C_LANGUAGE_STANDARD = gnu99;
-				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
-				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
-				GCC_WARN_UNDECLARED_SELECTOR = YES;
-				GCC_WARN_UNINITIALIZED_AUTOS = YES;
-				GCC_WARN_UNUSED_FUNCTION = YES;
-				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
-				SDKROOT = iphoneos;
-				TARGETED_DEVICE_FAMILY = "1,2";
-				VALIDATE_PRODUCT = YES;
-			};
-			name = Release;
-		};
-		636F29BD18362333008E394C /* Debug */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
-				CODE_SIGN_IDENTITY = "iPhone Developer";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
-				GCC_PRECOMPILE_PREFIX_HEADER = YES;
-				GCC_PREFIX_HEADER = "Climbing_bluetooth/Climbing_bluetooth-Prefix.pch";
-				INFOPLIST_FILE = "Climbing_bluetooth/Climbing_bluetooth-Info.plist";
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE = "";
-				WRAPPER_EXTENSION = app;
-			};
-			name = Debug;
-		};
-		636F29BE18362333008E394C /* Release */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
-				CODE_SIGN_IDENTITY = "iPhone Developer";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
-				GCC_PRECOMPILE_PREFIX_HEADER = YES;
-				GCC_PREFIX_HEADER = "Climbing_bluetooth/Climbing_bluetooth-Prefix.pch";
-				INFOPLIST_FILE = "Climbing_bluetooth/Climbing_bluetooth-Info.plist";
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE = "";
-				WRAPPER_EXTENSION = app;
-			};
-			name = Release;
-		};
-		636F29C018362333008E394C /* Debug */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				ARCHS = "$(ARCHS_STANDARD_INCLUDING_64_BIT)";
-				BUNDLE_LOADER = "$(BUILT_PRODUCTS_DIR)/Climbing_bluetooth.app/Climbing_bluetooth";
-				FRAMEWORK_SEARCH_PATHS = (
-					"$(SDKROOT)/Developer/Library/Frameworks",
-					"$(inherited)",
-					"$(DEVELOPER_FRAMEWORKS_DIR)",
-				);
-				GCC_PRECOMPILE_PREFIX_HEADER = YES;
-				GCC_PREFIX_HEADER = "Climbing_bluetooth/Climbing_bluetooth-Prefix.pch";
-				GCC_PREPROCESSOR_DEFINITIONS = (
-					"DEBUG=1",
-					"$(inherited)",
-				);
-				INFOPLIST_FILE = "Climbing_bluetoothTests/Climbing_bluetoothTests-Info.plist";
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				TEST_HOST = "$(BUNDLE_LOADER)";
-				WRAPPER_EXTENSION = xctest;
-			};
-			name = Debug;
-		};
-		636F29C118362333008E394C /* Release */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				ARCHS = "$(ARCHS_STANDARD_INCLUDING_64_BIT)";
-				BUNDLE_LOADER = "$(BUILT_PRODUCTS_DIR)/Climbing_bluetooth.app/Climbing_bluetooth";
-				FRAMEWORK_SEARCH_PATHS = (
-					"$(SDKROOT)/Developer/Library/Frameworks",
-					"$(inherited)",
-					"$(DEVELOPER_FRAMEWORKS_DIR)",
-				);
-				GCC_PRECOMPILE_PREFIX_HEADER = YES;
-				GCC_PREFIX_HEADER = "Climbing_bluetooth/Climbing_bluetooth-Prefix.pch";
-				INFOPLIST_FILE = "Climbing_bluetoothTests/Climbing_bluetoothTests-Info.plist";
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				TEST_HOST = "$(BUNDLE_LOADER)";
-				WRAPPER_EXTENSION = xctest;
-			};
-			name = Release;
-		};
-/* End XCBuildConfiguration section */
-
-/* Begin XCConfigurationList section */
-		636F298218362333008E394C /* Build configuration list for PBXProject "Climbing_bluetooth" */ = {
-			isa = XCConfigurationList;
-			buildConfigurations = (
-				636F29BA18362333008E394C /* Debug */,
-				636F29BB18362333008E394C /* Release */,
-			);
-			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
-		};
-		636F29BC18362333008E394C /* Build configuration list for PBXNativeTarget "Climbing_bluetooth" */ = {
-			isa = XCConfigurationList;
-			buildConfigurations = (
-				636F29BD18362333008E394C /* Debug */,
-				636F29BE18362333008E394C /* Release */,
-			);
-			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
-		};
-		636F29BF18362333008E394C /* Build configuration list for PBXNativeTarget "Climbing_bluetoothTests" */ = {
-			isa = XCConfigurationList;
-			buildConfigurations = (
-				636F29C018362333008E394C /* Debug */,
-				636F29C118362333008E394C /* Release */,
-			);
-			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
-		};
-/* End XCConfigurationList section */
-	};
-	rootObject = 636F297F18362333008E394C /* Project object */;
-}
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>archiveVersion</key>
+	<string>1</string>
+	<key>classes</key>
+	<dict/>
+	<key>objectVersion</key>
+	<string>46</string>
+	<key>objects</key>
+	<dict>
+		<key>4FDEF371526D4736AD7DE7CC</key>
+		<dict>
+			<key>buildActionMask</key>
+			<string>2147483647</string>
+			<key>files</key>
+			<array/>
+			<key>inputPaths</key>
+			<array/>
+			<key>isa</key>
+			<string>PBXShellScriptBuildPhase</string>
+			<key>name</key>
+			<string>Check Pods Manifest.lock</string>
+			<key>outputPaths</key>
+			<array/>
+			<key>runOnlyForDeploymentPostprocessing</key>
+			<string>0</string>
+			<key>shellPath</key>
+			<string>/bin/sh</string>
+			<key>shellScript</key>
+			<string>diff "${PODS_ROOT}/../Podfile.lock" "${PODS_ROOT}/Manifest.lock" &gt; /dev/null
+if [[ $? != 0 ]] ; then
+    cat &lt;&lt; EOM
+error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.
+EOM
+    exit 1
+fi
+</string>
+			<key>showEnvVarsInLog</key>
+			<string>0</string>
+		</dict>
+		<key>5E8F2B77862C4C02B6073D62</key>
+		<dict>
+			<key>buildActionMask</key>
+			<string>2147483647</string>
+			<key>files</key>
+			<array/>
+			<key>inputPaths</key>
+			<array/>
+			<key>isa</key>
+			<string>PBXShellScriptBuildPhase</string>
+			<key>name</key>
+			<string>Copy Pods Resources</string>
+			<key>outputPaths</key>
+			<array/>
+			<key>runOnlyForDeploymentPostprocessing</key>
+			<string>0</string>
+			<key>shellPath</key>
+			<string>/bin/sh</string>
+			<key>shellScript</key>
+			<string>"${SRCROOT}/Pods/Pods-resources.sh"
+</string>
+			<key>showEnvVarsInLog</key>
+			<string>0</string>
+		</dict>
+		<key>63165021183623850060A6C0</key>
+		<dict>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>lastKnownFileType</key>
+			<string>wrapper.framework</string>
+			<key>name</key>
+			<string>CoreBluetooth.framework</string>
+			<key>path</key>
+			<string>System/Library/Frameworks/CoreBluetooth.framework</string>
+			<key>sourceTree</key>
+			<string>SDKROOT</string>
+		</dict>
+		<key>63165022183623850060A6C0</key>
+		<dict>
+			<key>fileRef</key>
+			<string>63165021183623850060A6C0</string>
+			<key>isa</key>
+			<string>PBXBuildFile</string>
+		</dict>
+		<key>632B6FA51844F6D700100B56</key>
+		<dict>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>lastKnownFileType</key>
+			<string>image.png</string>
+			<key>path</key>
+			<string>backButton.png</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>632B6FA61844F6D700100B56</key>
+		<dict>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>lastKnownFileType</key>
+			<string>image.png</string>
+			<key>path</key>
+			<string>backButton@2x.png</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>632B6FA71844F6D700100B56</key>
+		<dict>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>lastKnownFileType</key>
+			<string>image.png</string>
+			<key>path</key>
+			<string>connectToBase.png</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>632B6FA81844F6D700100B56</key>
+		<dict>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>lastKnownFileType</key>
+			<string>image.png</string>
+			<key>path</key>
+			<string>connectToBase@2x.png</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>632B6FA91844F6D700100B56</key>
+		<dict>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>lastKnownFileType</key>
+			<string>image.png</string>
+			<key>path</key>
+			<string>debugMode.png</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>632B6FAA1844F6D700100B56</key>
+		<dict>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>lastKnownFileType</key>
+			<string>image.png</string>
+			<key>path</key>
+			<string>debugMode@2x.png</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>632B6FAB1844F6D700100B56</key>
+		<dict>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>lastKnownFileType</key>
+			<string>image.png</string>
+			<key>path</key>
+			<string>newGame.png</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>632B6FAD1844F6D700100B56</key>
+		<dict>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>lastKnownFileType</key>
+			<string>image.png</string>
+			<key>path</key>
+			<string>Placeholder.png</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>632B6FAE1844F6D700100B56</key>
+		<dict>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>lastKnownFileType</key>
+			<string>image.png</string>
+			<key>path</key>
+			<string>Placeholder@2x.png</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>632B6FAF1844F6D700100B56</key>
+		<dict>
+			<key>fileRef</key>
+			<string>632B6FA51844F6D700100B56</string>
+			<key>isa</key>
+			<string>PBXBuildFile</string>
+		</dict>
+		<key>632B6FB01844F6D700100B56</key>
+		<dict>
+			<key>fileRef</key>
+			<string>632B6FA61844F6D700100B56</string>
+			<key>isa</key>
+			<string>PBXBuildFile</string>
+		</dict>
+		<key>632B6FB11844F6D700100B56</key>
+		<dict>
+			<key>fileRef</key>
+			<string>632B6FA71844F6D700100B56</string>
+			<key>isa</key>
+			<string>PBXBuildFile</string>
+		</dict>
+		<key>632B6FB21844F6D700100B56</key>
+		<dict>
+			<key>fileRef</key>
+			<string>632B6FA81844F6D700100B56</string>
+			<key>isa</key>
+			<string>PBXBuildFile</string>
+		</dict>
+		<key>632B6FB31844F6D700100B56</key>
+		<dict>
+			<key>fileRef</key>
+			<string>632B6FA91844F6D700100B56</string>
+			<key>isa</key>
+			<string>PBXBuildFile</string>
+		</dict>
+		<key>632B6FB41844F6D700100B56</key>
+		<dict>
+			<key>fileRef</key>
+			<string>632B6FAA1844F6D700100B56</string>
+			<key>isa</key>
+			<string>PBXBuildFile</string>
+		</dict>
+		<key>632B6FB51844F6D700100B56</key>
+		<dict>
+			<key>fileRef</key>
+			<string>632B6FAB1844F6D700100B56</string>
+			<key>isa</key>
+			<string>PBXBuildFile</string>
+		</dict>
+		<key>632B6FB71844F6D700100B56</key>
+		<dict>
+			<key>fileRef</key>
+			<string>632B6FAD1844F6D700100B56</string>
+			<key>isa</key>
+			<string>PBXBuildFile</string>
+		</dict>
+		<key>632B6FB81844F6D700100B56</key>
+		<dict>
+			<key>fileRef</key>
+			<string>632B6FAE1844F6D700100B56</string>
+			<key>isa</key>
+			<string>PBXBuildFile</string>
+		</dict>
+		<key>6344D77A1839FBC200788FE8</key>
+		<dict>
+			<key>fileEncoding</key>
+			<string>4</string>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>lastKnownFileType</key>
+			<string>sourcecode.c.h</string>
+			<key>path</key>
+			<string>btManager.h</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>6344D77B1839FBC200788FE8</key>
+		<dict>
+			<key>fileEncoding</key>
+			<string>4</string>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>lastKnownFileType</key>
+			<string>sourcecode.c.objc</string>
+			<key>path</key>
+			<string>btManager.m</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>6344D77C1839FBC200788FE8</key>
+		<dict>
+			<key>fileRef</key>
+			<string>6344D77B1839FBC200788FE8</string>
+			<key>isa</key>
+			<string>PBXBuildFile</string>
+		</dict>
+		<key>634A81A1183A602800DD4DC2</key>
+		<dict>
+			<key>fileEncoding</key>
+			<string>4</string>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>lastKnownFileType</key>
+			<string>sourcecode.c.h</string>
+			<key>path</key>
+			<string>button.h</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>634A81A2183A602800DD4DC2</key>
+		<dict>
+			<key>fileEncoding</key>
+			<string>4</string>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>lastKnownFileType</key>
+			<string>sourcecode.c.objc</string>
+			<key>path</key>
+			<string>button.m</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>634A81A3183A602800DD4DC2</key>
+		<dict>
+			<key>fileRef</key>
+			<string>634A81A2183A602800DD4DC2</string>
+			<key>isa</key>
+			<string>PBXBuildFile</string>
+		</dict>
+		<key>63501726185DF3190056DAC3</key>
+		<dict>
+			<key>fileEncoding</key>
+			<string>4</string>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>lastKnownFileType</key>
+			<string>sourcecode.c.h</string>
+			<key>name</key>
+			<string>buttonGroup.h</string>
+			<key>path</key>
+			<string>climbing_bluetooth/model/buttonGroup.h</string>
+			<key>sourceTree</key>
+			<string>SOURCE_ROOT</string>
+		</dict>
+		<key>63501727185DF3190056DAC3</key>
+		<dict>
+			<key>fileEncoding</key>
+			<string>4</string>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>lastKnownFileType</key>
+			<string>sourcecode.c.objc</string>
+			<key>name</key>
+			<string>buttonGroup.m</string>
+			<key>path</key>
+			<string>climbing_bluetooth/model/buttonGroup.m</string>
+			<key>sourceTree</key>
+			<string>SOURCE_ROOT</string>
+		</dict>
+		<key>63501728185DF3190056DAC3</key>
+		<dict>
+			<key>fileRef</key>
+			<string>63501727185DF3190056DAC3</string>
+			<key>isa</key>
+			<string>PBXBuildFile</string>
+		</dict>
+		<key>63501729185DF31F0056DAC3</key>
+		<dict>
+			<key>children</key>
+			<array>
+				<string>63501726185DF3190056DAC3</string>
+				<string>63501727185DF3190056DAC3</string>
+			</array>
+			<key>isa</key>
+			<string>PBXGroup</string>
+			<key>name</key>
+			<string>Model</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>636224DD1855482900C8BEBF</key>
+		<dict>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>lastKnownFileType</key>
+			<string>wrapper.framework</string>
+			<key>name</key>
+			<string>AudioToolbox.framework</string>
+			<key>path</key>
+			<string>System/Library/Frameworks/AudioToolbox.framework</string>
+			<key>sourceTree</key>
+			<string>SDKROOT</string>
+		</dict>
+		<key>636224DE1855482900C8BEBF</key>
+		<dict>
+			<key>fileRef</key>
+			<string>636224DD1855482900C8BEBF</string>
+			<key>isa</key>
+			<string>PBXBuildFile</string>
+		</dict>
+		<key>636EDD2218551F3000813ABA</key>
+		<dict>
+			<key>fileEncoding</key>
+			<string>4</string>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>lastKnownFileType</key>
+			<string>sourcecode.c.h</string>
+			<key>path</key>
+			<string>trainerModeViewController.h</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>636EDD2318551F3000813ABA</key>
+		<dict>
+			<key>fileEncoding</key>
+			<string>4</string>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>lastKnownFileType</key>
+			<string>sourcecode.c.objc</string>
+			<key>path</key>
+			<string>trainerModeViewController.m</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>636EDD2418551F3000813ABA</key>
+		<dict>
+			<key>fileRef</key>
+			<string>636EDD2318551F3000813ABA</string>
+			<key>isa</key>
+			<string>PBXBuildFile</string>
+		</dict>
+		<key>636EDD2518551F4A00813ABA</key>
+		<dict>
+			<key>children</key>
+			<array>
+				<string>636EDD2218551F3000813ABA</string>
+				<string>636EDD2318551F3000813ABA</string>
+			</array>
+			<key>isa</key>
+			<string>PBXGroup</string>
+			<key>name</key>
+			<string>trainerMode</string>
+			<key>path</key>
+			<string>..</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>636EDD261855230E00813ABA</key>
+		<dict>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>lastKnownFileType</key>
+			<string>image.png</string>
+			<key>name</key>
+			<string>genericButton.png</string>
+			<key>path</key>
+			<string>Graphics/genericButton.png</string>
+			<key>sourceTree</key>
+			<string>SOURCE_ROOT</string>
+		</dict>
+		<key>636EDD271855230E00813ABA</key>
+		<dict>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>lastKnownFileType</key>
+			<string>image.png</string>
+			<key>name</key>
+			<string>genericButton@2x.png</string>
+			<key>path</key>
+			<string>Graphics/genericButton@2x.png</string>
+			<key>sourceTree</key>
+			<string>SOURCE_ROOT</string>
+		</dict>
+		<key>636EDD281855230E00813ABA</key>
+		<dict>
+			<key>fileRef</key>
+			<string>636EDD261855230E00813ABA</string>
+			<key>isa</key>
+			<string>PBXBuildFile</string>
+		</dict>
+		<key>636EDD291855230E00813ABA</key>
+		<dict>
+			<key>fileRef</key>
+			<string>636EDD271855230E00813ABA</string>
+			<key>isa</key>
+			<string>PBXBuildFile</string>
+		</dict>
+		<key>636F297E18362333008E394C</key>
+		<dict>
+			<key>children</key>
+			<array>
+				<string>63A8E67F1843AB2F00F8A894</string>
+				<string>636F299018362333008E394C</string>
+				<string>636F29B218362333008E394C</string>
+				<string>636F298918362333008E394C</string>
+				<string>636F298818362333008E394C</string>
+				<string>A4584BF228274CCDA159BD86</string>
+			</array>
+			<key>isa</key>
+			<string>PBXGroup</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>636F297F18362333008E394C</key>
+		<dict>
+			<key>attributes</key>
+			<dict>
+				<key>LastUpgradeCheck</key>
+				<string>0500</string>
+				<key>ORGANIZATIONNAME</key>
+				<string>Morten Ydefeldt</string>
+				<key>TargetAttributes</key>
+				<dict>
+					<key>636F298618362333008E394C</key>
+					<dict>
+						<key>DevelopmentTeam</key>
+						<string>6V8W5E58Z8</string>
+					</dict>
+					<key>636F29AA18362333008E394C</key>
+					<dict>
+						<key>TestTargetID</key>
+						<string>636F298618362333008E394C</string>
+					</dict>
+				</dict>
+			</dict>
+			<key>buildConfigurationList</key>
+			<string>636F298218362333008E394C</string>
+			<key>compatibilityVersion</key>
+			<string>Xcode 3.2</string>
+			<key>developmentRegion</key>
+			<string>English</string>
+			<key>hasScannedForEncodings</key>
+			<string>0</string>
+			<key>isa</key>
+			<string>PBXProject</string>
+			<key>knownRegions</key>
+			<array>
+				<string>en</string>
+				<string>Base</string>
+			</array>
+			<key>mainGroup</key>
+			<string>636F297E18362333008E394C</string>
+			<key>productRefGroup</key>
+			<string>636F298818362333008E394C</string>
+			<key>projectDirPath</key>
+			<string></string>
+			<key>projectReferences</key>
+			<array/>
+			<key>projectRoot</key>
+			<string></string>
+			<key>targets</key>
+			<array>
+				<string>636F298618362333008E394C</string>
+				<string>636F29AA18362333008E394C</string>
+			</array>
+		</dict>
+		<key>636F298218362333008E394C</key>
+		<dict>
+			<key>buildConfigurations</key>
+			<array>
+				<string>636F29BA18362333008E394C</string>
+				<string>636F29BB18362333008E394C</string>
+			</array>
+			<key>defaultConfigurationIsVisible</key>
+			<string>0</string>
+			<key>defaultConfigurationName</key>
+			<string>Release</string>
+			<key>isa</key>
+			<string>XCConfigurationList</string>
+		</dict>
+		<key>636F298318362333008E394C</key>
+		<dict>
+			<key>buildActionMask</key>
+			<string>2147483647</string>
+			<key>files</key>
+			<array>
+				<string>636F29A418362333008E394C</string>
+				<string>63D1CC04187229B000F4F71F</string>
+				<string>6386E18B1845035C00FC5DA5</string>
+				<string>6386E18E184506D400FC5DA5</string>
+				<string>63E03A6218551CDF00B0DCDF</string>
+				<string>634A81A3183A602800DD4DC2</string>
+				<string>636F299B18362333008E394C</string>
+				<string>63501728185DF3190056DAC3</string>
+				<string>636F299718362333008E394C</string>
+				<string>636EDD2418551F3000813ABA</string>
+				<string>6386E19918456A4700FC5DA5</string>
+				<string>6344D77C1839FBC200788FE8</string>
+			</array>
+			<key>isa</key>
+			<string>PBXSourcesBuildPhase</string>
+			<key>runOnlyForDeploymentPostprocessing</key>
+			<string>0</string>
+		</dict>
+		<key>636F298418362333008E394C</key>
+		<dict>
+			<key>buildActionMask</key>
+			<string>2147483647</string>
+			<key>files</key>
+			<array>
+				<string>636224DE1855482900C8BEBF</string>
+				<string>63165022183623850060A6C0</string>
+				<string>636F298D18362333008E394C</string>
+				<string>636F298F18362333008E394C</string>
+				<string>636F298B18362333008E394C</string>
+				<string>850FD6DE2F7948B3BFF11B8A</string>
+			</array>
+			<key>isa</key>
+			<string>PBXFrameworksBuildPhase</string>
+			<key>runOnlyForDeploymentPostprocessing</key>
+			<string>0</string>
+		</dict>
+		<key>636F298518362333008E394C</key>
+		<dict>
+			<key>buildActionMask</key>
+			<string>2147483647</string>
+			<key>files</key>
+			<array>
+				<string>6386E195184569EA00FC5DA5</string>
+				<string>632B6FB31844F6D700100B56</string>
+				<string>636F29A118362333008E394C</string>
+				<string>632B6FB21844F6D700100B56</string>
+				<string>6386E196184569EA00FC5DA5</string>
+				<string>632B6FB41844F6D700100B56</string>
+				<string>636EDD291855230E00813ABA</string>
+				<string>632B6FB71844F6D700100B56</string>
+				<string>6386E19218450F0B00FC5DA5</string>
+				<string>632B6FB01844F6D700100B56</string>
+				<string>636EDD281855230E00813ABA</string>
+				<string>632B6FB81844F6D700100B56</string>
+				<string>6386E19118450F0B00FC5DA5</string>
+				<string>636F29A618362333008E394C</string>
+				<string>632B6FB51844F6D700100B56</string>
+				<string>6386E1881844F91F00FC5DA5</string>
+				<string>632B6FB11844F6D700100B56</string>
+				<string>632B6FAF1844F6D700100B56</string>
+				<string>636F299E18362333008E394C</string>
+				<string>636F299518362333008E394C</string>
+			</array>
+			<key>isa</key>
+			<string>PBXResourcesBuildPhase</string>
+			<key>runOnlyForDeploymentPostprocessing</key>
+			<string>0</string>
+		</dict>
+		<key>636F298618362333008E394C</key>
+		<dict>
+			<key>buildConfigurationList</key>
+			<string>636F29BC18362333008E394C</string>
+			<key>buildPhases</key>
+			<array>
+				<string>4FDEF371526D4736AD7DE7CC</string>
+				<string>636F298318362333008E394C</string>
+				<string>636F298418362333008E394C</string>
+				<string>636F298518362333008E394C</string>
+				<string>5E8F2B77862C4C02B6073D62</string>
+			</array>
+			<key>buildRules</key>
+			<array/>
+			<key>dependencies</key>
+			<array/>
+			<key>isa</key>
+			<string>PBXNativeTarget</string>
+			<key>name</key>
+			<string>Climbing_bluetooth</string>
+			<key>productName</key>
+			<string>Climbing_bluetooth</string>
+			<key>productReference</key>
+			<string>636F298718362333008E394C</string>
+			<key>productType</key>
+			<string>com.apple.product-type.application</string>
+		</dict>
+		<key>636F298718362333008E394C</key>
+		<dict>
+			<key>explicitFileType</key>
+			<string>wrapper.application</string>
+			<key>includeInIndex</key>
+			<string>0</string>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>path</key>
+			<string>Climbing_bluetooth.app</string>
+			<key>sourceTree</key>
+			<string>BUILT_PRODUCTS_DIR</string>
+		</dict>
+		<key>636F298818362333008E394C</key>
+		<dict>
+			<key>children</key>
+			<array>
+				<string>636F298718362333008E394C</string>
+				<string>636F29AB18362333008E394C</string>
+			</array>
+			<key>isa</key>
+			<string>PBXGroup</string>
+			<key>name</key>
+			<string>Products</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>636F298918362333008E394C</key>
+		<dict>
+			<key>children</key>
+			<array>
+				<string>636224DD1855482900C8BEBF</string>
+				<string>63165021183623850060A6C0</string>
+				<string>636F298A18362333008E394C</string>
+				<string>636F298C18362333008E394C</string>
+				<string>636F298E18362333008E394C</string>
+				<string>636F29AC18362333008E394C</string>
+				<string>7CD69247D69C401FA2C6072F</string>
+			</array>
+			<key>isa</key>
+			<string>PBXGroup</string>
+			<key>name</key>
+			<string>Frameworks</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>636F298A18362333008E394C</key>
+		<dict>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>lastKnownFileType</key>
+			<string>wrapper.framework</string>
+			<key>name</key>
+			<string>Foundation.framework</string>
+			<key>path</key>
+			<string>System/Library/Frameworks/Foundation.framework</string>
+			<key>sourceTree</key>
+			<string>SDKROOT</string>
+		</dict>
+		<key>636F298B18362333008E394C</key>
+		<dict>
+			<key>fileRef</key>
+			<string>636F298A18362333008E394C</string>
+			<key>isa</key>
+			<string>PBXBuildFile</string>
+		</dict>
+		<key>636F298C18362333008E394C</key>
+		<dict>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>lastKnownFileType</key>
+			<string>wrapper.framework</string>
+			<key>name</key>
+			<string>CoreGraphics.framework</string>
+			<key>path</key>
+			<string>System/Library/Frameworks/CoreGraphics.framework</string>
+			<key>sourceTree</key>
+			<string>SDKROOT</string>
+		</dict>
+		<key>636F298D18362333008E394C</key>
+		<dict>
+			<key>fileRef</key>
+			<string>636F298C18362333008E394C</string>
+			<key>isa</key>
+			<string>PBXBuildFile</string>
+		</dict>
+		<key>636F298E18362333008E394C</key>
+		<dict>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>lastKnownFileType</key>
+			<string>wrapper.framework</string>
+			<key>name</key>
+			<string>UIKit.framework</string>
+			<key>path</key>
+			<string>System/Library/Frameworks/UIKit.framework</string>
+			<key>sourceTree</key>
+			<string>SDKROOT</string>
+		</dict>
+		<key>636F298F18362333008E394C</key>
+		<dict>
+			<key>fileRef</key>
+			<string>636F298E18362333008E394C</string>
+			<key>isa</key>
+			<string>PBXBuildFile</string>
+		</dict>
+		<key>636F299018362333008E394C</key>
+		<dict>
+			<key>children</key>
+			<array>
+				<string>63E0F3E0184814DD007FFABB</string>
+				<string>63501729185DF31F0056DAC3</string>
+				<string>636F299918362333008E394C</string>
+				<string>636F299A18362333008E394C</string>
+				<string>636F299C18362333008E394C</string>
+				<string>63D1CC02187229B000F4F71F</string>
+				<string>63D1CC03187229B000F4F71F</string>
+				<string>636F299F18362333008E394C</string>
+				<string>6386E18C184506D400FC5DA5</string>
+				<string>6386E18D184506D400FC5DA5</string>
+				<string>636F29A218362333008E394C</string>
+				<string>636F29A318362333008E394C</string>
+				<string>6344D77A1839FBC200788FE8</string>
+				<string>6344D77B1839FBC200788FE8</string>
+				<string>634A81A1183A602800DD4DC2</string>
+				<string>634A81A2183A602800DD4DC2</string>
+				<string>6386E1891845035C00FC5DA5</string>
+				<string>6386E18A1845035C00FC5DA5</string>
+				<string>636F29A518362333008E394C</string>
+				<string>636F299118362333008E394C</string>
+			</array>
+			<key>isa</key>
+			<string>PBXGroup</string>
+			<key>path</key>
+			<string>Climbing_bluetooth</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>636F299118362333008E394C</key>
+		<dict>
+			<key>children</key>
+			<array>
+				<string>636F299218362333008E394C</string>
+				<string>636F299318362333008E394C</string>
+				<string>636F299618362333008E394C</string>
+				<string>636F299818362333008E394C</string>
+			</array>
+			<key>isa</key>
+			<string>PBXGroup</string>
+			<key>name</key>
+			<string>Supporting Files</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>636F299218362333008E394C</key>
+		<dict>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>lastKnownFileType</key>
+			<string>text.plist.xml</string>
+			<key>path</key>
+			<string>Climbing_bluetooth-Info.plist</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>636F299318362333008E394C</key>
+		<dict>
+			<key>children</key>
+			<array>
+				<string>636F299418362333008E394C</string>
+			</array>
+			<key>isa</key>
+			<string>PBXVariantGroup</string>
+			<key>name</key>
+			<string>InfoPlist.strings</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>636F299418362333008E394C</key>
+		<dict>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>lastKnownFileType</key>
+			<string>text.plist.strings</string>
+			<key>name</key>
+			<string>en</string>
+			<key>path</key>
+			<string>en.lproj/InfoPlist.strings</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>636F299518362333008E394C</key>
+		<dict>
+			<key>fileRef</key>
+			<string>636F299318362333008E394C</string>
+			<key>isa</key>
+			<string>PBXBuildFile</string>
+		</dict>
+		<key>636F299618362333008E394C</key>
+		<dict>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>lastKnownFileType</key>
+			<string>sourcecode.c.objc</string>
+			<key>path</key>
+			<string>main.m</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>636F299718362333008E394C</key>
+		<dict>
+			<key>fileRef</key>
+			<string>636F299618362333008E394C</string>
+			<key>isa</key>
+			<string>PBXBuildFile</string>
+		</dict>
+		<key>636F299818362333008E394C</key>
+		<dict>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>lastKnownFileType</key>
+			<string>sourcecode.c.h</string>
+			<key>path</key>
+			<string>Climbing_bluetooth-Prefix.pch</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>636F299918362333008E394C</key>
+		<dict>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>lastKnownFileType</key>
+			<string>sourcecode.c.h</string>
+			<key>path</key>
+			<string>AppDelegate.h</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>636F299A18362333008E394C</key>
+		<dict>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>lastKnownFileType</key>
+			<string>sourcecode.c.objc</string>
+			<key>path</key>
+			<string>AppDelegate.m</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>636F299B18362333008E394C</key>
+		<dict>
+			<key>fileRef</key>
+			<string>636F299A18362333008E394C</string>
+			<key>isa</key>
+			<string>PBXBuildFile</string>
+		</dict>
+		<key>636F299C18362333008E394C</key>
+		<dict>
+			<key>children</key>
+			<array>
+				<string>636F299D18362333008E394C</string>
+			</array>
+			<key>isa</key>
+			<string>PBXVariantGroup</string>
+			<key>name</key>
+			<string>Main_iPhone.storyboard</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>636F299D18362333008E394C</key>
+		<dict>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>lastKnownFileType</key>
+			<string>file.storyboard</string>
+			<key>name</key>
+			<string>Base</string>
+			<key>path</key>
+			<string>Base.lproj/Main_iPhone.storyboard</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>636F299E18362333008E394C</key>
+		<dict>
+			<key>fileRef</key>
+			<string>636F299C18362333008E394C</string>
+			<key>isa</key>
+			<string>PBXBuildFile</string>
+		</dict>
+		<key>636F299F18362333008E394C</key>
+		<dict>
+			<key>children</key>
+			<array>
+				<string>636F29A018362333008E394C</string>
+			</array>
+			<key>isa</key>
+			<string>PBXVariantGroup</string>
+			<key>name</key>
+			<string>Main_iPad.storyboard</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>636F29A018362333008E394C</key>
+		<dict>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>lastKnownFileType</key>
+			<string>file.storyboard</string>
+			<key>name</key>
+			<string>Base</string>
+			<key>path</key>
+			<string>Base.lproj/Main_iPad.storyboard</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>636F29A118362333008E394C</key>
+		<dict>
+			<key>fileRef</key>
+			<string>636F299F18362333008E394C</string>
+			<key>isa</key>
+			<string>PBXBuildFile</string>
+		</dict>
+		<key>636F29A218362333008E394C</key>
+		<dict>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>lastKnownFileType</key>
+			<string>sourcecode.c.h</string>
+			<key>path</key>
+			<string>ViewController.h</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>636F29A318362333008E394C</key>
+		<dict>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>lastKnownFileType</key>
+			<string>sourcecode.c.objc</string>
+			<key>path</key>
+			<string>ViewController.m</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>636F29A418362333008E394C</key>
+		<dict>
+			<key>fileRef</key>
+			<string>636F29A318362333008E394C</string>
+			<key>isa</key>
+			<string>PBXBuildFile</string>
+		</dict>
+		<key>636F29A518362333008E394C</key>
+		<dict>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>lastKnownFileType</key>
+			<string>folder.assetcatalog</string>
+			<key>path</key>
+			<string>Images.xcassets</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>636F29A618362333008E394C</key>
+		<dict>
+			<key>fileRef</key>
+			<string>636F29A518362333008E394C</string>
+			<key>isa</key>
+			<string>PBXBuildFile</string>
+		</dict>
+		<key>636F29A718362333008E394C</key>
+		<dict>
+			<key>buildActionMask</key>
+			<string>2147483647</string>
+			<key>files</key>
+			<array>
+				<string>636F29B918362333008E394C</string>
+			</array>
+			<key>isa</key>
+			<string>PBXSourcesBuildPhase</string>
+			<key>runOnlyForDeploymentPostprocessing</key>
+			<string>0</string>
+		</dict>
+		<key>636F29A818362333008E394C</key>
+		<dict>
+			<key>buildActionMask</key>
+			<string>2147483647</string>
+			<key>files</key>
+			<array>
+				<string>636F29AD18362333008E394C</string>
+				<string>636F29AF18362333008E394C</string>
+				<string>636F29AE18362333008E394C</string>
+			</array>
+			<key>isa</key>
+			<string>PBXFrameworksBuildPhase</string>
+			<key>runOnlyForDeploymentPostprocessing</key>
+			<string>0</string>
+		</dict>
+		<key>636F29A918362333008E394C</key>
+		<dict>
+			<key>buildActionMask</key>
+			<string>2147483647</string>
+			<key>files</key>
+			<array>
+				<string>636F29B718362333008E394C</string>
+			</array>
+			<key>isa</key>
+			<string>PBXResourcesBuildPhase</string>
+			<key>runOnlyForDeploymentPostprocessing</key>
+			<string>0</string>
+		</dict>
+		<key>636F29AA18362333008E394C</key>
+		<dict>
+			<key>buildConfigurationList</key>
+			<string>636F29BF18362333008E394C</string>
+			<key>buildPhases</key>
+			<array>
+				<string>636F29A718362333008E394C</string>
+				<string>636F29A818362333008E394C</string>
+				<string>636F29A918362333008E394C</string>
+			</array>
+			<key>buildRules</key>
+			<array/>
+			<key>dependencies</key>
+			<array>
+				<string>636F29B118362333008E394C</string>
+			</array>
+			<key>isa</key>
+			<string>PBXNativeTarget</string>
+			<key>name</key>
+			<string>Climbing_bluetoothTests</string>
+			<key>productName</key>
+			<string>Climbing_bluetoothTests</string>
+			<key>productReference</key>
+			<string>636F29AB18362333008E394C</string>
+			<key>productType</key>
+			<string>com.apple.product-type.bundle.unit-test</string>
+		</dict>
+		<key>636F29AB18362333008E394C</key>
+		<dict>
+			<key>explicitFileType</key>
+			<string>wrapper.cfbundle</string>
+			<key>includeInIndex</key>
+			<string>0</string>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>path</key>
+			<string>Climbing_bluetoothTests.xctest</string>
+			<key>sourceTree</key>
+			<string>BUILT_PRODUCTS_DIR</string>
+		</dict>
+		<key>636F29AC18362333008E394C</key>
+		<dict>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>lastKnownFileType</key>
+			<string>wrapper.framework</string>
+			<key>name</key>
+			<string>XCTest.framework</string>
+			<key>path</key>
+			<string>Library/Frameworks/XCTest.framework</string>
+			<key>sourceTree</key>
+			<string>DEVELOPER_DIR</string>
+		</dict>
+		<key>636F29AD18362333008E394C</key>
+		<dict>
+			<key>fileRef</key>
+			<string>636F29AC18362333008E394C</string>
+			<key>isa</key>
+			<string>PBXBuildFile</string>
+		</dict>
+		<key>636F29AE18362333008E394C</key>
+		<dict>
+			<key>fileRef</key>
+			<string>636F298A18362333008E394C</string>
+			<key>isa</key>
+			<string>PBXBuildFile</string>
+		</dict>
+		<key>636F29AF18362333008E394C</key>
+		<dict>
+			<key>fileRef</key>
+			<string>636F298E18362333008E394C</string>
+			<key>isa</key>
+			<string>PBXBuildFile</string>
+		</dict>
+		<key>636F29B018362333008E394C</key>
+		<dict>
+			<key>containerPortal</key>
+			<string>636F297F18362333008E394C</string>
+			<key>isa</key>
+			<string>PBXContainerItemProxy</string>
+			<key>proxyType</key>
+			<string>1</string>
+			<key>remoteGlobalIDString</key>
+			<string>636F298618362333008E394C</string>
+			<key>remoteInfo</key>
+			<string>Climbing_bluetooth</string>
+		</dict>
+		<key>636F29B118362333008E394C</key>
+		<dict>
+			<key>isa</key>
+			<string>PBXTargetDependency</string>
+			<key>target</key>
+			<string>636F298618362333008E394C</string>
+			<key>targetProxy</key>
+			<string>636F29B018362333008E394C</string>
+		</dict>
+		<key>636F29B218362333008E394C</key>
+		<dict>
+			<key>children</key>
+			<array>
+				<string>636F29B818362333008E394C</string>
+				<string>636F29B318362333008E394C</string>
+			</array>
+			<key>isa</key>
+			<string>PBXGroup</string>
+			<key>path</key>
+			<string>Climbing_bluetoothTests</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>636F29B318362333008E394C</key>
+		<dict>
+			<key>children</key>
+			<array>
+				<string>636F29B418362333008E394C</string>
+				<string>636F29B518362333008E394C</string>
+			</array>
+			<key>isa</key>
+			<string>PBXGroup</string>
+			<key>name</key>
+			<string>Supporting Files</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>636F29B418362333008E394C</key>
+		<dict>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>lastKnownFileType</key>
+			<string>text.plist.xml</string>
+			<key>path</key>
+			<string>Climbing_bluetoothTests-Info.plist</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>636F29B518362333008E394C</key>
+		<dict>
+			<key>children</key>
+			<array>
+				<string>636F29B618362333008E394C</string>
+			</array>
+			<key>isa</key>
+			<string>PBXVariantGroup</string>
+			<key>name</key>
+			<string>InfoPlist.strings</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>636F29B618362333008E394C</key>
+		<dict>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>lastKnownFileType</key>
+			<string>text.plist.strings</string>
+			<key>name</key>
+			<string>en</string>
+			<key>path</key>
+			<string>en.lproj/InfoPlist.strings</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>636F29B718362333008E394C</key>
+		<dict>
+			<key>fileRef</key>
+			<string>636F29B518362333008E394C</string>
+			<key>isa</key>
+			<string>PBXBuildFile</string>
+		</dict>
+		<key>636F29B818362333008E394C</key>
+		<dict>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>lastKnownFileType</key>
+			<string>sourcecode.c.objc</string>
+			<key>path</key>
+			<string>Climbing_bluetoothTests.m</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>636F29B918362333008E394C</key>
+		<dict>
+			<key>fileRef</key>
+			<string>636F29B818362333008E394C</string>
+			<key>isa</key>
+			<string>PBXBuildFile</string>
+		</dict>
+		<key>636F29BA18362333008E394C</key>
+		<dict>
+			<key>buildSettings</key>
+			<dict>
+				<key>ALWAYS_SEARCH_USER_PATHS</key>
+				<string>NO</string>
+				<key>ARCHS</key>
+				<string>$(ARCHS_STANDARD_INCLUDING_64_BIT)</string>
+				<key>CLANG_CXX_LANGUAGE_STANDARD</key>
+				<string>gnu++0x</string>
+				<key>CLANG_CXX_LIBRARY</key>
+				<string>libc++</string>
+				<key>CLANG_ENABLE_MODULES</key>
+				<string>YES</string>
+				<key>CLANG_ENABLE_OBJC_ARC</key>
+				<string>YES</string>
+				<key>CLANG_WARN_BOOL_CONVERSION</key>
+				<string>YES</string>
+				<key>CLANG_WARN_CONSTANT_CONVERSION</key>
+				<string>YES</string>
+				<key>CLANG_WARN_DIRECT_OBJC_ISA_USAGE</key>
+				<string>YES_ERROR</string>
+				<key>CLANG_WARN_EMPTY_BODY</key>
+				<string>YES</string>
+				<key>CLANG_WARN_ENUM_CONVERSION</key>
+				<string>YES</string>
+				<key>CLANG_WARN_INT_CONVERSION</key>
+				<string>YES</string>
+				<key>CLANG_WARN_OBJC_ROOT_CLASS</key>
+				<string>YES_ERROR</string>
+				<key>CLANG_WARN__DUPLICATE_METHOD_MATCH</key>
+				<string>YES</string>
+				<key>CODE_SIGN_IDENTITY[sdk=iphoneos*]</key>
+				<string>iPhone Developer</string>
+				<key>COPY_PHASE_STRIP</key>
+				<string>NO</string>
+				<key>GCC_C_LANGUAGE_STANDARD</key>
+				<string>gnu99</string>
+				<key>GCC_DYNAMIC_NO_PIC</key>
+				<string>NO</string>
+				<key>GCC_OPTIMIZATION_LEVEL</key>
+				<string>0</string>
+				<key>GCC_PREPROCESSOR_DEFINITIONS</key>
+				<array>
+					<string>DEBUG=1</string>
+					<string>$(inherited)</string>
+				</array>
+				<key>GCC_SYMBOLS_PRIVATE_EXTERN</key>
+				<string>NO</string>
+				<key>GCC_WARN_64_TO_32_BIT_CONVERSION</key>
+				<string>YES</string>
+				<key>GCC_WARN_ABOUT_RETURN_TYPE</key>
+				<string>YES_ERROR</string>
+				<key>GCC_WARN_UNDECLARED_SELECTOR</key>
+				<string>YES</string>
+				<key>GCC_WARN_UNINITIALIZED_AUTOS</key>
+				<string>YES</string>
+				<key>GCC_WARN_UNUSED_FUNCTION</key>
+				<string>YES</string>
+				<key>GCC_WARN_UNUSED_VARIABLE</key>
+				<string>YES</string>
+				<key>IPHONEOS_DEPLOYMENT_TARGET</key>
+				<string>7.0</string>
+				<key>ONLY_ACTIVE_ARCH</key>
+				<string>YES</string>
+				<key>SDKROOT</key>
+				<string>iphoneos</string>
+				<key>TARGETED_DEVICE_FAMILY</key>
+				<string>1,2</string>
+			</dict>
+			<key>isa</key>
+			<string>XCBuildConfiguration</string>
+			<key>name</key>
+			<string>Debug</string>
+		</dict>
+		<key>636F29BB18362333008E394C</key>
+		<dict>
+			<key>buildSettings</key>
+			<dict>
+				<key>ALWAYS_SEARCH_USER_PATHS</key>
+				<string>NO</string>
+				<key>ARCHS</key>
+				<string>$(ARCHS_STANDARD_INCLUDING_64_BIT)</string>
+				<key>CLANG_CXX_LANGUAGE_STANDARD</key>
+				<string>gnu++0x</string>
+				<key>CLANG_CXX_LIBRARY</key>
+				<string>libc++</string>
+				<key>CLANG_ENABLE_MODULES</key>
+				<string>YES</string>
+				<key>CLANG_ENABLE_OBJC_ARC</key>
+				<string>YES</string>
+				<key>CLANG_WARN_BOOL_CONVERSION</key>
+				<string>YES</string>
+				<key>CLANG_WARN_CONSTANT_CONVERSION</key>
+				<string>YES</string>
+				<key>CLANG_WARN_DIRECT_OBJC_ISA_USAGE</key>
+				<string>YES_ERROR</string>
+				<key>CLANG_WARN_EMPTY_BODY</key>
+				<string>YES</string>
+				<key>CLANG_WARN_ENUM_CONVERSION</key>
+				<string>YES</string>
+				<key>CLANG_WARN_INT_CONVERSION</key>
+				<string>YES</string>
+				<key>CLANG_WARN_OBJC_ROOT_CLASS</key>
+				<string>YES_ERROR</string>
+				<key>CLANG_WARN__DUPLICATE_METHOD_MATCH</key>
+				<string>YES</string>
+				<key>CODE_SIGN_IDENTITY[sdk=iphoneos*]</key>
+				<string>iPhone Developer</string>
+				<key>COPY_PHASE_STRIP</key>
+				<string>YES</string>
+				<key>ENABLE_NS_ASSERTIONS</key>
+				<string>NO</string>
+				<key>GCC_C_LANGUAGE_STANDARD</key>
+				<string>gnu99</string>
+				<key>GCC_WARN_64_TO_32_BIT_CONVERSION</key>
+				<string>YES</string>
+				<key>GCC_WARN_ABOUT_RETURN_TYPE</key>
+				<string>YES_ERROR</string>
+				<key>GCC_WARN_UNDECLARED_SELECTOR</key>
+				<string>YES</string>
+				<key>GCC_WARN_UNINITIALIZED_AUTOS</key>
+				<string>YES</string>
+				<key>GCC_WARN_UNUSED_FUNCTION</key>
+				<string>YES</string>
+				<key>GCC_WARN_UNUSED_VARIABLE</key>
+				<string>YES</string>
+				<key>IPHONEOS_DEPLOYMENT_TARGET</key>
+				<string>7.0</string>
+				<key>SDKROOT</key>
+				<string>iphoneos</string>
+				<key>TARGETED_DEVICE_FAMILY</key>
+				<string>1,2</string>
+				<key>VALIDATE_PRODUCT</key>
+				<string>YES</string>
+			</dict>
+			<key>isa</key>
+			<string>XCBuildConfiguration</string>
+			<key>name</key>
+			<string>Release</string>
+		</dict>
+		<key>636F29BC18362333008E394C</key>
+		<dict>
+			<key>buildConfigurations</key>
+			<array>
+				<string>636F29BD18362333008E394C</string>
+				<string>636F29BE18362333008E394C</string>
+			</array>
+			<key>defaultConfigurationIsVisible</key>
+			<string>0</string>
+			<key>defaultConfigurationName</key>
+			<string>Release</string>
+			<key>isa</key>
+			<string>XCConfigurationList</string>
+		</dict>
+		<key>636F29BD18362333008E394C</key>
+		<dict>
+			<key>baseConfigurationReference</key>
+			<string>A4584BF228274CCDA159BD86</string>
+			<key>buildSettings</key>
+			<dict>
+				<key>ASSETCATALOG_COMPILER_APPICON_NAME</key>
+				<string>AppIcon</string>
+				<key>ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME</key>
+				<string>LaunchImage</string>
+				<key>CODE_SIGN_IDENTITY</key>
+				<string>iPhone Developer</string>
+				<key>CODE_SIGN_IDENTITY[sdk=iphoneos*]</key>
+				<string>iPhone Developer</string>
+				<key>GCC_PRECOMPILE_PREFIX_HEADER</key>
+				<string>YES</string>
+				<key>GCC_PREFIX_HEADER</key>
+				<string>Climbing_bluetooth/Climbing_bluetooth-Prefix.pch</string>
+				<key>INFOPLIST_FILE</key>
+				<string>Climbing_bluetooth/Climbing_bluetooth-Info.plist</string>
+				<key>PRODUCT_NAME</key>
+				<string>$(TARGET_NAME)</string>
+				<key>PROVISIONING_PROFILE</key>
+				<string></string>
+				<key>WRAPPER_EXTENSION</key>
+				<string>app</string>
+			</dict>
+			<key>isa</key>
+			<string>XCBuildConfiguration</string>
+			<key>name</key>
+			<string>Debug</string>
+		</dict>
+		<key>636F29BE18362333008E394C</key>
+		<dict>
+			<key>baseConfigurationReference</key>
+			<string>A4584BF228274CCDA159BD86</string>
+			<key>buildSettings</key>
+			<dict>
+				<key>ASSETCATALOG_COMPILER_APPICON_NAME</key>
+				<string>AppIcon</string>
+				<key>ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME</key>
+				<string>LaunchImage</string>
+				<key>CODE_SIGN_IDENTITY</key>
+				<string>iPhone Developer</string>
+				<key>CODE_SIGN_IDENTITY[sdk=iphoneos*]</key>
+				<string>iPhone Developer</string>
+				<key>GCC_PRECOMPILE_PREFIX_HEADER</key>
+				<string>YES</string>
+				<key>GCC_PREFIX_HEADER</key>
+				<string>Climbing_bluetooth/Climbing_bluetooth-Prefix.pch</string>
+				<key>INFOPLIST_FILE</key>
+				<string>Climbing_bluetooth/Climbing_bluetooth-Info.plist</string>
+				<key>PRODUCT_NAME</key>
+				<string>$(TARGET_NAME)</string>
+				<key>PROVISIONING_PROFILE</key>
+				<string></string>
+				<key>WRAPPER_EXTENSION</key>
+				<string>app</string>
+			</dict>
+			<key>isa</key>
+			<string>XCBuildConfiguration</string>
+			<key>name</key>
+			<string>Release</string>
+		</dict>
+		<key>636F29BF18362333008E394C</key>
+		<dict>
+			<key>buildConfigurations</key>
+			<array>
+				<string>636F29C018362333008E394C</string>
+				<string>636F29C118362333008E394C</string>
+			</array>
+			<key>defaultConfigurationIsVisible</key>
+			<string>0</string>
+			<key>defaultConfigurationName</key>
+			<string>Release</string>
+			<key>isa</key>
+			<string>XCConfigurationList</string>
+		</dict>
+		<key>636F29C018362333008E394C</key>
+		<dict>
+			<key>buildSettings</key>
+			<dict>
+				<key>ARCHS</key>
+				<string>$(ARCHS_STANDARD_INCLUDING_64_BIT)</string>
+				<key>BUNDLE_LOADER</key>
+				<string>$(BUILT_PRODUCTS_DIR)/Climbing_bluetooth.app/Climbing_bluetooth</string>
+				<key>FRAMEWORK_SEARCH_PATHS</key>
+				<array>
+					<string>$(SDKROOT)/Developer/Library/Frameworks</string>
+					<string>$(inherited)</string>
+					<string>$(DEVELOPER_FRAMEWORKS_DIR)</string>
+				</array>
+				<key>GCC_PRECOMPILE_PREFIX_HEADER</key>
+				<string>YES</string>
+				<key>GCC_PREFIX_HEADER</key>
+				<string>Climbing_bluetooth/Climbing_bluetooth-Prefix.pch</string>
+				<key>GCC_PREPROCESSOR_DEFINITIONS</key>
+				<array>
+					<string>DEBUG=1</string>
+					<string>$(inherited)</string>
+				</array>
+				<key>INFOPLIST_FILE</key>
+				<string>Climbing_bluetoothTests/Climbing_bluetoothTests-Info.plist</string>
+				<key>PRODUCT_NAME</key>
+				<string>$(TARGET_NAME)</string>
+				<key>TEST_HOST</key>
+				<string>$(BUNDLE_LOADER)</string>
+				<key>WRAPPER_EXTENSION</key>
+				<string>xctest</string>
+			</dict>
+			<key>isa</key>
+			<string>XCBuildConfiguration</string>
+			<key>name</key>
+			<string>Debug</string>
+		</dict>
+		<key>636F29C118362333008E394C</key>
+		<dict>
+			<key>buildSettings</key>
+			<dict>
+				<key>ARCHS</key>
+				<string>$(ARCHS_STANDARD_INCLUDING_64_BIT)</string>
+				<key>BUNDLE_LOADER</key>
+				<string>$(BUILT_PRODUCTS_DIR)/Climbing_bluetooth.app/Climbing_bluetooth</string>
+				<key>FRAMEWORK_SEARCH_PATHS</key>
+				<array>
+					<string>$(SDKROOT)/Developer/Library/Frameworks</string>
+					<string>$(inherited)</string>
+					<string>$(DEVELOPER_FRAMEWORKS_DIR)</string>
+				</array>
+				<key>GCC_PRECOMPILE_PREFIX_HEADER</key>
+				<string>YES</string>
+				<key>GCC_PREFIX_HEADER</key>
+				<string>Climbing_bluetooth/Climbing_bluetooth-Prefix.pch</string>
+				<key>INFOPLIST_FILE</key>
+				<string>Climbing_bluetoothTests/Climbing_bluetoothTests-Info.plist</string>
+				<key>PRODUCT_NAME</key>
+				<string>$(TARGET_NAME)</string>
+				<key>TEST_HOST</key>
+				<string>$(BUNDLE_LOADER)</string>
+				<key>WRAPPER_EXTENSION</key>
+				<string>xctest</string>
+			</dict>
+			<key>isa</key>
+			<string>XCBuildConfiguration</string>
+			<key>name</key>
+			<string>Release</string>
+		</dict>
+		<key>6386E1871844F91F00FC5DA5</key>
+		<dict>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>lastKnownFileType</key>
+			<string>image.png</string>
+			<key>path</key>
+			<string>newGame@2x.png</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>6386E1881844F91F00FC5DA5</key>
+		<dict>
+			<key>fileRef</key>
+			<string>6386E1871844F91F00FC5DA5</string>
+			<key>isa</key>
+			<string>PBXBuildFile</string>
+		</dict>
+		<key>6386E1891845035C00FC5DA5</key>
+		<dict>
+			<key>fileEncoding</key>
+			<string>4</string>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>lastKnownFileType</key>
+			<string>sourcecode.c.h</string>
+			<key>path</key>
+			<string>gameController.h</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>6386E18A1845035C00FC5DA5</key>
+		<dict>
+			<key>fileEncoding</key>
+			<string>4</string>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>lastKnownFileType</key>
+			<string>sourcecode.c.objc</string>
+			<key>path</key>
+			<string>gameController.m</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>6386E18B1845035C00FC5DA5</key>
+		<dict>
+			<key>fileRef</key>
+			<string>6386E18A1845035C00FC5DA5</string>
+			<key>isa</key>
+			<string>PBXBuildFile</string>
+		</dict>
+		<key>6386E18C184506D400FC5DA5</key>
+		<dict>
+			<key>fileEncoding</key>
+			<string>4</string>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>lastKnownFileType</key>
+			<string>sourcecode.c.h</string>
+			<key>path</key>
+			<string>selectButtonsViewController.h</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>6386E18D184506D400FC5DA5</key>
+		<dict>
+			<key>fileEncoding</key>
+			<string>4</string>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>lastKnownFileType</key>
+			<string>sourcecode.c.objc</string>
+			<key>path</key>
+			<string>selectButtonsViewController.m</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>6386E18E184506D400FC5DA5</key>
+		<dict>
+			<key>fileRef</key>
+			<string>6386E18D184506D400FC5DA5</string>
+			<key>isa</key>
+			<string>PBXBuildFile</string>
+		</dict>
+		<key>6386E18F18450F0B00FC5DA5</key>
+		<dict>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>lastKnownFileType</key>
+			<string>image.png</string>
+			<key>path</key>
+			<string>connectToBase_Connected.png</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>6386E19018450F0B00FC5DA5</key>
+		<dict>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>lastKnownFileType</key>
+			<string>image.png</string>
+			<key>path</key>
+			<string>connectToBase_Connected@2x.png</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>6386E19118450F0B00FC5DA5</key>
+		<dict>
+			<key>fileRef</key>
+			<string>6386E18F18450F0B00FC5DA5</string>
+			<key>isa</key>
+			<string>PBXBuildFile</string>
+		</dict>
+		<key>6386E19218450F0B00FC5DA5</key>
+		<dict>
+			<key>fileRef</key>
+			<string>6386E19018450F0B00FC5DA5</string>
+			<key>isa</key>
+			<string>PBXBuildFile</string>
+		</dict>
+		<key>6386E193184569EA00FC5DA5</key>
+		<dict>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>lastKnownFileType</key>
+			<string>image.png</string>
+			<key>path</key>
+			<string>Vector-Smart-Object.png</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>6386E194184569EA00FC5DA5</key>
+		<dict>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>lastKnownFileType</key>
+			<string>image.png</string>
+			<key>path</key>
+			<string>Vector-Smart-Object@2x.png</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>6386E195184569EA00FC5DA5</key>
+		<dict>
+			<key>fileRef</key>
+			<string>6386E193184569EA00FC5DA5</string>
+			<key>isa</key>
+			<string>PBXBuildFile</string>
+		</dict>
+		<key>6386E196184569EA00FC5DA5</key>
+		<dict>
+			<key>fileRef</key>
+			<string>6386E194184569EA00FC5DA5</string>
+			<key>isa</key>
+			<string>PBXBuildFile</string>
+		</dict>
+		<key>6386E19718456A4700FC5DA5</key>
+		<dict>
+			<key>fileEncoding</key>
+			<string>4</string>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>lastKnownFileType</key>
+			<string>sourcecode.c.h</string>
+			<key>path</key>
+			<string>timeAttack.h</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>6386E19818456A4700FC5DA5</key>
+		<dict>
+			<key>fileEncoding</key>
+			<string>4</string>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>lastKnownFileType</key>
+			<string>sourcecode.c.objc</string>
+			<key>path</key>
+			<string>timeAttack.m</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>6386E19918456A4700FC5DA5</key>
+		<dict>
+			<key>fileRef</key>
+			<string>6386E19818456A4700FC5DA5</string>
+			<key>isa</key>
+			<string>PBXBuildFile</string>
+		</dict>
+		<key>63A8E67F1843AB2F00F8A894</key>
+		<dict>
+			<key>children</key>
+			<array>
+				<string>636EDD261855230E00813ABA</string>
+				<string>636EDD271855230E00813ABA</string>
+				<string>6386E18F18450F0B00FC5DA5</string>
+				<string>6386E19018450F0B00FC5DA5</string>
+				<string>6386E193184569EA00FC5DA5</string>
+				<string>6386E194184569EA00FC5DA5</string>
+				<string>632B6FA51844F6D700100B56</string>
+				<string>632B6FA61844F6D700100B56</string>
+				<string>632B6FA71844F6D700100B56</string>
+				<string>632B6FA81844F6D700100B56</string>
+				<string>632B6FA91844F6D700100B56</string>
+				<string>632B6FAA1844F6D700100B56</string>
+				<string>6386E1871844F91F00FC5DA5</string>
+				<string>632B6FAB1844F6D700100B56</string>
+				<string>632B6FAD1844F6D700100B56</string>
+				<string>632B6FAE1844F6D700100B56</string>
+			</array>
+			<key>isa</key>
+			<string>PBXGroup</string>
+			<key>name</key>
+			<string>Graphics</string>
+			<key>path</key>
+			<string>Climbing_bluetooth</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>63D1CC02187229B000F4F71F</key>
+		<dict>
+			<key>fileEncoding</key>
+			<string>4</string>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>lastKnownFileType</key>
+			<string>sourcecode.c.h</string>
+			<key>name</key>
+			<string>cameraViewController.h</string>
+			<key>path</key>
+			<string>climbing_bluetooth/cameraViewController.h</string>
+			<key>sourceTree</key>
+			<string>SOURCE_ROOT</string>
+		</dict>
+		<key>63D1CC03187229B000F4F71F</key>
+		<dict>
+			<key>fileEncoding</key>
+			<string>4</string>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>lastKnownFileType</key>
+			<string>sourcecode.c.objc</string>
+			<key>name</key>
+			<string>cameraViewController.m</string>
+			<key>path</key>
+			<string>climbing_bluetooth/cameraViewController.m</string>
+			<key>sourceTree</key>
+			<string>SOURCE_ROOT</string>
+		</dict>
+		<key>63D1CC04187229B000F4F71F</key>
+		<dict>
+			<key>fileRef</key>
+			<string>63D1CC03187229B000F4F71F</string>
+			<key>isa</key>
+			<string>PBXBuildFile</string>
+		</dict>
+		<key>63E03A5F1855158C00B0DCDF</key>
+		<dict>
+			<key>children</key>
+			<array>
+				<string>63E03A6018551CDF00B0DCDF</string>
+				<string>63E03A6118551CDF00B0DCDF</string>
+			</array>
+			<key>isa</key>
+			<string>PBXGroup</string>
+			<key>name</key>
+			<string>domination</string>
+			<key>path</key>
+			<string>..</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>63E03A6018551CDF00B0DCDF</key>
+		<dict>
+			<key>fileEncoding</key>
+			<string>4</string>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>lastKnownFileType</key>
+			<string>sourcecode.c.h</string>
+			<key>path</key>
+			<string>domination.h</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>63E03A6118551CDF00B0DCDF</key>
+		<dict>
+			<key>fileEncoding</key>
+			<string>4</string>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>lastKnownFileType</key>
+			<string>sourcecode.c.objc</string>
+			<key>path</key>
+			<string>domination.m</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>63E03A6218551CDF00B0DCDF</key>
+		<dict>
+			<key>fileRef</key>
+			<string>63E03A6118551CDF00B0DCDF</string>
+			<key>isa</key>
+			<string>PBXBuildFile</string>
+		</dict>
+		<key>63E0F3E0184814DD007FFABB</key>
+		<dict>
+			<key>children</key>
+			<array>
+				<string>636EDD2518551F4A00813ABA</string>
+				<string>63E03A5F1855158C00B0DCDF</string>
+				<string>63E0F3E1184814FD007FFABB</string>
+			</array>
+			<key>isa</key>
+			<string>PBXGroup</string>
+			<key>name</key>
+			<string>Games</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>63E0F3E1184814FD007FFABB</key>
+		<dict>
+			<key>children</key>
+			<array>
+				<string>6386E19718456A4700FC5DA5</string>
+				<string>6386E19818456A4700FC5DA5</string>
+			</array>
+			<key>isa</key>
+			<string>PBXGroup</string>
+			<key>name</key>
+			<string>timeAttack</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>7CD69247D69C401FA2C6072F</key>
+		<dict>
+			<key>explicitFileType</key>
+			<string>archive.ar</string>
+			<key>includeInIndex</key>
+			<string>0</string>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>path</key>
+			<string>libPods.a</string>
+			<key>sourceTree</key>
+			<string>BUILT_PRODUCTS_DIR</string>
+		</dict>
+		<key>850FD6DE2F7948B3BFF11B8A</key>
+		<dict>
+			<key>fileRef</key>
+			<string>7CD69247D69C401FA2C6072F</string>
+			<key>isa</key>
+			<string>PBXBuildFile</string>
+		</dict>
+		<key>A4584BF228274CCDA159BD86</key>
+		<dict>
+			<key>includeInIndex</key>
+			<string>1</string>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>lastKnownFileType</key>
+			<string>text.xcconfig</string>
+			<key>name</key>
+			<string>Pods.xcconfig</string>
+			<key>path</key>
+			<string>Pods/Pods.xcconfig</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+	</dict>
+	<key>rootObject</key>
+	<string>636F297F18362333008E394C</string>
+</dict>
+</plist>
