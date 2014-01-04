@@ -7,6 +7,8 @@
 //
 
 #import "selectButtonsViewController.h"
+#import "button.h"
+
 #define buttonsize 90
 #define coloumCount 3
 
@@ -25,46 +27,107 @@
     return self;
 }
 
+-(void)viewDidAppear:(BOOL)animated{
+    
+    
+}
+@synthesize buttons;
 - (void)viewDidLoad
 {
     [super viewDidLoad];
 	// Do any additional setup after loading the view.
     _localGameController = [gameController getInstance];
+    
+    
     [_localGameController setDelegate:self];
     [_localGameController pingButtons];
-    NSDictionary* d = [_localGameController getAvalibleButtons];
-    [self drawButtons:d];
+    
+    [_localGameController buttonPressed:10];
+    [_localGameController buttonPressed:11];
+    [_localGameController buttonPressed:12];
+    [_localGameController buttonPressed:24];
+    [_localGameController buttonPressed:25];
+    [_localGameController buttonPressed:30];
+    [_localGameController buttonPressed:19];
+    [_localGameController buttonPressed:16];
+
+
+    _buttonCollection.backgroundColor = [UIColor colorWithWhite:0.25f alpha:0.0f];
+    _buttonCollection.delegate = self;
+
+
 }
+
+- (NSArray*)buttons {
+    buttons = [[_localGameController getAvalibleButtons] allValues];
+    return buttons;
+}
+
+- (NSInteger)numberOfSectionsInCollectionView:(UICollectionView *)collectionView{
+    return 1;
+}
+
+-(NSInteger)collectionView:(UICollectionView *)collectionView numberOfItemsInSection:(NSInteger)section{
+    return self.buttons.count;
+}
+
+- (UICollectionViewCell *)collectionView:(UICollectionView *)collectionView cellForItemAtIndexPath:(NSIndexPath *)indexPath {
+    int i = indexPath.row;
+    button *button = self.buttons[i];
+    ButtonCell *cell = [[ButtonCell alloc] init];
+    
+    if (button.groupIndex == 1) {
+        cell = [collectionView dequeueReusableCellWithReuseIdentifier:@"group1" forIndexPath:indexPath];
+        cell.idLabel.text = [NSString stringWithFormat:@"%i", [button buttonID]];
+        cell.frame = CGRectMake(cell.frame.origin.x, cell.frame.origin.y, 30, 30);
+
+
+    }else
+    {
+        cell = [collectionView dequeueReusableCellWithReuseIdentifier:@"group2" forIndexPath:indexPath];
+        cell.idLabel.text = [NSString stringWithFormat:@"%i%@", [button buttonID],@"SELECTED"];
+        cell.frame = CGRectMake(cell.frame.origin.x, cell.frame.origin.y, 50, 50);
+
+    }
+    cell.backgroundColor = [button identificationColor];
+    [_buttonCollection invalidateIntrinsicContentSize];
+    return cell;
+}
+
+- (BOOL)collectionView:(UICollectionView *)collectionView shouldHighlightItemAtIndexPath:(NSIndexPath *)indexPath {
+    
+    int i = indexPath.row;
+    button *button = self.buttons[i];
+    
+    if (button.groupIndex == 1) {
+        [button setGroupIndex:2];
+        
+    }else{
+        [button setGroupIndex:1];
+    }
+    [self.buttonCollection reloadItemsAtIndexPaths:@[indexPath]];
+    return NO;
+    
+}
+
+
+-(UIStatusBarStyle)preferredStatusBarStyle
+{
+    return UIStatusBarStyleLightContent;
+}
+
+
 
 - (void)didReceiveMemoryWarning
 {
     [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
 }
 
 
 - (void) buttonPressed:(button *)button{
     
     
-}
-
-- (void)uiButtonPressed:(id)sender{
     
-    gameController* localGameController = [gameController getInstance];
-    button* button = [localGameController getButtonWith:[sender tag]];
-    
-    if (button.groupIndex == 2) {
-        [sender setTitle:[NSString stringWithFormat:@"%i",button.buttonID] forState:UIControlStateNormal];
-        [button fadebuttonFromCurrentColorTo:[UIColor colorWithRed:0 green:0 blue:0 alpha:0] duration:1];
-        [button setGroupIndex:1];
-    } else {
-        [sender setTitle:[NSString stringWithFormat:@"%i%@",button.buttonID, @"✓"] forState:UIControlStateNormal];
-        [button fadebuttonFrom:[UIColor colorWithRed:1 green:1 blue:1 alpha:1] duration:1 endColor:button.identificationColor];
-        [button setGroupIndex:2];
-    }
-    
-    [_buttonGroup setAllButtonsWithIdentificationColor];
-   //[b fadebuttonFromCurrentColorTo:[UIColor redColor] duration:2];
 }
 
 - (IBAction)cameraButton:(id)sender {
@@ -80,45 +143,12 @@
 	[_localGameController setBackgroundImage:[info objectForKey:@"UIImagePickerControllerOriginalImage"]];
 }
 
-- (void)drawButtons:(NSDictionary*)buttons {
-    
-    UIScrollView *s = [[UIScrollView alloc] initWithFrame: CGRectMake(20, 100, self.view.frame.size.width-40, 200)];
-    s.contentSize = CGSizeMake(s.frame.size.width,500);
-    s.scrollEnabled = YES;
-    
-    int i = 0;
-    int r = 0;
-    int c = 0;
-    
-    for (id key in buttons){
-        button *button = [buttons objectForKey:key];
-        c = i%coloumCount;
-        r = i/coloumCount;
-        i++;
-        UIButton *uiButton = [UIButton buttonWithType:UIButtonTypeRoundedRect];
-        uiButton.layer.cornerRadius = (buttonsize-10)/2;
-        uiButton.backgroundColor = button.identificationColor;
-        [uiButton addTarget:self action:@selector(uiButtonPressed:) forControlEvents:UIControlEventTouchDown];
-        [uiButton setTag:button.buttonID];
-        if (button.groupIndex == 2) {
-            [uiButton setTitle:[NSString stringWithFormat:@"%i%@",button.buttonID, @"✓"] forState:UIControlStateNormal];
-        } else {
-            [uiButton setTitle:[NSString stringWithFormat:@"%i",button.buttonID] forState:UIControlStateNormal];
-        }
-        uiButton.titleLabel.font = [UIFont boldSystemFontOfSize:35];
-        [uiButton setTitleColor:[UIColor colorWithWhite:1 alpha:1] forState:UIControlStateNormal];
-        uiButton.frame = CGRectMake(c*buttonsize, r*buttonsize, buttonsize-10, buttonsize-10);
-        
-        [s addSubview:uiButton];
-        [button displayIdentificationColor];
-    }
-    [self.view addSubview:s];
-    
-
+- (IBAction)AddNewButton:(id)sender {
+    [_localGameController buttonPressed:99];
 }
 
 - (void) newButtonAttatched:(button *)button buttons:(NSDictionary *)avalibleButtons{
-    [self drawButtons:avalibleButtons];
+    [_buttonCollection reloadData];
 }
 
 - (void) connectionStatusChanged:(BOOL)isConnected {

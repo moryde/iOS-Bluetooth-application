@@ -9,21 +9,21 @@
 #import <UIKit/UIKit.h>
 #import "gameController.h"
 #import "buttonGroup.h"
+#import "ButtonCell.h"
 
-
-@interface selectButtonsViewController : UIViewController <gameControllerDelegate>{
+@interface selectButtonsViewController : UIViewController <gameControllerDelegate, UICollectionViewDelegate, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout>{
 
 }
 
 @property (weak, nonatomic) IBOutlet UIScrollView *scrollView;
-@property (weak, nonatomic) IBOutlet buttonGroup *buttonGroup;
+@property (weak, nonatomic) IBOutlet NSArray *buttons;
 @property (nonatomic) gameController *localGameController;
-
 
 - (IBAction)cameraButton:(id)sender;
 
+@property (weak, nonatomic) IBOutlet UICollectionView *buttonCollection;
 
-- (void)drawButtons:(NSDictionary*)buttons;
+- (IBAction)AddNewButton:(id)sender;
 
 
 @end

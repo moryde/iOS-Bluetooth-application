@@ -46,6 +46,16 @@
     return(self);
 }
 
+- (void)setGroupIndex:(int)groupIndex {
+    _groupIndex = groupIndex;
+    if (groupIndex == 2) {
+        [self fadebuttonFrom:[UIColor colorWithRed:1 green:1 blue:1 alpha:1] duration:1 endColor:self.identificationColor];
+    }
+    else if (groupIndex == 1) {
+        [self fadebuttonFrom:self.identificationColor duration:2 endColor:[UIColor colorWithRed:0 green:0 blue:0 alpha:0]];
+    }
+    
+}
 - (void)displayColor:(UIColor *)color fade:(BOOL)fade{
     ledColor = color;
     [self.delegate colorUpdated:self];

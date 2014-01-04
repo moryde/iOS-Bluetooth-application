@@ -124,7 +124,6 @@
     int i;
     [characteristic.value getBytes:&i length:sizeof(i)];
     NSLog(@"%i",i);
-
             [delegate buttonPressed:i];
 }
 
