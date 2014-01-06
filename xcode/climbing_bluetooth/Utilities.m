@@ -1,14 +1,14 @@
 //
-//  myCell.m
+//  Utilities.m
 //  Climbing_bluetooth
 //
-//  Created by Morten Ydefeldt on 03/01/14.
+//  Created by Morten Ydefeldt on 06/01/14.
 //  Copyright (c) 2014 Morten Ydefeldt. All rights reserved.
 //
 
-#import "myCell.h"
+#import "Utilities.h"
 
-@implementation myCell
+@implementation Utilities
 
 - (id)initWithFrame:(CGRect)frame
 {

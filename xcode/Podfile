@@ -1,2 +1,4 @@
-platform :ios
+platform :ios, '5.0'
 pod 'CorePlot', '~>1.4'
+
+pod 'MGBox2', '~> 2.0.0'

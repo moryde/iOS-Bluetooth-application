@@ -128,9 +128,6 @@
 <wire x1="30" y1="46" x2="0" y2="46" width="0" layer="20"/>
 <wire x1="0" y1="46" x2="0" y2="0" width="0" layer="20"/>
 <rectangle x1="2.305" y1="1.985" x2="27.305" y2="6.985" layer="23" rot="R180"/>
-<dimension x1="0" y1="45.72" x2="0" y2="0" x3="-3.81" y3="22.86" textsize="1.778" layer="1"/>
-<dimension x1="0" y1="0" x2="29.865" y2="0" x3="14.9325" y3="-5.08" textsize="1.778" layer="1"/>
-<dimension x1="29.845" y1="10.16" x2="29.845" y2="6.35" x3="36.83" y3="8.255" textsize="1.778" layer="1"/>
 </plain>
 <libraries>
 <library name="SparkFun-DigitalIC">

@@ -128,11 +128,20 @@
 <wire x1="30" y1="46" x2="0" y2="46" width="0" layer="20"/>
 <wire x1="0" y1="46" x2="0" y2="0" width="0" layer="20"/>
 <rectangle x1="2.305" y1="1.985" x2="27.305" y2="6.985" layer="23" rot="R180"/>
-<text x="9.525" y="35.56" size="0.4064" layer="121" font="vector">RESET</text>
-<text x="9.525" y="34.29" size="0.4064" layer="121" font="vector">TX</text>
-<text x="9.525" y="33.02" size="0.4064" layer="121" font="vector">RX</text>
-<text x="9.525" y="31.75" size="0.4064" layer="121" font="vector">GND</text>
-<text x="9.525" y="30.48" size="0.4064" layer="121" font="vector">VCC</text>
+<text x="9.525" y="35.56" size="0.4064" layer="121" font="vector" ratio="20">RESET</text>
+<text x="9.525" y="34.29" size="0.4064" layer="121" font="vector" ratio="20">TX</text>
+<text x="9.525" y="33.02" size="0.4064" layer="121" font="vector" ratio="20">RX</text>
+<text x="9.525" y="31.75" size="0.4064" layer="121" font="vector" ratio="20">GND</text>
+<text x="9.525" y="30.48" size="0.4064" layer="121" font="vector" ratio="20">VCC</text>
+<text x="6.35" y="44.45" size="0.4064" layer="121" font="vector" ratio="20">VCC</text>
+<text x="6.35" y="38.1" size="0.4064" layer="121" font="vector" ratio="20">GND</text>
+<text x="21.59" y="41.91" size="0.4064" layer="121" font="vector" ratio="20">L2</text>
+<text x="22.86" y="43.815" size="0.4064" layer="121" font="vector" ratio="20">L3</text>
+<text x="12.7" y="38.1" size="0.4064" layer="121" font="vector" ratio="20" rot="R180">L1</text>
+<text x="24.765" y="31.75" size="0.4064" layer="121" font="vector" ratio="20" rot="R180">L1</text>
+<text x="24.765" y="32.385" size="0.4064" layer="121" font="vector" ratio="20" rot="R180">L2</text>
+<text x="15.875" y="28.575" size="0.4064" layer="121" font="vector" ratio="20">L3</text>
+<text x="26.67" y="7.62" size="0.4064" layer="121" font="vector" ratio="20" rot="R180">ANTENNA</text>
 </plain>
 <libraries>
 <library name="SparkFun-DigitalIC">

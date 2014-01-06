@@ -29,6 +29,7 @@
 
 @property (nonatomic, assign) id <btManagerDelegate>delegate;
 
+
 - (void)send:(NSString *)Message;
 
 @end
@@ -37,6 +38,5 @@
 
 -(void)buttonPressed:(int)buttonID;
 -(void)connectionChanged:(BOOL)isConnected;
-
 
 @end

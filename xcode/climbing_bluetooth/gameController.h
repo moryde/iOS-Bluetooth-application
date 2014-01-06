@@ -15,9 +15,15 @@
 @protocol gameControllerDelegate;
 
 @interface gameController : NSObject <btManagerDelegate, buttonDelegate> {
-    btManager *btConnection;
-    NSMutableDictionary *buttons;
+
+    
 }
+@property (nonatomic) NSMutableDictionary *buttons;
+@property (strong, nonatomic) IBOutlet UIImage *backgroundImage;
+@property (nonatomic) buttonGroup *group;
+@property (nonatomic, readonly) btManager *btConnection;
+@property (nonatomic, assign) id <gameControllerDelegate>delegate;
+@property (nonatomic) int index;
 
 - (void) connectToBase;
 - (void) disconnectToBase;
@@ -25,22 +31,15 @@
 - (NSMutableDictionary*) getAvalibleButtons;
 - (NSMutableDictionary*) getPlayableButtons;
 - (button*)getButtonWith:(long)ID;
-- (void)pingButtons;
 
 + (gameController*) getInstance;
 + (NSString *)getHexStringForColor:(UIColor *)color;
-
-@property (strong, nonatomic) IBOutlet UIImage *backgroundImage;
-@property (nonatomic) buttonGroup *group;
-@property (nonatomic, readonly) btManager *btConnection;
-@property (nonatomic, assign) id <gameControllerDelegate>delegate;
-@property (nonatomic) int index;
-
+- (void)pingButtons;
 
 @end
 
 @protocol gameControllerDelegate
-- (void) connectionStatusChanged:(BOOL)isConnected;
-- (void) buttonPressed:(button*)button;
-- (void) newButtonAttatched:(button*)button buttons:(NSDictionary*)avalibleButtons;
+    - (void) connectionStatusChanged:(BOOL)isConnected;
+    - (void) buttonPressed:(button*)button;
+    - (void) newButtonAttatched:(button*)button buttons:(NSDictionary*)avalibleButtons;
 @end

@@ -27,7 +27,6 @@
 @property (nonatomic) CGPoint uiPosition;
 @property (nonatomic) BOOL shouldVibrate;
 
-
 - (id)initWith:(int)Id;
 - (void)displayColor:(UIColor*)color fade:(BOOL)fade;
 - (void)fadebuttonFrom:(UIColor*)startColor duration:(int)seconds endColor:(UIColor*)endColor;

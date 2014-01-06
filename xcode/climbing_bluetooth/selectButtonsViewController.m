@@ -78,15 +78,23 @@
     
     if (button.groupIndex == 1) {
         cell = [collectionView dequeueReusableCellWithReuseIdentifier:@"group1" forIndexPath:indexPath];
-        cell.idLabel.text = [NSString stringWithFormat:@"%i", [button buttonID]];
-        cell.frame = CGRectMake(cell.frame.origin.x, cell.frame.origin.y, 30, 30);
-
+        
+        [UIView transitionWithView:collectionView duration:.5 options:UIViewAnimationOptionCurveEaseOut animations:^{
+            cell.idLabel.text = [NSString stringWithFormat:@"%i", [button buttonID]];
+            cell.frame = CGRectMake(cell.frame.origin.x, cell.frame.origin.y, 30, 30);
+        } completion:^(BOOL finished) { }];
 
     }else
     {
         cell = [collectionView dequeueReusableCellWithReuseIdentifier:@"group2" forIndexPath:indexPath];
-        cell.idLabel.text = [NSString stringWithFormat:@"%i%@", [button buttonID],@"SELECTED"];
-        cell.frame = CGRectMake(cell.frame.origin.x, cell.frame.origin.y, 50, 50);
+        
+        [UIView transitionWithView:collectionView duration:.5 options:UIViewAnimationOptionCurveEaseOut animations:^{
+            cell.idLabel.text = [NSString stringWithFormat:@"%i%@", [button buttonID],@"SELECTED"];
+            cell.frame = CGRectMake(cell.frame.origin.x, cell.frame.origin.y, 40, 40);
+        } completion:^(BOOL finished) { }];
+        
+        
+        
 
     }
     cell.backgroundColor = [button identificationColor];
@@ -105,6 +113,7 @@
     }else{
         [button setGroupIndex:1];
     }
+    
     [self.buttonCollection reloadItemsAtIndexPaths:@[indexPath]];
     return NO;
     

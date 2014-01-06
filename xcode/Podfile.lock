@@ -1,10 +1,13 @@
 PODS:
   - CorePlot (1.4)
+  - MGBox2 (2.0.0)
 
 DEPENDENCIES:
   - CorePlot (~> 1.4)
+  - MGBox2 (~> 2.0.0)
 
 SPEC CHECKSUMS:
   CorePlot: 620ec9763d92cc0478eae469c515132df317e24e
+  MGBox2: 7c09e36c2271f9af16fdb5141a0ca554ecee4d8d
 
 COCOAPODS: 0.29.0

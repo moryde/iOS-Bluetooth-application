@@ -30,14 +30,14 @@ static gameController *singletonInstance;
 {
     if (self = [super init])
     {
-        buttons = [[NSMutableDictionary alloc] init];
+        self.buttons = ButtonGroup;
         NSLog(@"buttons created");
     }
     return self;
 }
 
 - (void)connectionChanged:(BOOL)isConnected{
- 
+
     [delegate connectionStatusChanged:isConnected];
 }
 
@@ -50,18 +50,17 @@ static gameController *singletonInstance;
 
 - (NSMutableDictionary*) getAvalibleButtons{
 
-    return buttons;
+    return self.buttons;
 }
 
 - (button*)getButtonWith:(long)ID {
     
-    button* button = [buttons valueForKey:[NSString stringWithFormat:@"%li",ID]];
+    button* button = [self.buttons valueForKey:[NSString stringWithFormat:@"%li",ID]];
     return button;
 
 }
 
 -(void)pingButtons{
-    
     for (int i = 2; i <= 30; i++) {
         NSString *j = [NSString stringWithFormat:@"%i",i];
         NSMutableString *ss = [[NSMutableString alloc] initWithString:[NSString stringWithFormat:@"%02lX", (long)[j integerValue]]];
@@ -125,8 +124,8 @@ static gameController *singletonInstance;
 
 - (NSMutableDictionary *) getPlayableButtons {
     NSMutableDictionary* a = [[NSMutableDictionary alloc] init];
-    for (id key in buttons) {
-        button *b = [buttons objectForKey:key];        
+    for (id key in self.buttons) {
+        button *b = [self.buttons objectForKey:key];
         if (b.groupIndex == self.index) {
             [a setObject:b forKey:key];
         }
@@ -136,14 +135,14 @@ static gameController *singletonInstance;
 
 -(void)buttonPressed:(int)buttonID{
     
-    button* b = [buttons valueForKey:[NSString stringWithFormat:@"%i",buttonID]];
+    button* b = [self.buttons valueForKey:[NSString stringWithFormat:@"%i",buttonID]];
     //Check if button exsists
     
     if(!b){
         b = [[button alloc] initWith:buttonID];
         [b setDelegate:self];
-        [buttons setObject:b forKey:[NSString stringWithFormat:@"%i", buttonID]];
-        [delegate newButtonAttatched:b buttons:buttons];
+        [self.buttons setObject:b forKey:[NSString stringWithFormat:@"%i", buttonID]];
+        [delegate newButtonAttatched:b buttons:self.buttons];
     }
     
     if ([b shouldVibrate]) {
