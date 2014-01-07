@@ -8,7 +8,7 @@
 
 #import <UIKit/UIKit.h>
 #import "gameController.h"
-#import "buttonGroup.h"
+#import "ButtonGroup.h"
 #import "ButtonCell.h"
 
 @interface selectButtonsViewController : UIViewController <gameControllerDelegate, UICollectionViewDelegate, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout>{

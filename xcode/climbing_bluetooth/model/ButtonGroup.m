@@ -1,24 +1,24 @@
 //
-//  buttonGroup.m
+//  ButtonGroup.m
 //  climbing_bluetooth
 //
 //  Created by Morten Ydefeldt on 15/12/13.
 //  Copyright (c) 2013 Morten Ydefeldt. All rights reserved.
 //
 
-#import "buttonGroup.h"
+#import "ButtonGroup.h"
 #import "button.h"
 
-@interface buttonGroup()
+@interface ButtonGroup()
 
 @end
 
 
-@implementation buttonGroup {
+@implementation ButtonGroup {
     
 }
 
-- (buttonGroup*) initWithGroupIndex:(int)groupID {
+- (ButtonGroup*) initWithGroupIndex:(int)groupID {
     NSLog(@"initWithIndex");
     _groupIndex = groupID;
     return self;

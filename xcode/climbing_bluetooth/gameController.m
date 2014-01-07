@@ -14,24 +14,33 @@
 
 static gameController *singletonInstance;
 
--(int)index{
+
+-(int) index {
     return 2;
 }
 
-- (buttonGroup*) group {
-    NSLog(@"group");
+- (ButtonGroup*) group {
     if (!_group) {
         _group = [_group initWithGroupIndex:self.index];
     }
     return _group;
 }
 
+- (NSMutableDictionary*) buttons {
+    
+    if (!_buttons) {
+        _buttons = [[NSMutableDictionary alloc] init];
+    }
+    
+    return _buttons;
+    
+}
+
 -(id)init
 {
     if (self = [super init])
     {
-        self.buttons = ButtonGroup;
-        NSLog(@"buttons created");
+        NSLog(@"LEWLS");
     }
     return self;
 }
@@ -50,8 +59,12 @@ static gameController *singletonInstance;
 
 - (NSMutableDictionary*) getAvalibleButtons{
 
+    NSLog(@"%lu",(unsigned long)self.buttons.count);
     return self.buttons;
+    
 }
+
+
 
 - (button*)getButtonWith:(long)ID {
     
@@ -134,11 +147,12 @@ static gameController *singletonInstance;
 }
 
 -(void)buttonPressed:(int)buttonID{
-    
-    button* b = [self.buttons valueForKey:[NSString stringWithFormat:@"%i",buttonID]];
+
     //Check if button exsists
-    
+    button* b = [self.buttons valueForKey:[NSString stringWithFormat:@"%i",buttonID]];
+
     if(!b){
+        NSLog(@"JEG ER HERINDE");
         b = [[button alloc] initWith:buttonID];
         [b setDelegate:self];
         [self.buttons setObject:b forKey:[NSString stringWithFormat:@"%i", buttonID]];
@@ -148,7 +162,6 @@ static gameController *singletonInstance;
     if ([b shouldVibrate]) {
         AudioServicesPlaySystemSound(kSystemSoundID_Vibrate);
     }
-    
     [delegate buttonPressed:b];
 }
 

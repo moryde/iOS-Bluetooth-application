@@ -1,5 +1,5 @@
 //
-//  buttonGroup.h
+//  ButtonGroup.h
 //  climbing_bluetooth
 //
 //  Created by Morten Ydefeldt on 15/12/13.
@@ -8,14 +8,14 @@
 
 #import <Foundation/Foundation.h>
 
-@interface buttonGroup : NSObject {
+@interface ButtonGroup : NSObject {
     
 }
 
 @property (nonatomic) NSMutableArray *buttons;
 @property (nonatomic) int groupIndex;
 
-- (buttonGroup*) initWithGroupIndex:(int)groupID;
+- (ButtonGroup*) initWithGroupIndex:(int)groupID;
 - (void) turnAllButtonsOff;
 - (void) setAllButtonsWithIdentificationColor;
 

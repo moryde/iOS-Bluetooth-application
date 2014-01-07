@@ -9,9 +9,14 @@
 #import "button.h"
 
 
-@implementation button
+@implementation button {
+    
+}
 
-@synthesize buttonID,ledColor;
+
+
+@synthesize buttonID,ledColor,indexPath;
+
 
 - (button*)initWith:(int)Id
 {
@@ -21,7 +26,6 @@
         buttonID = Id;
         _groupIndex = 1;
         _uiPosition = CGPointMake(100,100);
-
         switch (buttonID) {
             case 10:
                 _identificationColor = [UIColor orangeColor];
@@ -46,6 +50,14 @@
     return(self);
 }
 
+- (NSIndexPath*) indexPath {
+
+    if (!indexPath) {
+        indexPath = [NSIndexPath indexPathForRow:self.buttonID inSection:self.groupIndex];
+    }
+    return indexPath;
+}
+
 - (void)setGroupIndex:(int)groupIndex {
     _groupIndex = groupIndex;
     if (groupIndex == 2) {
@@ -59,6 +71,7 @@
 - (void)displayColor:(UIColor *)color fade:(BOOL)fade{
     ledColor = color;
     [self.delegate colorUpdated:self];
+    NSLog(@"DisplayColor");
 }
 - (void)fadebuttonFrom:(UIColor *)startColor duration: (int)seconds endColor:(UIColor*)endColor {
     

@@ -38,7 +38,6 @@
 	// Do any additional setup after loading the view.
     _localGameController = [gameController getInstance];
     
-    
     [_localGameController setDelegate:self];
     [_localGameController pingButtons];
     
@@ -51,10 +50,8 @@
     [_localGameController buttonPressed:19];
     [_localGameController buttonPressed:16];
 
-
     _buttonCollection.backgroundColor = [UIColor colorWithWhite:0.25f alpha:0.0f];
     _buttonCollection.delegate = self;
-
 
 }
 
@@ -72,10 +69,10 @@
 }
 
 - (UICollectionViewCell *)collectionView:(UICollectionView *)collectionView cellForItemAtIndexPath:(NSIndexPath *)indexPath {
-    int i = indexPath.row;
+    int i = (int)indexPath.row;
     button *button = self.buttons[i];
     ButtonCell *cell = [[ButtonCell alloc] init];
-    
+    NSIndexPath *p = button.indexPath;
     if (button.groupIndex == 1) {
         cell = [collectionView dequeueReusableCellWithReuseIdentifier:@"group1" forIndexPath:indexPath];
         
@@ -99,12 +96,13 @@
     }
     cell.backgroundColor = [button identificationColor];
     [_buttonCollection invalidateIntrinsicContentSize];
+    NSLog(@"LOOO");
     return cell;
 }
 
 - (BOOL)collectionView:(UICollectionView *)collectionView shouldHighlightItemAtIndexPath:(NSIndexPath *)indexPath {
     
-    int i = indexPath.row;
+    int i = (int)indexPath.row;
     button *button = self.buttons[i];
     
     if (button.groupIndex == 1) {

@@ -10,20 +10,20 @@
 #import <AudioToolbox/AudioToolbox.h>
 #import "btManager.h"
 #import "button.h"
-#import "buttonGroup.h"
+#import "ButtonGroup.h"
 
 @protocol gameControllerDelegate;
 
 @interface gameController : NSObject <btManagerDelegate, buttonDelegate> {
 
-    
 }
-@property (nonatomic) NSMutableDictionary *buttons;
-@property (strong, nonatomic) IBOutlet UIImage *backgroundImage;
-@property (nonatomic) buttonGroup *group;
+@property (nonatomic) NSMutableDictionary* buttons;
+@property (nonatomic,strong) IBOutlet UIImage *backgroundImage;
+@property (nonatomic) ButtonGroup* group;
 @property (nonatomic, readonly) btManager *btConnection;
 @property (nonatomic, assign) id <gameControllerDelegate>delegate;
 @property (nonatomic) int index;
+
 
 - (void) connectToBase;
 - (void) disconnectToBase;
@@ -34,6 +34,7 @@
 
 + (gameController*) getInstance;
 + (NSString *)getHexStringForColor:(UIColor *)color;
+
 - (void)pingButtons;
 
 @end
