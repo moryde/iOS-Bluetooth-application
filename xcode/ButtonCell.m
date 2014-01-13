@@ -19,6 +19,12 @@
     return self;
 }
 
+-(void)setIndex:(int)index{
+    NSLog(@"LO2");
+    _index = index;
+    self.backgroundColor = [UIColor yellowColor];
+    [self setNeedsDisplay];
+}
 
 /*
 // Only override drawRect: if you perform custom drawing.

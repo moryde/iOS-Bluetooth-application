@@ -7,9 +7,15 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "button.h"
 
 @interface ButtonCell : UICollectionViewCell
 
+
 @property (weak, nonatomic) IBOutlet UILabel *idLabel;
+@property (weak, nonatomic) button *button;
+@property (nonatomic) int index;
+
 
 @end
+

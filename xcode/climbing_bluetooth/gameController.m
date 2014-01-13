@@ -16,7 +16,7 @@ static gameController *singletonInstance;
 
 
 -(int) index {
-    return 2;
+    return 1;
 }
 
 - (ButtonGroup*) group {
@@ -40,7 +40,7 @@ static gameController *singletonInstance;
 {
     if (self = [super init])
     {
-        NSLog(@"LEWLS");
+        NSLog(@"Singleton Init");
     }
     return self;
 }
@@ -58,13 +58,19 @@ static gameController *singletonInstance;
 }
 
 - (NSMutableDictionary*) getAvalibleButtons{
-
-    NSLog(@"%lu",(unsigned long)self.buttons.count);
-    return self.buttons;
-    
+    return _buttons;
 }
 
-
+- (NSMutableDictionary*) getButtonsWithGroup:(int)groupIndex {
+    NSMutableDictionary* a = [[NSMutableDictionary alloc] init];
+    for (id key in self.buttons) {
+        button *b = [self.buttons objectForKey:key];
+        if (b.groupIndex == groupIndex) {
+            [a setObject:b forKey:key];
+        }
+    }
+    return a;
+}
 
 - (button*)getButtonWith:(long)ID {
     
@@ -152,7 +158,6 @@ static gameController *singletonInstance;
     button* b = [self.buttons valueForKey:[NSString stringWithFormat:@"%i",buttonID]];
 
     if(!b){
-        NSLog(@"JEG ER HERINDE");
         b = [[button alloc] initWith:buttonID];
         [b setDelegate:self];
         [self.buttons setObject:b forKey:[NSString stringWithFormat:@"%i", buttonID]];

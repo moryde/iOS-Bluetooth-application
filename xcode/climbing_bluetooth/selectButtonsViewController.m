@@ -39,80 +39,79 @@
     _localGameController = [gameController getInstance];
     
     [_localGameController setDelegate:self];
+    for (int i = 9; i < 15; i++) {
+        [_localGameController buttonPressed:i];
+    }
+
+
     [_localGameController pingButtons];
     
-    [_localGameController buttonPressed:10];
-    [_localGameController buttonPressed:11];
-    [_localGameController buttonPressed:12];
-    [_localGameController buttonPressed:24];
-    [_localGameController buttonPressed:25];
-    [_localGameController buttonPressed:30];
-    [_localGameController buttonPressed:19];
-    [_localGameController buttonPressed:16];
-
     _buttonCollection.backgroundColor = [UIColor colorWithWhite:0.25f alpha:0.0f];
     _buttonCollection.delegate = self;
 
 }
 
-- (NSArray*)buttons {
-    buttons = [[_localGameController getAvalibleButtons] allValues];
+- (NSDictionary*)buttons {
+    buttons = [_localGameController getAvalibleButtons];
     return buttons;
 }
 
 - (NSInteger)numberOfSectionsInCollectionView:(UICollectionView *)collectionView{
-    return 1;
+    return 2;
 }
 
 -(NSInteger)collectionView:(UICollectionView *)collectionView numberOfItemsInSection:(NSInteger)section{
-    return self.buttons.count;
+    
+    NSLog(@"%i items in section %i",[_localGameController getButtonsWithGroup:section].count,section);
+    return [_localGameController getButtonsWithGroup:section].count;
+
 }
 
 - (UICollectionViewCell *)collectionView:(UICollectionView *)collectionView cellForItemAtIndexPath:(NSIndexPath *)indexPath {
-    int i = (int)indexPath.row;
-    button *button = self.buttons[i];
-    ButtonCell *cell = [[ButtonCell alloc] init];
-    NSIndexPath *p = button.indexPath;
-    if (button.groupIndex == 1) {
-        cell = [collectionView dequeueReusableCellWithReuseIdentifier:@"group1" forIndexPath:indexPath];
-        
-        [UIView transitionWithView:collectionView duration:.5 options:UIViewAnimationOptionCurveEaseOut animations:^{
-            cell.idLabel.text = [NSString stringWithFormat:@"%i", [button buttonID]];
-            cell.frame = CGRectMake(cell.frame.origin.x, cell.frame.origin.y, 30, 30);
-        } completion:^(BOOL finished) { }];
+    NSArray* buttonArray = [_localGameController getButtonsWithGroup:indexPath.section].allValues;
 
-    }else
-    {
-        cell = [collectionView dequeueReusableCellWithReuseIdentifier:@"group2" forIndexPath:indexPath];
-        
-        [UIView transitionWithView:collectionView duration:.5 options:UIViewAnimationOptionCurveEaseOut animations:^{
-            cell.idLabel.text = [NSString stringWithFormat:@"%i%@", [button buttonID],@"SELECTED"];
-            cell.frame = CGRectMake(cell.frame.origin.x, cell.frame.origin.y, 40, 40);
-        } completion:^(BOOL finished) { }];
-        
-        
-        
+    ButtonCell* cell = [collectionView dequeueReusableCellWithReuseIdentifier:@"group1" forIndexPath:indexPath];
+    button *button = [buttonArray objectAtIndex:indexPath.row];
 
-    }
+    [cell setIndex:button.buttonID];
+    
+    cell.idLabel.text = [NSString stringWithFormat:@"%i", [button buttonID]];
+
+
+//        [UIView transitionWithView:collectionView duration:.5 options:UIViewAnimationOptionCurveEaseOut animations:^{
+//            cell.idLabel.text = [NSString stringWithFormat:@"%i%@", [button buttonID],@"✔"];
+//            //cell.frame = CGRectMake(cell.frame.origin.x, cell.frame.origin.y, 40, 40);
+//        } completion:^(BOOL finished) { }];
+    
     cell.backgroundColor = [button identificationColor];
     [_buttonCollection invalidateIntrinsicContentSize];
-    NSLog(@"LOOO");
+
     return cell;
 }
 
 - (BOOL)collectionView:(UICollectionView *)collectionView shouldHighlightItemAtIndexPath:(NSIndexPath *)indexPath {
     
-    int i = (int)indexPath.row;
-    button *button = self.buttons[i];
+    ButtonCell *cell = (ButtonCell*) [collectionView cellForItemAtIndexPath:indexPath];
+    button *button = [_localGameController getButtonWith:cell.index];
+
     
-    if (button.groupIndex == 1) {
-        [button setGroupIndex:2];
-        
-    }else{
+    if (button.groupIndex == 0) {
         [button setGroupIndex:1];
+
+    }else{
+        [button setGroupIndex:0];
     }
     
-    [self.buttonCollection reloadItemsAtIndexPaths:@[indexPath]];
+    
+        [collectionView reloadData];
+    
+    
+    //[self.buttonCollection reloadItemsAtIndexPaths:@[indexPath]];
+    //NSIndexPath *n = [NSIndexPath indexPathForItem:indexPath.item inSection:[button groupIndex]];
+    //[self.buttonCollection moveItemAtIndexPath:indexPath toIndexPath:n];
+
+    //[button setGroupIndex:3];
+    //[collectionView deleteItemsAtIndexPaths:@[indexPath]];
     return NO;
     
 }
@@ -133,8 +132,6 @@
 
 - (void) buttonPressed:(button *)button{
     
-    
-    
 }
 
 - (IBAction)cameraButton:(id)sender {
@@ -151,7 +148,12 @@
 }
 
 - (IBAction)AddNewButton:(id)sender {
-    [_localGameController buttonPressed:99];
+//    ButtonCell* cell = (ButtonCell*)[self.buttonCollection cellForItemAtIndexPath:[NSIndexPath indexPathForItem:3 inSection:0]];
+//    [[_localGameController getButtonWith:cell.index] setGroupIndex:1];
+//    NSIndexPath *n = [NSIndexPath indexPathForItem:0 inSection:1];
+//    
+//    [self.buttonCollection moveItemAtIndexPath:[self.buttonCollection indexPathForCell:cell] toIndexPath:n];
+
 }
 
 - (void) newButtonAttatched:(button *)button buttons:(NSDictionary *)avalibleButtons{

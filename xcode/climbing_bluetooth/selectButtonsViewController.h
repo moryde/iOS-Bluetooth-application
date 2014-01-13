@@ -15,8 +15,7 @@
 
 }
 
-@property (weak, nonatomic) IBOutlet UIScrollView *scrollView;
-@property (weak, nonatomic) IBOutlet NSArray *buttons;
+@property (weak, nonatomic) IBOutlet NSDictionary *buttons;
 @property (nonatomic) gameController *localGameController;
 
 - (IBAction)cameraButton:(id)sender;

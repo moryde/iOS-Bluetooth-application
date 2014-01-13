@@ -10,15 +10,14 @@
 
 @protocol buttonDelegate;
 
-
 @interface button : NSObject {
     
     int buttonID;
     UIColor* ledColor;
+    
 }
 @property (nonatomic, assign) id <buttonDelegate>delegate;
 
-@property (nonatomic) NSIndexPath *indexPath;
 @property (nonatomic) UIColor* ledColor;
 @property (nonatomic) int buttonID;
 @property (nonatomic) UIColor* identificationColor;

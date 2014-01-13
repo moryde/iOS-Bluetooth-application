@@ -15,7 +15,7 @@
 
 
 
-@synthesize buttonID,ledColor,indexPath;
+@synthesize buttonID,ledColor;
 
 
 - (button*)initWith:(int)Id
@@ -24,7 +24,7 @@
     if(self) {
         _shouldVibrate = NO;
         buttonID = Id;
-        _groupIndex = 1;
+        _groupIndex = 0;
         _uiPosition = CGPointMake(100,100);
         switch (buttonID) {
             case 10:
@@ -50,13 +50,7 @@
     return(self);
 }
 
-- (NSIndexPath*) indexPath {
 
-    if (!indexPath) {
-        indexPath = [NSIndexPath indexPathForRow:self.buttonID inSection:self.groupIndex];
-    }
-    return indexPath;
-}
 
 - (void)setGroupIndex:(int)groupIndex {
     _groupIndex = groupIndex;
@@ -66,7 +60,7 @@
     else if (groupIndex == 1) {
         [self fadebuttonFrom:self.identificationColor duration:2 endColor:[UIColor colorWithRed:0 green:0 blue:0 alpha:0]];
     }
-    
+
 }
 - (void)displayColor:(UIColor *)color fade:(BOOL)fade{
     ledColor = color;
@@ -93,6 +87,7 @@
 }
 
 - (NSString *)getTime {
+    NSLog(@"GET TIME");
     [self updateTime];
     NSString *s = [NSString stringWithFormat:@"%.2f",fabs(self.time)];
     return s;

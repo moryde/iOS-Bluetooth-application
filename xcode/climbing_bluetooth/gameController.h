@@ -30,6 +30,9 @@
 
 - (NSMutableDictionary*) getAvalibleButtons;
 - (NSMutableDictionary*) getPlayableButtons;
+- (NSMutableDictionary*) getButtonsWithGroup:(int)groupIndex;
+
+
 - (button*)getButtonWith:(long)ID;
 
 + (gameController*) getInstance;
